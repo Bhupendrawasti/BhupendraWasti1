@@ -1,0 +1,165 @@
+body {
+    background: rgb(238,174,202);
+background: -moz-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endColorstr="#94bbe9",GradientType=1);
+}
+
+
+.menu {background-color:red;
+padding:10;
+}
+
+h1 {
+text-align:center
+}
+
+
+
+ .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif ;
+  background: rgba(0, 0, 0, 0.7) url('/My website/photo/image.jpg');
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+
+.nav-list {
+  width:95%;
+  align-items: center;
+  display: flex;
+
+}
+
+.nav-list li {
+  list-style: none;
+  padding: 5px 5px 2px 0px;
+  align-items: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 3px;
+  font-size: 20px;
+
+}
+
+
+.nav-list li a:hover {
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.masthead-avater{
+  height: 20px
+}
+.header {
+  text-align:center;
+}
+
+
+
+
+.footer-basic {
+  padding:5px 0;
+  background-color:black;
+  color:white;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic .list-inline{
+  display: flex;
+text-align: center;
+  align-items: center;
+  padding: 2px 2px 2px 20px
+}
+
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:2px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:2px solid #ccc;
+  margin:0px 8px;
+  color:inherit;
+  opacity:0.75;
+  overflow: hidden
+ 
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.;
+}
+
+.footer-basic .copyright {
+  margin-top:5px;
+  text-align:center;
+  font-size:20px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+
+
+.animation1{
+  
+    animation:waqar 8s linear 0s infinite;
+    align-items: center;
+ 
+}
+
+@keyframes waqar {
+    from{}
+    to{transform:rotateY(360deg);}
+    10%{color: red; }
+    20%{color: yellow; }
+    30%{color: purple;}
+    40%{color: teal; }
+    50%{color: olive; }
+    60%{color: green;}
+    70%{color: red; }
+    80%{color: aqua;}
+    90%{color: silver;}
+    100%{color: pink;}
+}
