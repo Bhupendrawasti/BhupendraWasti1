@@ -14,8 +14,10 @@ text-align:center
 
 
 
-.masthead-avater{
-  height: 20px
+.mastheadavater{
+  height: 20px;
+    text-align:center;
+    allign-item:center;
 }
 .header {
   text-align:center;
