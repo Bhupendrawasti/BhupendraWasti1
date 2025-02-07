@@ -73,6 +73,144 @@ h4{
     </head>
 <br><br><br><br><br>
     <body>
-      <h4> <span class="fa fa-wrench"></span> Maintenance!!!</h4>
-</body>
+<!-- Tic-Tac-Toe Game Section -->
+<section id="games">
+    <h2 class="text-center">Tic-Tac-Toe</h2>
+    
+    <div id="tic-tac-toe">
+    <div class="cell" id="cell-0"></div>
+    <div class="cell" id="cell-1"></div>
+    <div class="cell" id="cell-2"></div>
+    <div class="cell" id="cell-3"></div>
+    <div class="cell" id="cell-4"></div>
+    <div class="cell" id="cell-5"></div>
+    <div class="cell" id="cell-6"></div>
+    <div class="cell" id="cell-7"></div>
+    <div class="cell" id="cell-8"></div>
+</div>
+
+<p id="message"></p>
+</section>
+<!-- Pop-up Modal -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <p id="popup-message"></p>
+        <button id="restart-btn" class="btn">Restart Game</button>
+    </div>
+    </div></body>
 </html>
+<script>
+// Tic-Tac-Toe game with bot functionality
+let board = ['', '', '', '', '', '', '', '', ''];
+let currentPlayer = 'X'; // 'X' is the player, 'O' is the bot
+let gameOver = false;
+
+const cells = document.querySelectorAll('.cell');
+const messageElement = document.getElementById('message');
+const popup = document.getElementById('popup');
+const popupMessage = document.getElementById('popup-message');
+const closeBtn = document.getElementById('close-btn');
+const restartBtn = document.getElementById('restart-btn');
+
+function renderBoard() {
+    board.forEach((mark, index) => {
+        cells[index].textContent = mark;
+    });
+}
+
+function checkWinner(player) {
+    const winPatterns = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    return winPatterns.some(pattern => {
+        return pattern.every(index => board[index] === player);
+    });
+}
+
+function isBoardFull() {
+    return board.every(cell => cell !== '');
+}
+
+function botMove() {
+    let availableMoves = [];
+    board.forEach((mark, index) => {
+        if (mark === '') availableMoves.push(index);
+    });
+
+    if (availableMoves.length === 0) return;
+
+    const randomMove = availableMoves[Math.floor(Math.random() * availableMoves.length)];
+    board[randomMove] = 'O';
+    renderBoard();
+    
+    if (checkWinner('O')) {
+        showPopUp('Bot Wins!');
+        gameOver = true;
+    } else if (isBoardFull()) {
+        showPopUp('It\'s a Draw!');
+        gameOver = true;
+    } else {
+        currentPlayer = 'X'; // Switch to player turn
+        messageElement.textContent = 'Your turn!';
+    }
+}
+
+function handleCellClick(event) {
+    if (gameOver) return;
+    
+    const index = event.target.id.split('-')[1];
+    
+    if (board[index] !== '' || currentPlayer === 'O') return; // Can't mark a taken cell or bot's turn
+
+    board[index] = 'X';
+    renderBoard();
+
+    if (checkWinner('X')) {
+        showPopUp('You Win!');
+        gameOver = true;
+    } else if (isBoardFull()) {
+        showPopUp('It\'s a Draw!');
+        gameOver = true;
+    } else {
+        currentPlayer = 'O'; // Switch to bot's turn
+        messageElement.textContent = 'Bot is thinking...';
+        setTimeout(botMove, 1000); // Simulate bot thinking time
+    }
+}
+
+function showPopUp(message) {
+    popup.style.display = 'flex';
+    popupMessage.textContent = message;
+}
+
+function closePopUp() {
+    popup.style.display = 'none';
+    resetGame();
+}
+
+function resetGame() {
+    board = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = 'X';
+    gameOver = false;
+    messageElement.textContent = 'Your turn!';
+    renderBoard();
+}
+
+cells.forEach(cell => {
+    cell.addEventListener('click', handleCellClick);
+});
+
+restartBtn.addEventListener('click', closePopUp);
+closeBtn.addEventListener('click', closePopUp);
+
+renderBoard(); // Initialize the game board
+</script>
