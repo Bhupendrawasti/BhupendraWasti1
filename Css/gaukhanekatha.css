@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: rgb(255, 234, 255);
+    font-size: 16px;
+}
+
+.heading-primary {
+    background-color: #4249ed;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0.25em;
+    color: white;
+    font-size: 2.8em;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.heading-primary > span {
+    color: #0f1730;
+    font-size: 0.5em;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.heading-secondary {
+    font-weight: 600;
+    font-size: 1.4em;
+    color: #ffffff;
+    background-color: #0f1730;
+    margin: 0.7em 0;
+    display: inline-block;
+    padding: 0 0.7em;
+    transform: skew(-5deg);
+    position: relative;
+}
+
+.heading-secondary:before {
+    font-size: 1.25em;
+    content: "";
+    position: absolute;
+    width: 82vw;
+    height: 2px;
+    background-color: #0f1730;
+    bottom: 0;
+}
+
+.page {
+    width: 95%;
+    margin: 0 3%;
+    height: 30rem;
+    background-color: rgb(255, 234, 255);
+}
+
+.question {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.answer {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.button-box {
+    width: 94%;
+    height: 2.9em;
+    margin: 0 auto 2em auto;
+    position: relative;
+}
+
+.button-box > button {
+    background-color: #0f1730;
+    font-size: 1em;
+    font-weight: 600;
+    position: absolute;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.62em 2em;
+    outline: none;
+    border-radius: 2em;
+}
+
+.button-next {
+    right: 0;
+}
+
+h3 {
+    background: rgb(255, 215, 255);
+    height: 2em;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: blue;
+}
