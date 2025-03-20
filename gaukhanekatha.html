@@ -2,9 +2,137 @@
 <html>
 <head>
     <title>गाउ खाने कथा</title>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://bhupendrawasti.com.np/Css/gaukhanekatha.css" />
+    <!-- Add html2canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: rgb(255, 234, 255);
+            font-size: 16px;
+        }
+
+        .heading-primary {
+            background-color: #4249ed;
+            text-align: center;
+            margin-top: 0;
+            padding-top: 0.25em;
+            color: white;
+            font-size: 2.8em;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+
+        .heading-primary > span {
+            color: #0f1730;
+            font-size: 0.5em;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .heading-secondary {
+            font-weight: 600;
+            font-size: 1.4em;
+            color: #ffffff;
+            background-color: #0f1730;
+            margin: 0.7em 0;
+            display: inline-block;
+            padding: 0 0.7em;
+            transform: skew(-5deg);
+            position: relative;
+        }
+
+        .heading-secondary:before {
+            font-size: 1.25em;
+            content: "";
+            position: absolute;
+            width: 82vw;
+            height: 2px;
+            background-color: #0f1730;
+            bottom: 0;
+        }
+
+        .page {
+            width: 95%;
+            margin: 0 3%;
+            height: 30rem;
+            background-color: rgb(255, 234, 255);
+        }
+
+        .question {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .answer {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .button-box {
+            width: 94%;
+            height: 2.9em;
+            margin: 0 auto 2em auto;
+            position: relative;
+        }
+
+        .button-box > button {
+            background-color: #0f1730;
+            font-size: 1em;
+            font-weight: 600;
+            position: absolute;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.62em 2em;
+            outline: none;
+            border-radius: 2em;
+        }
+
+        .button-save {
+            left: 0;
+        }
+
+        .button-next {
+            right: 0;
+        }
+
+        h3 {
+            background: rgb(255, 215, 255);
+            height: 2em;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+            color: blue;
+        }
+        
+        .attribution-container {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .download-attribution {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div id="box">
@@ -17,10 +145,10 @@
         <!-- Pages Container -->
         <div id="pages-container"></div>
 
-        <!-- Navigate Back and Forth -->
+        <!-- Navigate and Save -->
         <div class="button-box">
-            <button class="button-home">
-                Back To Home <i class="fa fa-home" aria-hidden="true"></i>
+            <button class="button-save">
+                Save Question <i class="fa fa-download" aria-hidden="true"></i>
             </button>
             <button class="button-next">
                 NEXT <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -28,6 +156,92 @@
         </div>
     </div>
 
-    <script src="/scripts/gaukhanekatha.js"></script>
+    <script>
+        let questionsData = [];
+
+        // Function to load JSON data
+        async function loadQuestions() {
+            try {
+                const response = await fetch('https://bhupendrawasti.com.np/data/Gaukhanekatha/data.json'); // Load JSON from external URL
+                if (!response.ok) {
+                    throw new Error('Failed to load questions data');
+                }
+                questionsData = await response.json();
+                showRandomQuestion(); // Show a random question on page load
+            } catch (error) {
+                console.error('Error loading JSON:', error);
+            }
+        }
+
+        // Function to get a random question
+        function getRandomQuestion() {
+            const randomIndex = Math.floor(Math.random() * questionsData.length);
+            return questionsData[randomIndex];
+        }
+
+        // Function to render a random question
+        function showRandomQuestion() {
+            const randomQuestion = getRandomQuestion();
+            const pagesContainer = document.getElementById('pages-container');
+            if (randomQuestion) {
+                pagesContainer.innerHTML = `
+                    <div class="page">
+                        <h2 class="heading-secondary">Questions</h2>
+                        <div class="question">${randomQuestion.question}</div>
+                        <br><br><br><br>
+                        <details class="answer">
+                            <summary>Check Answer</summary>
+                            <h3>${randomQuestion.answer}</h3>
+                        </details>
+                    </div>
+                `;
+            } else {
+                pagesContainer.innerHTML = `<div class="page"><h2>No questions available!</h2></div>`;
+            }
+        }
+
+        // Function to save the question as an image
+        function saveQuestionAsImage() {
+            const pageElement = document.querySelector('.page');
+            if (pageElement) {
+                // Create clone of the page element
+                const clone = pageElement.cloneNode(true);
+                
+                // Add attribution text
+                const attribution = document.createElement('div');
+                attribution.className = 'download-attribution';
+                attribution.textContent = 'Downloaded from: https://bhupendrawasti.com.np';
+                
+                // Create container for capture
+                const container = document.createElement('div');
+                container.className = 'attribution-container';
+                container.appendChild(clone);
+                container.appendChild(attribution);
+                
+                // Add to body temporarily
+                document.body.appendChild(container);
+
+                html2canvas(container).then((canvas) => {
+                    const link = document.createElement('a');
+                    link.download = `question.jpg`;
+                    link.href = canvas.toDataURL('image/jpeg', 1.0);
+                    link.click();
+                    
+                    // Clean up
+                    document.body.removeChild(container);
+                });
+            } else {
+                alert('No question to save!');
+            }
+        }
+
+
+        // Event listeners for buttons
+        document.querySelector('.button-next').addEventListener('click', showRandomQuestion);
+        document.querySelector('.button-save').addEventListener('click', saveQuestionAsImage);
+
+        // Load questions on page load
+        loadQuestions();
+    </script>
 </body>
 </html>
