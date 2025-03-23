@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>गाउ खाने कथा</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- Google Fonts -->
@@ -20,31 +21,32 @@
         body {
             background-color: rgb(255, 234, 255);
             font-size: 16px;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        #box {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .heading-primary {
             background-color: #4249ed;
             text-align: center;
-            margin-top: 0;
-            padding-top: 0.25em;
+            padding: 15px 10px;
             color: white;
-            font-size: 2.8em;
+            font-size: 1.8em;
             letter-spacing: 0.5px;
             font-weight: 600;
-            line-height: 1em;
+            line-height: 1.3;
             text-transform: uppercase;
-        }
-
-        .heading-primary > span {
-            color: #0f1730;
-            font-size: 0.5em;
-            font-weight: 500;
-            letter-spacing: 2px;
+            margin-bottom: 15px;
+            border-radius: 10px;
         }
 
         .heading-secondary {
             font-weight: 600;
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #ffffff;
             background-color: #0f1730;
             margin: 0.7em 0;
@@ -54,70 +56,89 @@
             position: relative;
         }
 
-        .heading-secondary:before {
-            font-size: 1.25em;
-            content: "";
-            position: absolute;
-            width: 82vw;
-            height: 2px;
-            background-color: #0f1730;
-            bottom: 0;
-        }
-
         .page {
-            width: 95%;
-            margin: 0 3%;
-            height: 30rem;
+            width: 100%;
+            margin: 0 auto;
+            min-height: 50vh;
             background-color: rgb(255, 234, 255);
+            padding: 15px;
         }
 
         .question {
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-align: center;
+            line-height: 1.4;
+            margin-bottom: 20px;
         }
 
         .answer {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             text-align: center;
+            margin-top: 20px;
         }
 
         .button-box {
-            width: 94%;
-            height: 2.9em;
-            margin: 0 auto 2em auto;
-            position: relative;
+            width: 100%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .button-box > button {
             background-color: #0f1730;
             font-size: 1em;
             font-weight: 600;
-            position: absolute;
             border: none;
             color: white;
             cursor: pointer;
-            padding: 0.62em 2em;
-            outline: none;
+            padding: 15px 25px;
             border-radius: 2em;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .button-save {
-            left: 0;
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .heading-primary {
+                font-size: 1.5em;
+                padding: 12px 8px;
+            }
+
+            .question {
+                font-size: 1.2rem;
+            }
+
+            .answer {
+                font-size: 1rem;
+            }
+
+            .button-box > button {
+                font-size: 0.9em;
+                padding: 12px 20px;
+            }
+
+            .page {
+                padding: 10px;
+                min-height: 60vh;
+            }
         }
 
-        .button-next {
-            right: 0;
+        @media (min-width: 480px) {
+            .button-box {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .button-box > button {
+                width: auto;
+            }
         }
 
-        h3 {
-            background: rgb(255, 215, 255);
-            height: 2em;
-            text-align: center;
-            font-weight: bold;
-            font-size: 2rem;
-            color: blue;
-        }
-        
+        /* Hidden attribution container */
         .attribution-container {
             position: absolute;
             left: -9999px;
@@ -125,12 +146,12 @@
             opacity: 0;
             pointer-events: none;
         }
-        
+
         .download-attribution {
-            font-size: 12px;
+            font-size: 10px;
             color: #666;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 8px;
         }
     </style>
 </head>
@@ -138,8 +159,7 @@
     <div id="box">
         <!-- Heading -->
         <h1 class="heading-primary">
-            गाउ खाने कथा<br />
-            <span></span>
+            गाउ खाने कथा
         </h1>
 
         <!-- Pages Container -->
@@ -162,12 +182,12 @@
         // Function to load JSON data
         async function loadQuestions() {
             try {
-                const response = await fetch('https://bhupendrawasti.com.np/data/Gaukhanekatha/data.json'); // Load JSON from external URL
+                const response = await fetch('https://bhupendrawasti.com.np/data/Gaukhanekatha/data.json');
                 if (!response.ok) {
                     throw new Error('Failed to load questions data');
                 }
                 questionsData = await response.json();
-                showRandomQuestion(); // Show a random question on page load
+                showRandomQuestion();
             } catch (error) {
                 console.error('Error loading JSON:', error);
             }
@@ -188,7 +208,6 @@
                     <div class="page">
                         <h2 class="heading-secondary">Questions</h2>
                         <div class="question">${randomQuestion.question}</div>
-                        <br><br><br><br>
                         <details class="answer">
                             <summary>Check Answer</summary>
                             <h3>${randomQuestion.answer}</h3>
@@ -200,34 +219,30 @@
             }
         }
 
-        // Function to save the question as an image
+        // Function to save the question as an image with heading and attribution
         function saveQuestionAsImage() {
+            const headingElement = document.querySelector('.heading-primary');
             const pageElement = document.querySelector('.page');
-            if (pageElement) {
-                // Create clone of the page element
-                const clone = pageElement.cloneNode(true);
-                
-                // Add attribution text
+            if (headingElement && pageElement) {
+                const headingClone = headingElement.cloneNode(true);
+                const pageClone = pageElement.cloneNode(true);
+
                 const attribution = document.createElement('div');
                 attribution.className = 'download-attribution';
                 attribution.textContent = 'Downloaded from: https://bhupendrawasti.com.np';
-                
-                // Create container for capture
+
                 const container = document.createElement('div');
-                container.className = 'attribution-container';
-                container.appendChild(clone);
+                container.appendChild(headingClone);
+                container.appendChild(pageClone);
                 container.appendChild(attribution);
-                
-                // Add to body temporarily
+
                 document.body.appendChild(container);
 
-                html2canvas(container).then((canvas) => {
+                html2canvas(container, { scale: 2 }).then((canvas) => {
                     const link = document.createElement('a');
                     link.download = `question.jpg`;
                     link.href = canvas.toDataURL('image/jpeg', 1.0);
                     link.click();
-                    
-                    // Clean up
                     document.body.removeChild(container);
                 });
             } else {
@@ -235,12 +250,11 @@
             }
         }
 
-
-        // Event listeners for buttons
+        // Event listeners
         document.querySelector('.button-next').addEventListener('click', showRandomQuestion);
         document.querySelector('.button-save').addEventListener('click', saveQuestionAsImage);
 
-        // Load questions on page load
+        // Initial load
         loadQuestions();
     </script>
 </body>
