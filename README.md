@@ -1,16 +1,40 @@
-### Hi there 👋
+# Bhupendra Wasti's Portfolio Website
 
-<!--
-**Bhupendrawasti/BhupendraWasti** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[![Website](https://img.shields.io/badge/Visit-Website-blue?style=for-the-badge)](https://bhupendrawasti.com.np/)
 
-Here are some ideas to get you started:
+A collection of useful tools, games, and resources specifically curated for Nepali users.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🌟 Features
+
+### 1. Online Tools
+- **Currency Converter**: Real-time exchange rates for international and Nepali currencies
+- **AD-BS Date Converter**: Seamless conversion between Gregorian and Bikram Sambat calendars
+- **AI Background Remover**: Automatic background removal tool powered by AI
+
+### 2. Games
+- **TIC TAC TOE**: Classic strategy game with responsive design
+- **Memory Card**: Interactive card-matching challenge
+
+### 3. Loksewa Bises
+- **Loksewa MCQ**: Practice questions for Nepal's civil service examinations
+- **Loksewa Notes**: Comprehensive study materials for competitive exams
+- **Gaukhane Katha**: Inspirational stories and motivational content
+
+### 4. Useful Resources
+- **Essential Website Links**: Curated list of important Nepali government and service portals
+- **Emergency Contacts**: Vital contact numbers for Nepal (Police, Ambulance, Fire Brigade, etc.)
+
+## 🚀 Usage
+Visit [https://bhupendrawasti.com.np/](https://bhupendrawasti.com.np/) to access all features directly in your browser. No installation required!
+
+## 🤝 Contributing
+Contributions are welcome! Please contact through website for:
+- Bug reports
+- Feature suggestions
+- Content improvements
+
+## 📜 License
+All content is property of Bhupendra Wasti unless otherwise specified. Unauthorized duplication prohibited.
+
+## 📬 Contact
+**Website**: [https://bhupendrawasti.com.np/](https://bhupendrawasti.com.np/)
