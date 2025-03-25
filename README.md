@@ -6,19 +6,19 @@ A collection of useful tools, games, and resources specifically curated for Nepa
 
 ## 🌟 Features
 
-### 1. Online Tools
-- **Currency Converter**: Real-time exchange rates for international and Nepali currencies
-- **AD-BS Date Converter**: Seamless conversion between Gregorian and Bikram Sambat calendars
-- **AI Background Remover**: Automatic background removal tool powered by AI
+### 1. Online Tools 🔧
+- **Currency Converter 💱**: Real-time exchange rates for international and Nepali currencies
+- **AD-BS Date Converter 🗓️**: Seamless conversion between Gregorian and Bikram Sambat calendars
+- **AI Background Remover 🖌️**: Automatic background removal tool powered by AI
 
-### 2. Games
-- **TIC TAC TOE**: Classic strategy game with responsive design
-- **Memory Card**: Interactive card-matching challenge
+### 2. Games 🎮 
+- **TIC TAC TOE 🟢**: Classic strategy game with responsive design
+- **Memory Card 🀄**: Interactive card-matching challenge
 
-### 3. Loksewa Bises
-- **Loksewa MCQ**: Practice questions for Nepal's civil service examinations
-- **Loksewa Notes**: Comprehensive study materials for competitive exams
-- **Gaukhane Katha**: Inspirational stories and motivational content
+### 3. Loksewa Bises📚
+- **Loksewa MCQ ✅**: Practice questions for Nepal's civil service examinations
+- **Loksewa Notes 📝**: Comprehensive study materials for competitive exams
+- **Gaukhane Katha 🤔**: Inspirational stories and motivational content
 
 ### 4. Useful Resources
 - **Essential Website Links**: Curated list of important Nepali government and service portals
