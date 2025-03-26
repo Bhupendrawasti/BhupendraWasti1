@@ -1,1 +1,131 @@
-
+{
+    "wishes": [
+        {
+            "id": 0,
+            "title": "Adventure Theme",
+            "message": "May your birthday be the start of a year filled with wonderful adventures and exciting journeys! Wishing you happiness in all your endeavors."
+        },
+        {
+            "id": 1,
+            "title": "Joy Theme",
+            "message": "Wishing you a birthday overflowing with happiness, laughter, and joy that lasts throughout the coming year! May all your dreams come true."
+        },
+        {
+            "id": 2,
+            "title": "Success Theme",
+            "message": "May your birthday mark the beginning of your most successful year yet! Wishing you achievements, prosperity, and fulfillment in all you do."
+        },
+        {
+            "id": 3,
+            "title": "Friendship Theme",
+            "message": "On your special day, I want you to know how much you mean to me. Wishing you a birthday as wonderful as the friendship we share!"
+        },
+        {
+            "id": 4,
+            "title": "Love Theme",
+            "message": "Happy birthday to someone who makes my world brighter every day! May your birthday be as special and beautiful as you are to me."
+        },
+        {
+            "id": 5,
+            "title": "Adventure Theme 1",
+            "message": "Every year is another peak to conquer. May this birthday mark the beginning of your most victorious climb yet!"
+        },
+        {
+            "id": 6,
+            "title": "Phoenix Theme",
+            "message": "Like the phoenix, may you rise stronger with each passing year. Your best chapters are still being written!"
+        },
+        {
+            "id": 7,
+            "title": "Compass Theme",
+            "message": "May this birthday point you toward your true north - where purpose meets passion and dreams become destinations!"
+        },
+        {
+            "id": 8,
+            "title": "Story Theme",
+            "message": "Today begins a new chapter in your extraordinary story. Make it one where obstacles become opportunities!"
+        },
+        {
+            "id": 9,
+            "title": "Light Theme",
+            "message": "You've been a light for so many others - may this birthday illuminate your own brightest path forward!"
+        },
+        {
+            "id": 10,
+            "title": "Growth Theme",
+            "message": "The mightiest oaks grow from small seeds. Keep nurturing your potential - your growth inspires us all!"
+        },
+        {
+            "id": 11,
+            "title": "Starry Theme",
+            "message": "Your potential is as limitless as the stars. Chart a course this year that makes the universe proud!"
+        },
+        {
+            "id": 12,
+            "title": "Bridge Theme",
+            "message": "Birthdays are bridges to better versions of ourselves. Step boldly onto yours - the view gets better ahead!"
+        },
+        {
+            "id": 13,
+            "title": "Diamond Theme",
+            "message": "Remember: Diamonds form under pressure. Every challenge you've faced has made you more brilliant!"
+        },
+        {
+            "id": 14,
+            "title": "Journey Theme",
+            "message": "May your coming year have just enough wind to be exciting, and just enough calm to enjoy the journey!"
+        },
+        {
+            "id": 15,
+            "title": "Artistry Theme",
+            "message": "Your life is your greatest masterpiece - keep adding bold strokes this year!"
+        },
+        {
+            "id": 16,
+            "title": "Vintage Theme",
+            "message": "Like a fine wine, you just keep getting better with time. Cheers to your vintage year!"
+        },
+        {
+            "id": 17,
+            "title": "Sparkle Theme",
+            "message": "May your birthday sparkle with moments of love, laughter, and happy surprises!"
+        },
+        {
+            "id": 18,
+            "title": "Level Up Theme",
+            "message": "You're not getting older, you're leveling up! What amazing power will you unlock this year?"
+        },
+        {
+            "id": 19,
+            "title": "Cake Theme",
+            "message": "Birthdays are nature's way of telling us to eat more cake! Enjoy every delicious moment!"
+        },
+        {
+            "id": 20,
+            "title": "Smile Theme",
+            "message": "Your smile is contagious, your spirit is inspiring - may your birthday be as wonderful as you are!"
+        },
+        {
+            "id": 21,
+            "title": "Celebration Theme",
+            "message": "Today we celebrate the incredible person you are and the amazing person you're becoming!"
+        },
+        {
+            "id": 22,
+            "title": "Starry Wish Theme",
+            "message": "Like a shooting star, may your birthday wishes all come true in brilliant fashion!"
+        },
+        {
+            "id": 23,
+            "title": "CEO Theme",
+            "message": "You're the CEO of your life - may this birthday bring a raise in happiness!"
+        },
+        {
+            "id": 24,
+            "title": "Legacy Theme",
+            "message": "Age is merely the number of years the world has been enjoying you. Here's to many more!"
+        }
+    ],
+    "defaultPic": "https://bhupendrawasti.com.np/data/birthday/birthday.png",
+    "musicUrl": "https://bhupendrawasti.com.np/data/birthday/birthday.mp3"
+      }
