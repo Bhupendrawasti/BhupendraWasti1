@@ -3,141 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Useful Links</title>
+    <title>उपयोगी लिङ्कहरू</title>
     <style>
         body {
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    text-align: center;
-}
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            min-height: 100vh;
+        }
 
-.container {
-    max-width: 600px;
-    margin: 30px auto; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-h2 {
-    color: #444;
-}
+        h3 {
+            color: #444;
+            font-weight: bold;
+            margin: 30px 0 15px 0;
+        }
+            
+        h2 {
+            color: White;
+            font-weight: bold;
+            margin: 30px 0 15px 0;
+            
+            align-items: center;
+            background: navy;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
-.link-box {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    color: #333;
-    transition: 0.3s;
-}
+        .link-box {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
 
-.link-box img {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-    border-radius: 5px;
-}
+        .link-box img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 50px;
+            object-fit: cover;
+        }
 
-.link-box:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.03);
-}
+        .link-box:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
+        .search-container {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        #searchInput {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        #searchButton {
+            padding: 12px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #searchButton:hover {
+            background: #45a049;
+        }
+
+        .loader {
+            width: 30px;
+            height: 30px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #noResults {
+            display: none;
+            color: #ff4444;
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+        }
+
+        .search-status {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        /* Info Button Styles */
+        .info-button {
+            background: #2196F3;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .info-button:hover {
+            background: #1976D2;
+            transform: scale(1.1);
+        }
+
+        .about-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+        }
+
+        .about-section.visible {
+            display: block;
+        }
+
+        .about-section ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+
+        .about-section li {
+            margin: 8px 0;
+        }
+
+        .highlight {
+            color: #2196F3;
+            font-weight: bold;
+        }
     </style>
-    
-    
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: skyblue;">
-        <div class="container">
-            <a class="navbar-brand logo" href="/index">
-                <h4 style="font-family: 'Carter One', cursive;">Bhupendra Wasti</h4>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index"><i class="fa fa-home"></i> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-photo"></i> Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/games"><i class="fa fa-play"></i> Games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-wrench"></i> Online Tools</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact"><i class="fa fa-mobile"></i> Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <h2>Useful Websites</h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..... ">
+            <button id="searchButton">खोज्नुहोस्</button>
+            <button class="info-button" id="infoButton">i</button>
         </div>
-                        </nav>
-<div class="container">
-    <h2>Useful Links</h2>
 
-    <a class="link-box" href="https://citizenportal.donidcr.gov.np/en/check-national-id-number" target="_blank">
-        <img src="images/id-check.png" alt="National ID Check">
-        <span>राष्ट्रिय परिचयपत्र नम्बर हेर्न</span>
-    </a>
+        <!-- About Section -->
+        <div class="about-section" id="aboutSection">
+            <div class="highlight">यो वेबसाइटको बारेमा</div>
+            <p>यो वेबसाइट नेपाली नागरिकहरूका लागि सरकारी सेवाका र अन्य महत्वपूर्ण लिङ्कहरू एकै ठाउँमा उपलब्ध गराउन बनाइएको हो।</p>
 
-    <a class="link-box" href="https://citizenportal.donidcr.gov.np/ne/check-nid-card-status" target="_blank">
-        <img src="images/id-status.png" alt="National ID Status">
-        <span>राष्ट्रिय परिचय पत्रको अवस्था जाँच गर्न</span>
-    </a>
+            <div class="highlight">✌️ विशेषताहरू</div>
+            <ul>
+                <li>खोज सुविधा</li>
+                <li>मोबाइल अनुकूल</li>
+                <li>प्रत्यक्ष आवेदन लिङ्क</li>
+                <li>नि:शुल्क प्रयोग</li>
+            </ul>
 
-    <a class="link-box" href="https://enrollment.donidcr.gov.np/PreEnrollment/" target="_blank">
-        <img src="images/id-apply.png" alt="National ID Apply">
-        <span>राष्ट्रिय परिचयपत्रको आवेदन दिन</span>
-    </a>
+            <div class="highlight">📢 नोट:</div>
+            
+            <p>यो वेबसाइट सरकारी वेबसाइट होइन, तर सरकारी वेबसाइटहरूको सुचना संकलन मात्र हो।</p>
+        </div>
 
-    <a class="link-box" href="https://applydlnew.dotm.gov.np/login" target="_blank">
-        <img src="images/driving-license.png" alt="Driving License">
-        <span>सवारीचालक अनुमतिपत्रको आवेदन दिन</span>
-    </a>
 
-    <a class="link-box" href="https://emrtds.nepalpassport.gov.np/" target="_blank">
-        <img src="images/passport.png" alt="Passport Apply">
-        <span>विद्युतीय राहदानीको लागि आवेदन दिन</span>
-    </a>
+        <h3>यो वेबसाइट नेपाली नागरिकहरूका लागि सरकारी सेवाका र अन्य महत्वपूर्ण लिङ्कहरू एकै ठाउँमा उपलब्ध गराउन बनाइएको हो। </h3>
+    
+        
+        
+        <div class="search-status">
+            <div class="loader"></div>
+            <div id="noResults">कुनै परिणाम फेला परेन। कृपया फेरि प्रयास गर्नुहोस्!</div>
+        </div>
 
-    <a class="link-box" href="https://feims.dofe.gov.np/New-Individual-Login" target="_blank">
-        <img src="images/labor.png" alt="Labor Approval">
-        <span>अनलाइनबाटै श्रम स्वीकृति लिन</span>
-    </a>
+        <!-- All Links -->
+  <a class="link-box" href="https://citizenportal.donidcr.gov.np/en/check-national-id-number" 
+           data-search-id="nid-check" 
+           data-search-keywords="nid, national id, परिचयपत्र, नम्बर">
+            <img src="Media/Icons/id-check.webp" alt="National ID Check">
+            <span>राष्ट्रिय परिचयपत्र नम्बर हेर्न</span>
+        </a>
 
-    <a class="link-box" href="https://opcr.nepalpolice.gov.np/#/login" target="_blank">
-        <img src="images/police.png" alt="Police Clearance">
-        <span>प्रहरी चारित्रिक प्रमाण पत्र लिन</span>
-    </a>
+        <a class="link-box" href="https://citizenportal.donidcr.gov.np/ne/check-nid-card-status" 
+           data-search-id="nid-status" 
+           data-search-keywords="nid, status, अवस्था">
+            <img src="Media/Icons/id-status.webp" alt="National ID Status">
+            <span>राष्ट्रिय परिचय पत्रको अवस्था जाँच गर्न</span>
+        </a>
 
-    <a class="link-box" href="https://noc.moest.gov.np/" target="_blank">
-        <img src="images/noc.png" alt="NOC Certificate">
-        <span>नो अब्जेक्सन सर्टिफिकेट लिन</span>
-    </a>
+        <a class="link-box" href="https://enrollment.donidcr.gov.np/PreEnrollment/" 
+           data-search-id="nid-apply" 
+           data-search-keywords="nid, apply, आवेदन">
+            <img src="Media/Icons/id-apply.webp" alt="National ID Apply">
+            <span>राष्ट्रिय परिचयपत्रको आवेदन दिन</span>
+        </a>
 
-    <a class="link-box" href="https://election.gov.np/np/page/voter-list-db" target="_blank">
-        <img src="images/voter-list.png" alt="Voter List">
-        <span>मतदाता नामावली हेर्न</span>
-    </a>
+        <a class="link-box" href="https://applydlnew.dotm.gov.np/login" 
+           data-search-id="driving-license" 
+           data-search-keywords="license, driving, सवारी">
+            <img src="Media/Icons/driving-license.webp" alt="Driving License">
+            <span>सवारीचालक अनुमतिपत्रको आवेदन दिन</span>
+        </a>
 
-    <a class="link-box" href="https://applyvr.election.gov.np/Login/Preregistration/EnterMobileNo" target="_blank">
-        <img src="images/voter-register.png" alt="Voter Registration">
-        <span>मतदाता नामावलीमा नाम दर्ता गर्न</span>
-    </a>
+        <a class="link-box" href="https://emrtds.nepalpassport.gov.np/" 
+           data-search-id="passport" 
+           data-search-keywords="passport, राहदानी">
+            <img src="Media/Icons/passport.webp" alt="Passport Apply">
+            <span>विद्युतीय राहदानीको लागि आवेदन दिन</span>
+        </a>
 
-</div>
+        <a class="link-box" href="https://feims.dofe.gov.np/New-Individual-Login" 
+           data-search-id="labor" 
+           data-search-keywords="labor, श्रम">
+            <img src="Media/Icons/labor.webp" alt="Labor Approval">
+            <span>अनलाइनबाटै श्रम स्वीकृति लिन</span>
+        </a>
 
+        <a class="link-box" href="https://opcr.nepalpolice.gov.np/#/login" 
+           data-search-id="police-clearance" 
+           data-search-keywords="police, प्रहरी">
+            <img src="Media/Icons/police.webp" alt="Police Clearance">
+            <span>प्रहरी चारित्रिक प्रमाण पत्र लिन</span>
+        </a>
+
+        <a class="link-box" href="https://noc.moest.gov.np/" 
+           data-search-id="noc" 
+           data-search-keywords="noc, certificate">
+            <img src="Media/Icons/noc.webp" alt="NOC Certificate">
+            <span>नो अब्जेक्सन सर्टिफिकेट लिन</span>
+        </a>
+
+        <a class="link-box" href="https://election.gov.np/np/page/voter-list-db" 
+           data-search-id="voter-list" 
+           data-search-keywords="voter, मतदाता">
+            <img src="Media/Icons/voterid.webp" alt="Voter List">
+            <span>मतदाता नामावली हेर्न</span>
+        </a>
+
+        <a class="link-box" href="https://applyvr.election.gov.np/Login/Preregistration/EnterMobileNo" 
+           data-search-id="voter-reg" 
+           data-search-keywords="voter, दर्ता">
+            <img src="Media/Icons/voter-register.webp" alt="Voter Registration">
+            <span>मतदाता नामावलीमा नाम दर्ता गर्न</span>
+        </a>
+
+        <a class="link-box" href="https://play.google.com/store/apps/details?id=com.yajtech.nagarikapp" 
+           data-search-id="nagarik-android" 
+           data-search-keywords="nagarik, एप">
+            <img src="Media/Icons/nagarik-app.webp" alt="नागरिक एप">
+            <span>नागरिक एप - Playstore</span>
+        </a>
+
+        <a class="link-box" href="https://apps.apple.com/app/id1493013430" 
+           data-search-id="nagarik-ios" 
+           data-search-keywords="nagarik, एप">
+            <img src="Media/Icons/nagarik-app.webp" alt="नागरिक एप">
+            <span>नागरिक एप - Appstore</span>
+        </a>
+
+        <a class="link-box" href="https://web.nagarikapp.gov.np/" 
+           data-search-id="nagarik-web" 
+           data-search-keywords="nagarik, वेबसाइट">
+            <img src="Media/Icons/nagarik-app.webp" alt="नागरिक एप">
+            <span>नागरिक एप - आधिकारिक वेबसाइट</span>
+        </a>
+
+        <a class="link-box" href="https://psconline1.psc.gov.np/#/home" 
+           data-search-id="loksewa-central" 
+           data-search-keywords="loksewa, आयोग">
+            <img src="Media/Icons/loksewa.webp" alt="लोकसेवा आयोग">
+            <span>संघीय लोकसेवा आयोग - Online Application</span>
+        </a>
+
+        <a class="link-box" href="https://psconline.p1.gov.np/login" 
+           data-search-id="loksewa-koshi" 
+           data-search-keywords="loksewa, कोशी">
+            <img src="Media/Icons/LoksewaKoshi.webp" alt="लोकसेवा आयोग">
+            <span>कोशी प्रदेश लोकसेवा आयोग - Online Application</span>
+        </a>
+
+        <a class="link-box" href="https://ppsconline.p2.gov.np/login/" 
+           data-search-id="loksewa-madhesh" 
+           data-search-keywords="loksewa, मधेश">
+            <img src="Media/Icons/loksewa.webp" alt="लोकसेवा आयोग">
+            <span>मधेश प्रदेश लोकसेवा आयोग - Online Application</span>
+        </a>
+
+        <a class="link-box" href="https://register.com.np/" 
+           data-search-id="register-com-info" 
+           data-search-keywords="register, domain">
+            <img src="Media/Icons/comreg.webp" alt="Domain Registration">
+            <span>.com.np डोमेन दर्ता</span>
+        </a>
+        
+        
+    </div>
+
+    <script>
+        // Search functionality
+        function normalizeNepaliText(text) {
+            return text.normalize("NFC")
+                .replace(/[\u0900-\u097F]/g, m => m.normalize("NFD")[0]);
+        }
+
+        async function searchLinks() {
+            const loader = document.querySelector('.loader');
+            const noResults = document.getElementById('noResults');
+            
+            try {
+                loader.style.display = 'block';
+                noResults.style.display = 'none';
+
+                await new Promise(resolve => setTimeout(resolve, 300));
+
+                const rawSearchTerm = document.getElementById('searchInput').value;
+                const searchTerm = normalizeNepaliText(rawSearchTerm.toUpperCase());
+                const links = document.getElementsByClassName('link-box');
+                const searchTerms = searchTerm.split(/\s+/).filter(t => t);
+
+                let visibleCount = 0;
+                
+                for (const link of links) {
+                    const content = normalizeNepaliText(link.textContent.toUpperCase());
+                    const searchId = normalizeNepaliText(link.dataset.searchId.toUpperCase());
+                    const keywords = normalizeNepaliText(
+                        (link.dataset.searchKeywords || '').toUpperCase()
+                    );
+
+                    const match = searchTerms.every(term => 
+                        content.includes(term) ||
+                        searchId.includes(term) ||
+                        keywords.includes(term)
+                    );
+
+                    link.style.display = match ? '' : 'none';
+                    if (match) visibleCount++;
+                }
+
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            } catch (error) {
+                console.error('Search error:', error);
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+
+        // Search event listeners
+        let searchTimeout;
+        document.getElementById('searchInput').addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            document.querySelector('.loader').style.display = 'block';
+            searchTimeout = setTimeout(searchLinks, 200);
+        });
+
+        document.getElementById('searchButton').addEventListener('click', searchLinks);
+        document.getElementById('searchInput').addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') searchLinks();
+        });
+
+        // Info button functionality
+        const infoButton = document.getElementById('infoButton');
+        const aboutSection = document.getElementById('aboutSection');
+
+        infoButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            aboutSection.classList.toggle('visible');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!aboutSection.contains(e.target)) {
+                aboutSection.classList.remove('visible');
+            }
+        });
+
+        aboutSection.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // Initial search
+        searchLinks();
+    </script>
 </body>
 </html>
