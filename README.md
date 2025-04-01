@@ -9,7 +9,6 @@ A collection of useful tools, games, and resources specifically curated for Nepa
 ### 1. Online Tools 🔧
 - **Currency Converter 💱**: Real-time exchange rates for international and Nepali currencies
 - **AD-BS Date Converter 🗓️**: Seamless conversion between Gregorian and Bikram Sambat calendars
-- **AI Background Remover 🖌️**: Automatic background removal tool powered by AI
 
 ### 2. Games 🎮 
 - **TIC TAC TOE 🟢**: Classic strategy game with responsive design
