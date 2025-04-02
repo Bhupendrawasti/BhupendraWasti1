@@ -1,49 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>404 - Page Not Found</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* Additional styles for the 404 page */
-        .404container {
-            text-align: center;
-            padding: 50px;
-        }
+    body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: Arial, sans-serif;
+}
 
-        h1 {
-            font-size: 3rem;
-            color: #2196F3;
-            text-align: center;
-        }
+.container-404 {
+    text-align: center;
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-        p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-            text-align: center;
-        }
+h3 {
+    font-size: 4rem;
+    color: #2196F3;
+    margin: 0;
+    text-shadow: 4px 4px 6px rgba(0,0,0,0.1);
+}
 
-        .home-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #2196F3;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-           text-align: center;
-        }
+p {
+    font-size: 2rem;
+    color: #444;
+    margin: 20px 0;
+}
 
-        .home-link:hover {
-            background-color: #1976D2;
-        }
+.icon {
+    font-size: 10rem;
+    color: #2196F3;
+    margin: 30px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon i {
+    display: inline-block;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.link {
+    background: #000;
+    width: 200px;
+    margin:30px auto;
+    padding: 15px 0;
+    border-radius: 8px;
+    animation: anim 1.2s linear infinite;
+}
+
+.link a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+@keyframes anim {
+    0% { border-top: 3px solid #ff0000; }
+    25% { border-left: 3px solid #ff0000; }
+    50% { border-bottom: 3px solid #ff0000; }
+    75% { border-right: 3px solid #ff0000; }
+    100% { border-top: 3px solid #ff0000; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 5rem; }
+    p { font-size: 1.5rem; }
+    .icon { font-size: 6rem; }
+    .link { width: 180px; }
+}    
+        
+        
     </style>
 </head>
 <body>
-    <div class="404container" >
-        <h1>404 - Page Not Found</h1>
+    <div class="container-404">
+        <h3>404 - Page Not Found</h3>
         <p>Oops! The page you are looking for does not exist.</p>
-        <a href="/index" class="home-link">Go Back to Home</a>
+        <div class="icon">
+            <i class="fas fa-question-circle"></i>
+        </div>
     </div>
+
+    <footer>
+        <div class="link">
+            <a href="/index"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </footer>
 </body>
 </html>
