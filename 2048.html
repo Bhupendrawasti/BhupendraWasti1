@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2048 Game</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     <style>
+        /* Navbar Styles */
+        .navbar {
+            background: skyblue !important;
+        }
+        .navbar-brand h4 {
+            font-family: 'Carter One', cursive;
+        }
+        .dropdown-menu{
+            background: radial-gradient(rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 0%);
+        }
+        
+        /* Game Styles */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,6 +39,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            padding-top: 70px; /* Add padding for navbar */
         }
 
         /* Start Screen Styles */
@@ -37,6 +56,7 @@
             justify-content: center;
             z-index: 1000;
             transition: all 0.3s ease;
+            padding-top: 60px; /* Account for navbar height */
         }
 
         .start-screen.hidden {
@@ -52,6 +72,7 @@
             width: 90%;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-top: 20px;
         }
 
         .game-title {
@@ -113,23 +134,14 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .start-btn:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-        }
-
-        .start-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Game Styles (same as before) */
+        /* Rest of your game styles remain the same... */
         .header {
             width: 100%;
             max-width: 500px;
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
-            display: none; /* Initially hidden */
+            display: none;
         }
 
         .title {
@@ -175,7 +187,7 @@
             max-width: 500px;
             aspect-ratio: 1/1;
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            display: none; /* Initially hidden */
+            display: none;
         }
 
         .grid {
@@ -282,7 +294,7 @@
             margin-top: 20px;
             display: flex;
             gap: 15px;
-            display: none; /* Initially hidden */
+            display: none;
         }
 
         .btn-undo {
@@ -344,6 +356,74 @@
     </style>
 </head>
 <body>
+    <!-- Navigation (only visible on start screen) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="/index">
+                <h4>Bhupendra</h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                   <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    
+                     <!-- Games -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/games" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gamepad"></i> Games
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/games/tictactoe"><i class="fa fa-circle"></i> TicTacToe</a>
+                            <a class="dropdown-item" href="/games/sudoku"><i class="fa fa-circle"></i>Sudoku</a>
+                        </div>
+                    </li>
+                    
+                   <!-- Loksewa Bises -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/loksewa" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-Book"></i> Loksewa Bises
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/games/tictactoe"><i class="fa fa-circle"></i> Loksewa MCQ</a>
+                            <a class="dropdown-item" href="/games/sudoku"><i class="fa fa-circle"></i>Loksewa Notes</a>
+                            <a class="dropdown-item" href="/games/sudoku"><i class="fa fa-circle"></i>Gaukhane Katha</a>
+                        </div>
+                    </li>
+                    
+                      <!-- Online Tools -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-wrench"></i> Online Tools
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/tictactoe"><i class="fa fa-magic"></i> Background Remover</a>
+                            <a class="dropdown-item" href="/sudoku"><i class="fa fa-calendar"></i> B.S.-A.D. Date Converter </a>
+                            <a class="dropdown-item" href="/sudoku">
+                                <i class="fas fa-coins"></i>
+                                Currency converter
+                            </a>
+                        </div>
+                    </li>
+                    
+                      <!-- Useful links  -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-info-circle"></i> Useful Resources</a>
+                    </li>
+                    
+                      <!-- Contact  -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fa fa-phone"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Start Screen -->
     <div class="start-screen" id="start-screen">
         <div class="start-container">
@@ -398,6 +478,11 @@
         <button class="btn btn-undo" id="undo-btn">Undo</button>
     </div>
 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
     <script>
         class Game2048 {
             constructor() {
@@ -423,13 +508,15 @@
                 document.getElementById('game-container').style.display = 'none';
                 document.getElementById('controls').style.display = 'none';
                 
-                // Show start screen
+                // Show start screen and navbar
                 document.getElementById('start-screen').classList.remove('hidden');
+                document.getElementById('main-navbar').style.display = 'flex';
             }
 
             startGame() {
-                // Hide start screen
+                // Hide start screen and navbar
                 document.getElementById('start-screen').classList.add('hidden');
+                document.getElementById('main-navbar').style.display = 'none';
                 
                 // Show game elements
                 document.getElementById('header').style.display = 'flex';
@@ -846,6 +933,8 @@
                 });
                 
                 document.getElementById('try-again-btn').addEventListener('click', () => {
+                    // Show navbar again when returning to start screen
+                    document.getElementById('main-navbar').style.display = 'flex';
                     this.startGame();
                 });
                 
