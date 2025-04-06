@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            color: #4a4a4a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 80px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .scores {
+            display: flex;
+            gap: 10px;
+        }
+
+        .score-box {
+            background: rgba(255, 255, 255, 0.7);
+            color: #4a4a4a;
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 100px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .score-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .score-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        .game-container {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1/1;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cell {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .tile {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: bold;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #4a4a4a;
+            transition: all 0.1s ease-in-out;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Tile colors based on value with your gradient theme */
+        .tile-2 { background: rgba(238, 174, 202, 0.6); }
+        .tile-4 { background: rgba(238, 174, 202, 0.7); }
+        .tile-8 { background: rgba(238, 174, 202, 0.8); color: white; }
+        .tile-16 { background: rgba(238, 174, 202, 0.9); color: white; }
+        .tile-32 { background: rgba(238, 174, 202, 1); color: white; }
+        .tile-64 { background: rgba(210, 150, 180, 1); color: white; }
+        .tile-128 { background: rgba(180, 130, 160, 1); color: white; font-size: 30px; }
+        .tile-256 { background: rgba(150, 110, 140, 1); color: white; font-size: 30px; }
+        .tile-512 { background: rgba(120, 90, 120, 1); color: white; font-size: 30px; }
+        .tile-1024 { background: rgba(90, 70, 100, 1); color: white; font-size: 25px; }
+        .tile-2048 { background: rgba(60, 50, 80, 1); color: white; font-size: 25px; }
+
+        .game-message {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 100;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .game-message.game-won, 
+        .game-message.game-over,
+        .game-message.restart-confirm {
+            display: flex;
+        }
+
+        .game-message p {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #4a4a4a;
+        }
+
+        .btn {
+            background: rgba(148, 187, 233, 1);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background: rgba(128, 167, 213, 1);
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-undo {
+            background: rgba(238, 174, 202, 1);
+        }
+
+        .btn-undo:hover {
+            background: rgba(218, 154, 182, 1);
+        }
+
+        .btn-new-game {
+            background: rgba(148, 187, 233, 1);
+        }
+
+        .btn-new-game:hover {
+            background: rgba(128, 167, 213, 1);
+        }
+
+        @media (max-width: 520px) {
+            .title {
+                font-size: 50px;
+            }
+            
+            .tile {
+                font-size: 25px;
+            }
+            
+            .tile-128, .tile-256, .tile-512 {
+                font-size: 22px;
+            }
+            
+            .tile-1024, .tile-2048 {
+                font-size: 18px;
+            }
+
+            .game-message p {
+                font-size: 30px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">2048</div>
+        <div class="scores">
+            <div class="score-box">
+                <div class="score-title">Score</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="score-box">
+                <div class="score-title">Best</div>
+                <div class="score-value" id="best-score">0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="grid" id="grid"></div>
+        <div class="game-message" id="game-message">
+            <p id="message-text"></p>
+            <button class="btn" id="keep-going-btn">Keep going</button>
+            <button class="btn" id="try-again-btn">Try again</button>
+        </div>
+        <div class="game-message restart-confirm" id="restart-confirm">
+            <p>Are you sure you want to restart?<br>Your current progress will be lost.</p>
+            <button class="btn" id="confirm-restart-btn">Yes, restart</button>
+            <button class="btn" id="cancel-restart-btn">Cancel</button>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-new-game" id="new-game-btn">New Game</button>
+        <button class="btn btn-undo" id="undo-btn">Undo</button>
+    </div>
+
+    <script>
+        class Game2048 {
+            constructor() {
+                this.size = 4;
+                this.score = 0;
+                this.bestScore = localStorage.getItem('bestScore') || 0;
+                this.board = this.createEmptyBoard();
+                this.previousStates = []; // Stack for undo functionality
+                this.maxUndoSteps = 5; // Limit undo steps
+                this.over = false;
+                this.won = false;
+                this.keepPlaying = false;
+                
+                this.setupEventListeners();
+                this.startNewGame();
+            }
+
+            createEmptyBoard() {
+                return Array(this.size).fill().map(() => Array(this.size).fill(0));
+            }
+
+            startNewGame() {
+                this.score = 0;
+                this.updateScore();
+                this.board = this.createEmptyBoard();
+                this.previousStates = [];
+                this.over = false;
+                this.won = false;
+                this.keepPlaying = false;
+                this.hideMessage();
+                this.hideRestartConfirm();
+                
+                // Add 2 initial tiles
+                this.addRandomTile();
+                this.addRandomTile();
+                
+                this.updateView();
+            }
+
+            addRandomTile() {
+                if (this.isBoardFull()) return;
+
+                let value = Math.random() < 0.9 ? 2 : 4;
+                let emptyCells = [];
+                
+                // Find all empty cells
+                for (let r = 0; r < this.size; r++) {
+                    for (let c = 0; c < this.size; c++) {
+                        if (this.board[r][c] === 0) {
+                            emptyCells.push({r, c});
+                        }
+                    }
+                }
+                
+                // Place the new tile in a random empty cell
+                if (emptyCells.length > 0) {
+                    const {r, c} = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+                    this.board[r][c] = value;
+                }
+            }
+
+            isBoardFull() {
+                for (let r = 0; r < this.size; r++) {
+                    for (let c = 0; c < this.size; c++) {
+                        if (this.board[r][c] === 0) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            updateView() {
+                this.clearGrid();
+                
+                for (let r = 0; r < this.size; r++) {
+                    for (let c = 0; c < this.size; c++) {
+                        const value = this.board[r][c];
+                        if (value !== 0) {
+                            this.addTileToGrid(r, c, value);
+                        }
+                    }
+                }
+            }
+
+            clearGrid() {
+                const grid = document.getElementById('grid');
+                while (grid.firstChild) {
+                    grid.removeChild(grid.firstChild);
+                }
+                
+                // Recreate grid cells
+                for (let i = 0; i < this.size * this.size; i++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    grid.appendChild(cell);
+                }
+            }
+
+            addTileToGrid(row, col, value) {
+                const grid = document.getElementById('grid');
+                const cellIndex = row * this.size + col;
+                const cell = grid.children[cellIndex];
+                
+                const tile = document.createElement('div');
+                tile.className = `tile tile-${value}`;
+                tile.textContent = value;
+                cell.appendChild(tile);
+            }
+
+            move(direction) {
+                if (this.over) return false;
+                
+                // Save current state before making the move
+                this.saveState();
+                
+                let moved = false;
+                const newBoard = this.createEmptyBoard();
+                
+                // Process the move based on direction
+                switch (direction) {
+                    case 'up':
+                        for (let c = 0; c < this.size; c++) {
+                            const column = this.getColumn(c);
+                            const { newColumn, scoreIncrease } = this.moveAndMerge(column);
+                            this.score += scoreIncrease;
+                            for (let r = 0; r < this.size; r++) {
+                                newBoard[r][c] = newColumn[r];
+                            }
+                            moved = moved || !this.arraysEqual(column, newColumn);
+                        }
+                        break;
+                        
+                    case 'down':
+                        for (let c = 0; c < this.size; c++) {
+                            const column = this.getColumn(c);
+                            const reversed = [...column].reverse();
+                            const { newColumn, scoreIncrease } = this.moveAndMerge(reversed);
+                            this.score += scoreIncrease;
+                            const newReversed = newColumn.reverse();
+                            for (let r = 0; r < this.size; r++) {
+                                newBoard[r][c] = newReversed[r];
+                            }
+                            moved = moved || !this.arraysEqual(column, newReversed);
+                        }
+                        break;
+                        
+                    case 'left':
+                        for (let r = 0; r < this.size; r++) {
+                            const row = [...this.board[r]];
+                            const { newColumn: newRow, scoreIncrease } = this.moveAndMerge(row);
+                            this.score += scoreIncrease;
+                            newBoard[r] = newRow;
+                            moved = moved || !this.arraysEqual(row, newRow);
+                        }
+                        break;
+                        
+                    case 'right':
+                        for (let r = 0; r < this.size; r++) {
+                            const row = [...this.board[r]].reverse();
+                            const { newColumn: newRow, scoreIncrease } = this.moveAndMerge(row);
+                            this.score += scoreIncrease;
+                            const newReversed = newRow.reverse();
+                            newBoard[r] = newReversed;
+                            moved = moved || !this.arraysEqual(this.board[r], newReversed);
+                        }
+                        break;
+                }
+                
+                if (moved) {
+                    this.board = newBoard;
+                    this.addRandomTile();
+                    this.updateScore();
+                    this.updateView();
+                    
+                    if (this.hasWon() && !this.won && !this.keepPlaying) {
+                        this.won = true;
+                        this.showMessage('You win!', true);
+                    }
+                    
+                    if (this.isGameOver()) {
+                        this.over = true;
+                        this.showMessage('Game over!', false);
+                    }
+                }
+                
+                return moved;
+            }
+
+            moveAndMerge(line) {
+                let newLine = line.filter(cell => cell !== 0);
+                let scoreIncrease = 0;
+                
+                // Merge tiles
+                for (let i = 0; i < newLine.length - 1; i++) {
+                    if (newLine[i] === newLine[i + 1]) {
+                        newLine[i] *= 2;
+                        newLine[i + 1] = 0;
+                        scoreIncrease += newLine[i];
+                    }
+                }
+                
+                // Remove zeros created by merging
+                newLine = newLine.filter(cell => cell !== 0);
+                
+                // Add zeros to the end
+                while (newLine.length < this.size) {
+                    newLine.push(0);
+                }
+                
+                return { newColumn: newLine, scoreIncrease };
+            }
+
+            getColumn(index) {
+                return this.board.map(row => row[index]);
+            }
+
+            arraysEqual(a, b) {
+                if (a.length !== b.length) return false;
+                for (let i = 0; i < a.length; i++) {
+                    if (a[i] !== b[i]) return false;
+                }
+                return true;
+            }
+
+            hasWon() {
+                for (let r = 0; r < this.size; r++) {
+                    for (let c = 0; c < this.size; c++) {
+                        if (this.board[r][c] === 2048) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            isGameOver() {
+                if (!this.isBoardFull()) return false;
+                
+                // Check for possible merges
+                for (let r = 0; r < this.size; r++) {
+                    for (let c = 0; c < this.size; c++) {
+                        const value = this.board[r][c];
+                        
+                        // Check right neighbor
+                        if (c < this.size - 1 && this.board[r][c + 1] === value) {
+                            return false;
+                        }
+                        
+                        // Check bottom neighbor
+                        if (r < this.size - 1 && this.board[r + 1][c] === value) {
+                            return false;
+                        }
+                    }
+                }
+                
+                return true;
+            }
+
+            updateScore() {
+                document.getElementById('score').textContent = this.score;
+                
+                if (this.score > this.bestScore) {
+                    this.bestScore = this.score;
+                    document.getElementById('best-score').textContent = this.bestScore;
+                    localStorage.setItem('bestScore', this.bestScore);
+                }
+            }
+
+            showMessage(message, isWin) {
+                const gameMessage = document.getElementById('game-message');
+                const messageText = document.getElementById('message-text');
+                const keepGoingBtn = document.getElementById('keep-going-btn');
+                const tryAgainBtn = document.getElementById('try-again-btn');
+                
+                messageText.textContent = message;
+                gameMessage.className = `game-message game-${isWin ? 'won' : 'over'}`;
+                
+                if (isWin) {
+                    keepGoingBtn.style.display = 'block';
+                } else {
+                    keepGoingBtn.style.display = 'none';
+                }
+            }
+
+            hideMessage() {
+                document.getElementById('game-message').className = 'game-message';
+            }
+
+            showRestartConfirm() {
+                document.getElementById('restart-confirm').className = 'game-message restart-confirm';
+            }
+
+            hideRestartConfirm() {
+                document.getElementById('restart-confirm').className = 'game-message';
+            }
+
+            saveState() {
+                // Save current state to undo stack
+                const state = {
+                    board: this.board.map(row => [...row]),
+                    score: this.score,
+                    over: this.over,
+                    won: this.won,
+                    keepPlaying: this.keepPlaying
+                };
+                
+                this.previousStates.push(state);
+                
+                // Limit the number of undo steps
+                if (this.previousStates.length > this.maxUndoSteps) {
+                    this.previousStates.shift();
+                }
+            }
+
+            undo() {
+                if (this.previousStates.length > 0) {
+                    const state = this.previousStates.pop();
+                    this.board = state.board.map(row => [...row]);
+                    this.score = state.score;
+                    this.over = state.over;
+                    this.won = state.won;
+                    
