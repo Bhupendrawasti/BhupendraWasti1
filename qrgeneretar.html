@@ -314,7 +314,7 @@
             const canvas = container.querySelector('canvas');
             if (canvas) {
                 const link = document.createElement('a');
-                const fileName = `QRCode-${userInput.value.substring(0, 20).replace(/[^a-z0-9]/gi, '_')}-${Date.now()}.png`;
+                const fileName = `QRCode-bhupendrawasti-${userInput.value.substring(0, 20).replace(/[^a-z0-9]/gi, '_')}-${Date.now()}.png`;
                 link.download = fileName;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
@@ -323,7 +323,7 @@
 
         // Initialize with demo QR code
         window.addEventListener('load', () => {
-            userInput.value = 'https://example.com';
+            userInput.value = '';
             generateQR();
         });
     </script>
