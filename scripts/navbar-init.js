@@ -3,7 +3,7 @@ function loadNavbar() {
     // Load CSS first
     const cssLink = document.createElement('link');
     cssLink.rel = 'stylesheet';
-    cssLink.href = '/CSS/navbar.css';
+    cssLink.href = '/Css/navbar.css';
     document.head.appendChild(cssLink);
 
     // Then load HTML
