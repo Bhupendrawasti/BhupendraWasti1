@@ -1,5 +1,12 @@
 // scripts/navbar-init.js
 function loadNavbar() {
+    // Load CSS first
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = '/CSS/navbar.css';
+    document.head.appendChild(cssLink);
+
+    // Then load HTML
     fetch('/navbar.html')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
@@ -14,12 +21,17 @@ function loadNavbar() {
         })
         .catch(error => {
             console.error('Failed to load navbar:', error);
-            // Fallback navbar if needed
+            // Fallback basic navbar
+            document.getElementById('navbar-placeholder').innerHTML = `
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" href="/">Bhupendra</a>
+                </nav>
+            `;
         });
 }
 
 function initializeBootstrapComponents() {
-    // Manually handle dropdown toggle for fetched content
+    // Initialize dropdowns
     document.querySelectorAll('[data-toggle="collapse"]').forEach(toggler => {
         toggler.addEventListener('click', function(e) {
             e.preventDefault();
@@ -29,7 +41,7 @@ function initializeBootstrapComponents() {
     });
 }
 
-// Load when DOM is ready
+// Load when ready
 if (document.readyState !== 'loading') {
     loadNavbar();
 } else {
