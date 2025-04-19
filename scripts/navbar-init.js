@@ -3,11 +3,11 @@ function loadNavbar() {
     // Load CSS first
     const cssLink = document.createElement('link');
     cssLink.rel = 'stylesheet';
-    cssLink.href = '/Css/navbar.css';
+    cssLink.href = 'https://bhupendrawasti.com.np/Css/navbar.css';
     document.head.appendChild(cssLink);
 
     // Then load HTML
-    fetch('/navbar.html')
+    fetch('https://bhupendrawasti.com.np/navbar.html')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.text();
