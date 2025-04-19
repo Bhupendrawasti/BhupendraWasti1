@@ -157,8 +157,8 @@
     </style>
 </head>
 <body>
-        <!-- Include Navbar -->
-    <!--#include virtual="/navbar.html" -->
+        <!-- Navbar will be inserted here by JavaScript -->
+    <div id="navbar-placeholder"></div>
     <div id="box">
         <!-- Heading -->
         <h1 class="heading-primary">
@@ -180,6 +180,25 @@
     </div>
 
     <script>
+        // Load navbar from navbar.html
+        fetch('/navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navbar-placeholder').innerHTML = html;
+                // Initialize Bootstrap components after navbar is loaded
+                // Initialize Bootstrap components after navbar is loaded
+                $('[data-toggle="collapse"]').collapse();
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                document.getElementById('navbar-placeholder').innerHTML = `
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                                            <div class="container">
+                            <a class="navbar-brand" href="/">Bhupendra</a>
+                        </div>
+                    </nav>
+                `;
+            });
         let questionsData = [];
 
         // Function to load JSON data
