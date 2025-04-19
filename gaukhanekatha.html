@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <!-- Add html2canvas library -->
@@ -189,25 +191,7 @@
     </div>
 
     <script>
-        // Load navbar from navbar.html
-        fetch('/navbar.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('navbar-placeholder').innerHTML = html;
-                // Initialize Bootstrap components after navbar is loaded
-                // Initialize Bootstrap components after navbar is loaded
-                $('[data-toggle="collapse"]').collapse();
-            })
-            .catch(error => {
-                console.error('Error loading navbar:', error);
-                document.getElementById('navbar-placeholder').innerHTML = `
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                                            <div class="container">
-                            <a class="navbar-brand" href="/">Bhupendra</a>
-                        </div>
-                    </nav>
-                `;
-            });
+        
         let questionsData = [];
 
         // Function to load JSON data
@@ -288,5 +272,10 @@
         // Initial load
         loadQuestions();
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/scripts/navbar-init.js"></script>
+    
 </body>
 </html>
