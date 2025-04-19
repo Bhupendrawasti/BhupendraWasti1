@@ -1,0 +1,31 @@
+<!-- File: navbar.html -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand logo" href="/index">
+            <img src="https://bhupendrawasti.com.np/Media/ProfilePicture/bw.png" alt="Bhupendra Wasti" class="brand-logo">
+            <h4>Bhupendra</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/index"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <!-- Games Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/games" id="navbarDropdown" role="button" data-toggle="dropdown">
+                        <i class="fa fa-gamepad"></i> Games
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/games/tictactoe"><i class="fa fa-circle"></i> TicTacToe</a>
+                        <a class="dropdown-item" href="/games/sudoku"><i class="fa fa-circle"></i> Sudoku</a>
+                    </div>
+                </li>
+                <!-- Other menu items (shortened for brevity) -->
+            </ul>
+        </div>
+    </div>
+</nav>
