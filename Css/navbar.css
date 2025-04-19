@@ -1,0 +1,22 @@
+  /* Custom styles */
+        .navbar {
+            background: skyblue !important;
+        }
+        .navbar-brand { 
+            display: flex;
+            align-items: center;
+
+        }
+        
+        .navbar-brand h4 {
+            font-family: 'cursive','Carter One';
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+        .dropdown-menu{
+            background: radial-gradient(rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 0%);
+        }
+        .brand-logo {
+            height: 30px; /* Adjust height as needed */
+            width: auto;
+        }
