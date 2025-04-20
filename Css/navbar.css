@@ -1,4 +1,8 @@
   /* Custom styles */
+     body {
+            padding-top: 70px; /* Offset for fixed navbar */
+}
+
         .navbar {
             background: skyblue !important;
         }
