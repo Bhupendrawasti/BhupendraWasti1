@@ -1,1 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer with Export</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: grid;
+      height: 100vh;
+      place-items: center;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
 
+    .timer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .time-settings {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .time-settings input {
+      width: 60px;
+      padding: 8px;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .time-settings button {
+      padding: 8px 16px;
+      background-color: #6c5ce7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .base-timer {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    .base-timer__svg {
+      transform: scaleX(-1);
+    }
+
+    .base-timer__circle {
+      fill: none;
+      stroke: none;
+    }
+
+    .base-timer__path-elapsed {
+      stroke-width: 7px;
+      stroke: #e0e0e0;
+    }
+
+    .base-timer__path-remaining {
+      stroke-width: 7px;
+      stroke-linecap: round;
+      transform: rotate(90deg);
+      transform-origin: center;
+      transition: 1s linear all;
+      fill-rule: nonzero;
+      stroke: currentColor;
+    }
+
+    .base-timer__path-remaining.green {
+      color: #41b883;
+    }
+
+    .base-timer__path-remaining.orange {
+      color: orange;
+    }
+
+    .base-timer__path-remaining.red {
+      color: #ff5252;
+    }
+
+    .base-timer__label {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .timer-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .export-controls {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:disabled {
+      background-color: #cccccc !important;
+      cursor: not-allowed;
+    }
+
+    #start-btn {
+      background-color: #41b883;
+    }
+
+    #pause-btn {
+      background-color: #ff9a3c;
+    }
+
+    #reset-btn {
+      background-color: #ff5252;
+    }
+
+    #set-time-btn {
+      background-color: #6c5ce7;
+    }
+
+    #start-recording {
+      background-color: #00b894;
+    }
+
+    #export-gif {
+      background-color: #0984e3;
+    }
+
+    #export-mp4 {
+      background-color: #6c5ce7;
+    }
+
+    .recording-status {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #d63031;
+      height: 20px;
+      text-align: center;
+    }
+
+    canvas {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <canvas id="capture-canvas" width="300" height="300"></canvas>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+  <script>
+    const FULL_DASH_ARRAY = 283;
+    const WARNING_THRESHOLD = 10;
+    const ALERT_THRESHOLD = 5;
+
+    const COLOR_CODES = {
+      info: {
+        color: "green",
+        threshold: WARNING_THRESHOLD
+      },
+      warning: {
+        color: "orange",
+        threshold: ALERT_THRESHOLD
+      },
+      alert: {
+        color: "red",
+        threshold: 0
+      }
+    };
+
+    let TIME_LIMIT = 20;
+    let timePassed = 0;
+    let timeLeft = TIME_LIMIT;
+    let timerInterval = null;
+    let remainingPathColor = COLOR_CODES.info.color;
+    let isTimerRunning = false;
+    let isRecording = false;
+    let frames = [];
+
+    function initTimer() {
+      document.getElementById("app").innerHTML = `
+        <div class="timer-container">
+          <div class="time-settings">
+            <input type="number" id="minutes-input" min="0" max="59" value="0" placeholder="Min">
+            <span>:</span>
+            <input type="number" id="seconds-input" min="0" max="59" value="20" placeholder="Sec">
+            <button id="set-time-btn">Set Time</button>
+          </div>
+          <div class="base-timer">
+            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <g class="base-timer__circle">
+                <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                <path
+                  id="base-timer-path-remaining"
+                  stroke-dasharray="283"
+                  class="base-timer__path-remaining ${remainingPathColor}"
+                  d="
+                    M 50, 50
+                    m -45, 0
+                    a 45,45 0 1,0 90,0
+                    a 45,45 0 1,0 -90,0
+                  "
+                ></path>
+              </g>
+            </svg>
+            <span id="base-timer-label" class="base-timer__label">${formatTime(timeLeft)}</span>
+          </div>
+          <div class="timer-controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn" disabled>Pause</button>
+            <button id="reset-btn">Reset</button>
+          </div>
+          <div class="export-controls">
+            <button id="start-recording">Start Recording</button>
+            <button id="export-gif" disabled>Export GIF</button>
+            <button id="export-mp4" disabled>Export MP4</button>
+          </div>
+          <div class="recording-status" id="recording-status"></div>
+        </div>
+      `;
+
+      document.getElementById("start-btn").addEventListener("click", startTimer);
+      document.getElementById("pause-btn").addEventListener("click", pauseTimer);
+      document.getElementById("reset-btn").addEventListener("click", resetTimer);
+      document.getElementById("set-time-btn").addEventListener("click", setNewTime);
+      document.getElementById("start-recording").addEventListener("click", toggleRecording);
+      document.getElementById("export-gif").addEventListener("click", exportGIF);
+      document.getElementById("export-mp4").addEventListener("click", exportMP4);
+    }
+
+    function setNewTime() {
+      const minutes = parseInt(document.getElementById("minutes-input").value) || 0;
+      const seconds = parseInt(document.getElementById("seconds-input").value) || 0;
+      
+      TIME_LIMIT = minutes * 60 + seconds;
+      if (TIME_LIMIT <= 0) TIME_LIMIT = 1; // Ensure at least 1 second
+      
+      resetTimer();
+    }
+
+    function startTimer() {
+      if (isTimerRunning) return;
+      
+      isTimerRunning = true;
+      document.getElementById("start-btn").disabled = true;
+      document.getElementById("pause-btn").disabled = false;
+      document.getElementById("set-time-btn").disabled = true;
+
+      timerInterval = setInterval(() => {
+        timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+
+        if (isRecording) {
+          captureFrame();
+        }
+
+        if (timeLeft === 0) {
+          onTimesUp();
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      document.getElementById("start-btn").disabled = false;
+      document.getElementById("pause-btn").disabled = true;
+      document.getElementById("set-time-btn").disabled = false;
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      timePassed = 0;
+      timeLeft = TIME_LIMIT;
+      document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+      setCircleDasharray();
+      resetPathColor();
+      document.getElementById("set-time-btn").disabled = false;
+    }
+
+    function onTimesUp() {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      document.getElementById("start-btn").disabled = false;
+      document.getElementById("pause-btn").disabled = true;
+      document.getElementById("set-time-btn").disabled = false;
+    }
+
+    function formatTime(time) {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+
+      if (seconds < 10) {
+        seconds = `0${seconds}`;
+      }
+
+      return `${minutes}:${seconds}`;
+    }
+
+    function setRemainingPathColor(timeLeft) {
+      if (timeLeft <= COLOR_CODES.alert.threshold) {
+        document.getElementById("base-timer-path-remaining").classList.remove(COLOR_CODES.warning.color);
+        document.getElementById("base-timer-path-remaining").classList.add(COLOR_CODES.alert.color);
+      } else if (timeLeft <= COLOR_CODES.warning.threshold) {
+        document.getElementById("base-timer-path-remaining").classList.remove(COLOR_CODES.info.color);
+        document.getElementById("base-timer-path-remaining").classList.add(COLOR_CODES.warning.color);
+      }
+    }
+
+    function resetPathColor() {
+      const path = document.getElementById("base-timer-path-remaining");
+      path.classList.remove(COLOR_CODES.warning.color, COLOR_CODES.alert.color);
+      path.classList.add(COLOR_CODES.info.color);
+    }
+
+    function calculateTimeFraction() {
+      return timeLeft / TIME_LIMIT;
+    }
+
+    function setCircleDasharray() {
+      const circleDasharray = `${(
+        calculateTimeFraction() * FULL_DASH_ARRAY
+      ).toFixed(0)} ${FULL_DASH_ARRAY}`;
+      document
+        .getElementById("base-timer-path-remaining")
+        .setAttribute("stroke-dasharray", circleDasharray);
+    }
+
+    function toggleRecording() {
+      const btn = document.getElementById("start-recording");
+      const status = document.getElementById("recording-status");
+      
+      if (!isRecording) {
+        isRecording = true;
+        frames = [];
+        btn.textContent = "Stop Recording";
+        status.textContent = "Recording...";
+        document.getElementById("export-gif").disabled = true;
+        document.getElementById("export-mp4").disabled = true;
+        
+        // Capture initial frame immediately
+        captureFrame();
+      } else {
+        isRecording = false;
+        btn.textContent = "Start Recording";
+        status.textContent = `Recording stopped. ${frames.length} frames captured.`;
+        document.getElementById("export-gif").disabled = frames.length === 0;
+        document.getElementById("export-mp4").disabled = frames.length === 0;
+      }
+    }
+
+    function captureFrame() {
+      return new Promise((resolve) => {
+        const timerElement = document.querySelector(".base-timer");
+        const canvas = document.getElementById("capture-canvas");
+        const ctx = canvas.getContext("2d");
+        
+        // Create SVG data with current timer state
+        const svgData = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+            <foreignObject width="100%" height="100%">
+              <div xmlns="http://www.w3.org/1999/xhtml" style="
+                width:300px;height:300px;
+                position:relative;
+                font-family:sans-serif;
+              ">
+                ${timerElement.innerHTML}
+              </div>
+            </foreignObject>
+          </svg>
+        `;
+        
+        const img = new Image();
+        const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+        const url = URL.createObjectURL(svgBlob);
+        
+        img.onload = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(img, 0, 0);
+          
+          frames.push({
+            imageData: canvas.toDataURL('image/png'),
+            canvas: document.createElement('canvas'),
+            delay: 100
+          });
+          
+          frames[frames.length-1].canvas.width = canvas.width;
+          frames[frames.length-1].canvas.height = canvas.height;
+          frames[frames.length-1].canvas.getContext('2d').drawImage(img, 0, 0);
+          
+          URL.revokeObjectURL(url);
+          resolve();
+        };
+        
+        img.onerror = () => {
+          console.error("Error loading frame");
+          resolve();
+        };
+        
+        img.src = url;
+      });
+    }
+
+    function exportGIF() {
+      if (frames.length === 0) {
+        alert("No frames recorded. Please start recording first.");
+        return;
+      }
+
+      const status = document.getElementById("recording-status");
+      status.textContent = "Creating GIF...";
+      
+      const gif = new GIF({
+        workers: 2,
+        quality: 10,
+        width: 300,
+        height: 300
+      });
+      
+      frames.forEach(frame => {
+        const img = new Image();
+        img.src = frame.imageData;
+        gif.addFrame(img, {delay: frame.delay});
+      });
+      
+      gif.on('finished', function(blob) {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'countdown-timer.gif';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          status.textContent = "GIF exported successfully!";
+        }, 100);
+      });
+      
+      gif.render();
+    }
+
+    function exportMP4() {
+      alert("For true MP4 export, server-side processing is required. The GIF export is recommended for client-side export.");
+    }
+
+    window.onload = initTimer;
+  </script>
+</body>
+</html>
