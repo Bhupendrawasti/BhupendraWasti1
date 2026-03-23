@@ -1,276 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="ne">
 <head>
+    <meta charset="UTF-8">
     <title>गाउ खाने कथा</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-    <!-- Add html2canvas library -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Bhupendra Wasti" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
 
-        body {
-            background-color: rgb(255, 234, 255);
-            font-size: 16px;
-            min-height: 100vh;
-            padding: 10px;
-        }
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/gaukhanekatha.css">
+    
 
-        /* Navbar placeholder styling */
-        #navbar-placeholder {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+     <!-- Navigation -->
 
-        #box {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+<nav class="navbar">
+  <div class="nav-container">
 
-        .heading-primary {
-            background-color: #4249ed;
-            text-align: center;
-            padding: 15px 10px;
-            color: white;
-            font-size: 1.8em;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-            line-height: 1.3;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            border-radius: 10px;
-        }
+    <a href="index.html" class="logo">
+      <img src="Media/ProfilePicture/logo.png"
+           alt="B"
+           loading="lazy">
+      <span>Bhupendra Wasti</span>
+    </a>
 
-        .heading-secondary {
-            font-weight: 600;
-            font-size: 1.2em;
-            color: #ffffff;
-            background-color: #0f1730;
-            margin: 0.7em 0;
-            display: inline-block;
-            padding: 0 0.7em;
-            transform: skew(-5deg);
-            position: relative;
-        }
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
-        .page {
-            width: 100%;
-            margin: 0 auto;
-            min-height: 50vh;
-            background-color: rgb(255, 234, 255);
-            padding: 15px;
-        }
+    <ul class="nav-links">
+      <li><a href="index.html"><img src="Media/svg/home-1-white.svg" alt="Home" width="15" height="15">  •Home</a></li>
+      <li><a href="games.html"><img src="Media/svg/game-white.svg" alt="Games" width="15" height="15">  •Games</a></li>
+      <li><a href="usefullinks.html"><img src="Media/svg/earth-white.svg" alt="link" width="15" height="15">  •Useful Links</a></li>
+      <li><a href="gaukhanekatha.html"><img src="Media/svg/thinking-think-white.svg" alt="GK" width="15" height="15">  •Gaukhanekatha</a></li>
+      <li><a href="tools.html"><img src="Media/svg/tools-white.svg" alt="Tools" width="15" height="15">  •Online Tools</a></li>
+      <li><a href="about-us.html"><img src="Media/svg/user-white.svg" alt="About" width="15" height="15">  •About us</a></li>
+      
+    </ul>
 
-        .question {
-            font-size: 1.5rem;
-            text-align: center;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
+  </div>
+</nav>
 
-        .answer {
-            font-size: 1.2rem;
-            text-align: center;
-            margin-top: 20px;
-        }
 
-        .button-box {
-            width: 100%;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .button-box > button {
-            background-color: #0f1730;
-            font-size: 1em;
-            font-weight: 600;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 15px 25px;
-            border-radius: 2em;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        /* Mobile-specific styles */
-        @media (max-width: 768px) {
-            .heading-primary {
-                font-size: 1.5em;
-                padding: 12px 8px;
-            }
-
-            .question {
-                font-size: 1.2rem;
-            }
-
-            .answer {
-                font-size: 1rem;
-            }
-
-            .button-box > button {
-                font-size: 0.9em;
-                padding: 12px 20px;
-            }
-
-            .page {
-                padding: 10px;
-                min-height: 60vh;
-            }
-        }
-
-        @media (min-width: 480px) {
-            .button-box {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            
-            .button-box > button {
-                width: auto;
-            }
-        }
-
-        /* Hidden attribution container */
-        .attribution-container {
-            position: absolute;            
-            background-color: rgb(255, 234, 255); 
-            left: -9999px;
-            top: -9999px;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .download-attribution {
-            font-size: 10px;
-            color: #666;
-            text-align: center;
-            margin-top: 8px;
-        }
-    </style>
 </head>
 <body>
-        <!-- Navbar will be inserted here by JavaScript -->
-    <div id="navbar-placeholder"></div>
+
+
+    <!-- Main content -->
     <div id="box">
-        <!-- Heading -->
         <h1 class="heading-primary">
             गाउ खाने कथा
         </h1>
 
-        <!-- Pages Container -->
-        <div id="pages-container"></div>
+        <div id="pages-container">
+            <div class="loading">प्रश्न लोड हुँदैछ...</div>
+        </div>
 
-        <!-- Navigate and Save -->
         <div class="button-box">
-            <button class="button-save">
-                Save Question <i class="fa fa-download" aria-hidden="true"></i>
+            <button class="button-save" id="saveBtn" disabled>
+                <i class="fa fa-download"></i> Save Question 
             </button>
-            <button class="button-next">
-                NEXT <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <button class="button-next" id="nextBtn" disabled>
+                NEXT <i class="fa fa-arrow-right"></i>
             </button>
         </div>
     </div>
 
-    <script>
-        
-        let questionsData = [];
 
-        // Function to load JSON data
-        async function loadQuestions() {
-            try {
-                const response = await fetch('https://bhupendrawasti.com.np/data/Gaukhanekatha/data.json');
-                if (!response.ok) {
-                    throw new Error('Failed to load questions data');
-                }
-                questionsData = await response.json();
-                showRandomQuestion();
-            } catch (error) {
-                console.error('Error loading JSON:', error);
-            }
-        }
-
-        // Function to get a random question
-        function getRandomQuestion() {
-            const randomIndex = Math.floor(Math.random() * questionsData.length);
-            return questionsData[randomIndex];
-        }
-
-        // Function to render a random question
-        function showRandomQuestion() {
-            const randomQuestion = getRandomQuestion();
-            const pagesContainer = document.getElementById('pages-container');
-            if (randomQuestion) {
-                pagesContainer.innerHTML = `
-                    <div class="page">
-                        <h2 class="heading-secondary">Questions</h2>
-                        <div class="question">${randomQuestion.question}</div>
-                        <details class="answer">
-                            <summary>👇 Answer</summary>
-                            <h3>${randomQuestion.answer}</h3>
-                        </details>
-                    </div>
-                `;
-            } else {
-                pagesContainer.innerHTML = `<div class="page"><h2>No questions available!</h2></div>`;
-            }
-        }
-
-        // Function to save the question as an image with heading and attribution
-        function saveQuestionAsImage() {
-            const headingElement = document.querySelector('.heading-primary');
-            const pageElement = document.querySelector('.page');
-            if (headingElement && pageElement) {
-                const headingClone = headingElement.cloneNode(true);
-                const pageClone = pageElement.cloneNode(true);
-
-                const attribution = document.createElement('div');
-                attribution.className = 'download-attribution';
-                attribution.textContent = 'Downloaded from: https://bhupendrawasti.com.np';
-
-                const container = document.createElement('div');
-                container.appendChild(headingClone);
-                container.appendChild(pageClone);
-                container.appendChild(attribution);
-
-                document.body.appendChild(container);
-
-                html2canvas(container, { scale: 2 }).then((canvas) => {
-                    const link = document.createElement('a');
-                    link.download = `question.jpg`;
-                    link.href = canvas.toDataURL('image/jpeg', 1.0);
-                    link.click();
-                    document.body.removeChild(container);
-                });
-            } else {
-                alert('No question to save!');
-            }
-        }
-
-        // Event listeners
-        document.querySelector('.button-next').addEventListener('click', showRandomQuestion);
-        document.querySelector('.button-save').addEventListener('click', saveQuestionAsImage);
-
-        // Initial load
-        loadQuestions();
-    </script>
-
-    
+        <script src="/Data/JavaScript/gaukhanekatha.js"></script>
 </body>
 </html>
