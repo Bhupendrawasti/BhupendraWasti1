@@ -1,112 +1,92 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Bhupendra Wasti" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+ 
     <title>Bhupendra Wasti</title>
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Css/main.css">
-    <!-- <link rel="stylesheet" href="Css/style.css">-->
-<style>
-        /* Custom styles */
-        .navbar {
-            background: skyblue !important;
-        }
-        .navbar-brand { 
-            display: flex;
-            align-items: center;
 
-        }
-        
-        .navbar-brand h4 {
-            font-family: 'cursive','Carter One';
-            margin-left: 20px;
-            margin-bottom: 0;
-        }
-        .dropdown-menu{
-            background: radial-gradient(rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 0%);
-        }
-        .brand-logo {
-            height: 30px; /* Adjust height as needed */
-            width: auto;
-        }
-        
-     
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    
+ <link rel="stylesheet" href="css/navbar.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/footer.css">
+
+    
+     <!-- Navigation -->
+
+<nav class="navbar">
+  <div class="nav-container">
+
+    <a href="index.html" class="logo">
+      <img src="Media/ProfilePicture/logo.png"
+           alt="B"
+           loading="lazy">
+      <span>Bhupendra Wasti</span>
+    </a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <ul class="nav-links">
+      <li><a href="index.html"><img src="Media/svg/home-1-white.svg" alt="Home" width="15" height="15">  •Home</a></li>
+      <li><a href="games.html"><img src="Media/svg/game-white.svg" alt="Games" width="15" height="15">  •Games</a></li>
+      <li><a href="usefullinks.html"><img src="Media/svg/earth-white.svg" alt="link" width="15" height="15">  •Useful Links</a></li>
+      <li><a href="gaukhanekatha.html"><img src="Media/svg/thinking-think-white.svg" alt="GK" width="15" height="15">  •Gaukhanekatha</a></li>
+      <li><a href="tools.html"><img src="Media/svg/tools-white.svg" alt="Tools" width="15" height="15">  •Online Tools</a></li>
+      <li><a href="about-us.html"><img src="Media/svg/user-white.svg" alt="About" width="15" height="15">  •About us</a></li>
+      
+    </ul>
+
+  </div>
+</nav>
+
+
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand logo" href="/index"> <img src="https://bhupendrawasti.com.np/Media/ProfilePicture/Bhupendra.png" alt="Bhupendra Wasti" class="brand-logo"><h4>Bhupendra Wasti</h4> </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index"><i class="fa fa-home"></i> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-photo"></i> Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/games"><i class="fa fa-play"></i> Games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/gaukhanekatha"><i class="fa fa-book"></i> Gaukhanekatha</a>
-                </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/qrscan.html"><i class="fa fa-wrench"></i> Online Tools</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact"><i class="fa fa-mobile"></i> Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+   
+
 
     <!-- Main Content -->
-    <main class="container" style="padding-top: 80px;">
-        <section class="masthead text-center text-white">
-            <div class="header">
+    <main class="container1" style="padding-top: 40px;">
+        <section class="masthead1 text-center text-white">
+            <div class="header1">
                 <div class="animation">
-                    <img src="Media/ProfilePicture/Bhupendra.png" alt="Profile Picture" class="img-fluid rounded-circle">
+                    <img src="Media/ProfilePicture/logo.png" alt="Profile Picture" class="img-fluid rounded-circle" style="width: 90%;">
                 </div>
                 <div class="animation1 mt-4">
                     <h1 class="display-4">Bhupendra Wasti</h1>
-                    <p class="lead">Student</p>
+                    <p class="lead1">Student</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-basic bg-dark text-white mt-5">
-        <div class="container py-4">
-            <div class="social-links mb-3">
-                <a href="https://facebook.com/bhupendrawasti.official" target="_blank" rel="noopener">
-                    <i class="fa fa-facebook fa-2x"></i>
-                </a>
-                <a href="https://www.tiktok.com/@bhupendrawasti" target="_blank" rel="noopener">
-                    <i class="fa fa-music fa-2x"></i>
-                </a>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">
-                    <i class="fa fa-twitter fa-2x"></i>
-                </a>
-            </div>
-            <p class="mb-0">&copy; 2022 Bhupendra Wasti.<br> All rights reserved.</p>
-            <div class="mt-2">
-                <small>Website by: Bhupendra Wasti</small>
-            </div>
+<!-- Footer -->
+<footer class="footer-basic bg-dark text-white mt-5">
+    <div class="container py-4">
+        <div class="social-links mb-3">
+            <a href="https://facebook.com/bhupendrawasti.official" target="_blank" rel="noopener">
+                <img src="Media/svg/facebook.svg" alt="Facebook" width="40" height="40" onerror="this.style.display='none'">
+            </a>
+            <a href="https://www.tiktok.com/@bhupendrawasti" target="_blank" rel="noopener">
+                <img src="Media/svg/tiktok.svg" alt="TikTok" width="40" height="40" onerror="this.style.display='none'">
+            </a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener">
+                <img src="Media/svg/youtube-1.svg" alt="Youtube" width="40" height="40" onerror="this.style.display='none'">
+            </a>
         </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <p class="mb-0">&copy; 2022 Bhupendra Wasti.<br> All rights reserved.</p>
+        <div class="mt-2">
+        </div>
+    </div>
+</footer>
 </body>
     </html>
