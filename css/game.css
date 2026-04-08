@@ -1,0 +1,62 @@
+   .ourGames {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 50px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 80px auto;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 50px;
+            padding: 10px 0;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Optional: Add game name below image */
+        .game-name {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 20px;
+            height: 40px;
+            font-weight: bold;
+            background: red;
+            border-radius: 8px;
+            color: white;
+            padding-top: 10px;
+        }

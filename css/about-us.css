@@ -1,0 +1,213 @@
+  /* reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: rgb(238, 174, 202);
+  background: -moz-radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca", endColorstr="#94bbe9", GradientType=1);
+   /* background: #f0f4fa;   soft neutral background */
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    margin-top: 80px;
+  }
+
+  .about-section {
+    max-width: 1040px;
+    width: 100%;
+  }
+
+  .about-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 2px 6px rgba(0,20,40,0.05);
+    padding: 48px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+
+  /* left graphic column */
+  .about-graphic {
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .graphic-svg {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 12px 18px rgba(79, 114, 202, 0.12));
+  }
+
+  .badge-version {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #eef2f8;
+    padding: 10px 24px;
+    border-radius: 60px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1f2a44;
+    border: 1px solid #d9e1ec;
+    box-shadow: inset 0 1px 2px white, 0 4px 8px rgba(0,0,0,0.02);
+  }
+
+  .badge-version .icon-svg {
+    width: 22px;
+    height: 22px;
+    opacity: 0.8;
+  }
+
+  /* right details column */
+  .about-details {
+    flex: 2 1 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-details h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #0f182b;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+  }
+
+  .intro {
+    font-size: 1rem;
+    color: #4a5a72;
+    border-bottom: 1.5px solid #dde3ed;
+    padding-bottom: 22px;
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px 32px;
+    margin: 12px 0 32px 0;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #f9fcff;
+    padding: 12px 18px;
+    border-radius: 20px;
+    border: 1px solid #e6ecf5;
+    transition: 0.2s ease;
+  }
+
+  .info-item:hover {
+    border-color: #b2c9e0;
+    background: #ffffff;
+    box-shadow: 0 6px 12px -6px rgba(36, 58, 94, 0.12);
+  }
+
+  .icon-svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: transparent; /* svg fills own color */
+    filter: brightness(0.95) saturate(0.9);
+  }
+
+  .info-item .icon-svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .info-item a {
+    text-decoration: none;
+    color: #1d3b6f;
+    font-weight: 500;
+    word-break: break-word;
+    font-size: 0.98rem;
+  }
+
+  .info-item a:hover {
+    text-decoration: underline;
+    color: #0b2549;
+  }
+
+  .info-item strong {
+    color: #1f2a44;
+    font-weight: 600;
+  }
+
+  .light-text {
+    color: #1d3b6f;
+    font-weight: 500;
+    font-size: 0.98rem;
+  }
+
+  .copyright-row {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 28px;
+    border-top: 1px dashed #cbd5e3;
+    color: #3f506e;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .copyright-row .icon-svg.small {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+  }
+
+  /* responsive */
+  @media (max-width: 750px) {
+    .about-card {
+      padding: 36px 28px;
+      gap: 32px;
+    }
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+    .about-details h2 {
+      font-size: 1.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 12px; }
+    .about-card {
+      padding: 28px 18px;
+      border-radius: 32px;
+    }
+    .graphic-svg {
+      max-width: 200px;
+    }
+    .info-item {
+      padding: 10px 14px;
+    }
+  }
+
+  img.icon-svg {
+    background: transparent;
+  }
