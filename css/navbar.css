@@ -54,7 +54,7 @@
 .nav-links a {
   text-decoration: none;
   color: #fff;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   transition: 0.3s;
   padding-left: 20px;
@@ -83,6 +83,9 @@
     display: block;
     padding-right: 20px;
   }
+  .nav-links a {
+  font-size: 20px;
+}
 
   .nav-links {
     position: absolute;
@@ -93,7 +96,7 @@
     flex-direction: column;
     text-align: left;
     transition: 0.3s;
-    padding: 5px 0;
+    padding: 5px 0;  
   }
 
   .nav-links li {
