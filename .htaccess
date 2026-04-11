@@ -1,18 +1,19 @@
 # Enable URL rewriting
 RewriteEngine On
 
-# Remove .html extension from URLs
+# Remove .html extension from URLs (avoid double .html)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteCond %{REQUEST_URI} !\.html$
 RewriteRule ^(.*)$ $1.html [L]
+
+# (Optional) Redirect trailing slash to non-slash version – uncomment if desired
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} /$
+# RewriteRule ^(.*)/$ /$1 [R=301,L]
 
 # Custom error pages
 ErrorDocument 404 /404.html
-
-# Enable Server-Side Includes (SSI) for navbar reuse
-Options +Includes
-AddType text/html .html
-AddOutputFilter INCLUDES .html
 
 # Enable browser caching for static assets
 <IfModule mod_expires.c>
@@ -21,5 +22,14 @@ AddOutputFilter INCLUDES .html
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
     ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    # Extra types (optional)
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
+
+# Optional: Enable gzip compression (uncomment if mod_deflate is available)
+# <IfModule mod_deflate.c>
+#     AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript
+# </IfModule>
