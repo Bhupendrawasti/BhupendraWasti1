@@ -1,0 +1,118 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Candy Crush Style Blue Gradient -->
+    <radialGradient id="blueGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#80D4FF"/>
+      <stop offset="25%" stop-color="#4DB8FF"/>
+      <stop offset="60%" stop-color="#0099FF"/>
+      <stop offset="85%" stop-color="#0059B3"/>
+      <stop offset="100%" stop-color="#003366"/>
+    </radialGradient>
+    
+    <!-- Candy Crush Glossy Shine -->
+    <radialGradient id="shine" cx="30%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Curved Band Gradients -->
+    <linearGradient id="bandTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#66CCFF"/>
+      <stop offset="50%" stop-color="#4DB8FF"/>
+      <stop offset="100%" stop-color="#0066CC"/>
+    </linearGradient>
+    
+    <linearGradient id="bandBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0066CC"/>
+      <stop offset="50%" stop-color="#004d99"/>
+      <stop offset="100%" stop-color="#003366"/>
+    </linearGradient>
+    
+    <!-- Sugar Sparkle Gradient -->
+    <radialGradient id="sparkle" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Main Round Candy Body -->
+  <g>
+    <!-- Candy shadow for depth -->
+    <circle cx="100" cy="103" r="80" fill="rgba(0,0,0,0.12)"/>
+    
+    <!-- Main candy -->
+    <circle cx="100" cy="100" r="80" 
+            fill="url(#blueGrad)" 
+            stroke="#002244" 
+            stroke-width="2" />
+    
+    <!-- Curved Lollipop Band (Wrapped Style) -->
+    
+    <!-- Band shadow -->
+    <path d="M 30,85 
+             Q 100,100 170,85 
+             L 170,115 
+             Q 100,130 30,115 Z" 
+          fill="rgba(0,0,0,0.15)"/>
+    
+    <!-- Curved Band Top Half -->
+    <path d="M 28,82 
+             Q 100,98 172,82 
+             L 170,95 
+             Q 100,108 30,95 Z" 
+          fill="url(#bandTop)"/>
+    
+    <!-- Curved Band Bottom Half -->
+    <path d="M 30,95 
+             Q 100,108 170,95 
+             L 172,112 
+             Q 100,126 28,112 Z" 
+          fill="url(#bandBottom)"/>
+    
+    <!-- Band center crease line -->
+    <path d="M 30,97 Q 100,110 170,97" 
+          fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="1.5"/>
+    
+    <!-- Band top shine -->
+    <path d="M 32,84 
+             Q 100,99 168,84 
+             L 166,88 
+             Q 100,102 34,88 Z" 
+          fill="white" fill-opacity="0.2"/>
+    
+    <!-- Band bottom shadow line -->
+    <path d="M 32,108 
+             Q 100,121 168,108 
+             L 166,111 
+             Q 100,123 34,111 Z" 
+          fill="rgba(0,0,0,0.1)"/>
+    
+    <!-- Band wrap lines (crimps) -->
+    <path d="M 35,86 Q 38,98 35,110" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
+    <path d="M 165,86 Q 162,98 165,110" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
+    <path d="M 45,88 Q 47,98 45,108" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+    <path d="M 155,88 Q 153,98 155,108" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+    
+    <!-- Glossy Shine Highlight -->
+    <ellipse cx="72" cy="62" rx="38" ry="24" 
+             fill="url(#shine)" 
+             transform="rotate(-25, 72, 62)" />
+    
+    <!-- Secondary subtle shine -->
+    <ellipse cx="140" cy="130" rx="20" ry="12" 
+             fill="white" fill-opacity="0.08" 
+             transform="rotate(-30, 140, 130)" />
+    
+    <!-- Candy Crush Style Sparkles -->
+    <!-- Main sparkle -->
+    <circle cx="125" cy="52" r="5" fill="url(#sparkle)"/>
+    <circle cx="128" cy="55" r="2.5" fill="url(#sparkle)"/>
+    
+    <!-- Sugar crystal sparkles -->
+    <circle cx="65" cy="130" r="2.5" fill="white" fill-opacity="0.6"/>
+    <circle cx="145" cy="90" r="2" fill="white" fill-opacity="0.5"/>
+    <circle cx="50" cy="85" r="1.5" fill="white" fill-opacity="0.4"/>
+    <circle cx="155" cy="120" r="1.5" fill="white" fill-opacity="0.4"/>
+    <circle cx="85" cy="155" r="2" fill="white" fill-opacity="0.3"/>
+  </g>
+</svg>

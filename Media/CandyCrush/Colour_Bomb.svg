@@ -1,0 +1,156 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+
+    <!-- Chocolate Base Gradient -->
+    <radialGradient id="chocoGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#9a5528"/>
+      <stop offset="25%" stop-color="#7a3a18"/>
+      <stop offset="55%" stop-color="#5a2510"/>
+      <stop offset="100%" stop-color="#3d1508"/>
+    </radialGradient>
+
+    <!-- Outer Ring Gradient for 3D Edge -->
+    <radialGradient id="ringGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="85%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="92%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.15)"/>
+    </radialGradient>
+
+    <!-- Gloss Highlight -->
+    <radialGradient id="glossGrad" cx="30%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="white" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Secondary Gloss -->
+    <radialGradient id="secondaryGloss" cx="60%" cy="70%" r="40%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Shadow -->
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6"
+        flood-color="#000000"
+        flood-opacity="0.3"/>
+    </filter>
+
+  </defs>
+
+  <!-- Candy Group -->
+  <g filter="url(#shadow)">
+
+    <!-- Main Chocolate Ball -->
+    <circle cx="100" cy="100" r="72"
+      fill="url(#chocoGrad)"
+      stroke="#2d1208"
+      stroke-width="2"/>
+
+    <!-- Outer Edge Light Ring -->
+    <circle cx="100" cy="100" r="71"
+      fill="url(#ringGrad)"/>
+
+    <!-- Edge Shine (Top-Left Rim Light) -->
+    <path d="
+      M 42,75
+      C 55,40 110,32 148,58"
+      fill="none"
+      stroke="rgba(255,255,255,0.25)"
+      stroke-width="4"
+      stroke-linecap="round"/>
+
+    <!-- Main Gloss Highlight -->
+    <ellipse cx="76" cy="64"
+      rx="30"
+      ry="18"
+      fill="url(#glossGrad)"
+      transform="rotate(-18 76 64)"/>
+
+    <!-- Secondary Bottom-Left Soft Gloss -->
+    <ellipse cx="135" cy="130"
+      rx="22"
+      ry="12"
+      fill="url(#secondaryGloss)"
+      transform="rotate(-30 135 130)"/>
+
+    <!-- Tiny Shine Dot -->
+    <circle cx="130" cy="58" r="7"
+      fill="white"
+      fill-opacity="0.85"/>
+    <circle cx="133" cy="61" r="3"
+      fill="white"
+      fill-opacity="0.5"/>
+
+    <!-- ============================================ -->
+    <!-- Pill-Shaped Candy Sprinkles -->
+    <!-- ============================================ -->
+
+    <!-- RED sprinkles -->
+    <rect x="62" y="86" width="12" height="5" rx="2.5" ry="2.5" fill="#ff3b3b" transform="rotate(-15, 68, 88.5)"/>
+    <rect x="100" y="142" width="11" height="5" rx="2.5" ry="2.5" fill="#ff5555" transform="rotate(25, 105.5, 144.5)"/>
+    <rect x="138" y="102" width="10" height="4.5" rx="2.25" ry="2.25" fill="#ff2222" transform="rotate(50, 143, 104.25)"/>
+
+    <!-- YELLOW sprinkles -->
+    <rect x="96" y="72" width="11" height="5" rx="2.5" ry="2.5" fill="#ffd93b" transform="rotate(-30, 101.5, 74.5)"/>
+    <rect x="135" y="128" width="12" height="5" rx="2.5" ry="2.5" fill="#ffe066" transform="rotate(15, 141, 130.5)"/>
+    <rect x="52" y="108" width="10" height="4.5" rx="2.25" ry="2.25" fill="#ffcc00" transform="rotate(-50, 57, 110.25)"/>
+
+    <!-- BLUE sprinkles -->
+    <rect x="118" y="82" width="11" height="5" rx="2.5" ry="2.5" fill="#3ba7ff" transform="rotate(35, 123.5, 84.5)"/>
+    <rect x="72" y="120" width="10" height="4.5" rx="2.25" ry="2.25" fill="#5599ff" transform="rotate(-20, 77, 122.25)"/>
+    <rect x="145" y="78" width="11" height="5" rx="2.5" ry="2.5" fill="#2a8eeb" transform="rotate(-60, 150.5, 80.5)"/>
+
+    <!-- GREEN sprinkles -->
+    <rect x="85" y="58" width="10" height="4.5" rx="2.25" ry="2.25" fill="#52ff52" transform="rotate(45, 90, 60.25)"/>
+    <rect x="122" y="142" width="11" height="5" rx="2.5" ry="2.5" fill="#44dd44" transform="rotate(-35, 127.5, 144.5)"/>
+    <rect x="58" y="145" width="10" height="4.5" rx="2.25" ry="2.25" fill="#66ff66" transform="rotate(10, 63, 147.25)"/>
+
+    <!-- ORANGE sprinkles -->
+    <rect x="108" y="58" width="11" height="5" rx="2.5" ry="2.5" fill="#ff8c2b" transform="rotate(60, 113.5, 60.5)"/>
+    <rect x="78" y="148" width="10" height="4.5" rx="2.25" ry="2.25" fill="#ffa244" transform="rotate(-45, 83, 150.25)"/>
+    <rect x="148" y="115" width="11" height="5" rx="2.5" ry="2.5" fill="#ff7722" transform="rotate(20, 153.5, 117.5)"/>
+
+    <!-- PURPLE sprinkles -->
+    <rect x="88" y="102" width="11" height="5" rx="2.5" ry="2.5" fill="#bb5cff" transform="rotate(-10, 93.5, 104.5)"/>
+    <rect x="55" y="75" width="10" height="4.5" rx="2.25" ry="2.25" fill="#cc77ff" transform="rotate(40, 60, 77.25)"/>
+    <rect x="112" y="120" width="11" height="5" rx="2.5" ry="2.5" fill="#aa44f0" transform="rotate(-55, 117.5, 122.5)"/>
+
+    <!-- WHITE sprinkles -->
+    <rect x="65" y="62" width="10" height="4.5" rx="2.25" ry="2.25" fill="#ffffff" transform="rotate(25, 70, 64.25)"/>
+    <rect x="132" y="95" width="11" height="5" rx="2.5" ry="2.5" fill="#f0f0f0" transform="rotate(-25, 137.5, 97.5)"/>
+
+    <!-- PINK sprinkles -->
+    <rect x="105" y="98" width="10" height="4.5" rx="2.25" ry="2.25" fill="#ff7bd8" transform="rotate(30, 110, 100.25)"/>
+    <rect x="82" y="80" width="11" height="5" rx="2.5" ry="2.5" fill="#ff99e0" transform="rotate(-40, 87.5, 82.5)"/>
+
+    <!-- CYAN sprinkles -->
+    <rect x="128" y="72" width="10" height="4.5" rx="2.25" ry="2.25" fill="#2dd4bf" transform="rotate(70, 133, 74.25)"/>
+    <rect x="95" y="158" width="11" height="5" rx="2.5" ry="2.5" fill="#14b8a6" transform="rotate(-15, 100.5, 160.5)"/>
+
+    <!-- ============================================ -->
+    <!-- Sprinkle Highlight Reflections -->
+    <!-- ============================================ -->
+    <circle cx="66" cy="84" r="1.2" fill="white" fill-opacity="0.55"/>
+    <circle cx="98" cy="70" r="1.2" fill="white" fill-opacity="0.55"/>
+    <circle cx="116" cy="80" r="1.2" fill="white" fill-opacity="0.55"/>
+    <circle cx="122" cy="140" r="1.2" fill="white" fill-opacity="0.55"/>
+    <circle cx="86" cy="100" r="1.2" fill="white" fill-opacity="0.55"/>
+    <circle cx="92" cy="156" r="1.2" fill="white" fill-opacity="0.55"/>
+    <circle cx="140" cy="126" r="1.2" fill="white" fill-opacity="0.55"/>
+    <circle cx="63" cy="143" r="1.2" fill="white" fill-opacity="0.55"/>
+
+    <!-- ============================================ -->
+    <!-- Sugar Crystal Sparkles -->
+    <!-- ============================================ -->
+    <circle cx="48" cy="85" r="1.5" fill="white" fill-opacity="0.4"/>
+    <circle cx="155" cy="95" r="1.5" fill="white" fill-opacity="0.4"/>
+    <circle cx="62" cy="158" r="1.5" fill="white" fill-opacity="0.35"/>
+    <circle cx="148" cy="145" r="1.5" fill="white" fill-opacity="0.35"/>
+    <circle cx="45" cy="120" r="1" fill="white" fill-opacity="0.3"/>
+    <circle cx="158" cy="108" r="1" fill="white" fill-opacity="0.3"/>
+
+  </g>
+
+</svg>

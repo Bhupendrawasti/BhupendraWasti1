@@ -1,0 +1,83 @@
+<svg height="200px" width="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Star gradient - Candy Crush style -->
+    <radialGradient id="starGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="25%" stop-color="#FFD700"/>
+      <stop offset="60%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </radialGradient>
+    
+    <!-- Shine highlight -->
+    <radialGradient id="shine" cx="35%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    
+    <!-- Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.25)"/>
+    </filter>
+    
+    <!-- Star clip path for stripes -->
+    <clipPath id="starClip">
+      <path d="M 100,8 L 125,66 L 187,66 L 140,108 L 163,170 L 100,137 L 37,170 L 60,108 L 13,66 L 75,66 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Star candy body -->
+  <g filter="url(#shadow)">
+    <!-- Main star -->
+    <path fill="url(#starGrad)" d="
+      M 100,8 
+      L 125,66 
+      L 187,66 
+      L 140,108 
+      L 163,170 
+      L 100,137 
+      L 37,170 
+      L 60,108 
+      L 13,66 
+      L 75,66 
+      Z
+    "/>
+    
+    <!-- Vertical White Stripes (Candy Crush Style) -->
+    <g clip-path="url(#starClip)">
+      <!-- Stripe 1 -->
+      <rect x="25" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Stripe 2 -->
+      <rect x="43" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.9"/>
+      <!-- Stripe 3 -->
+      <rect x="61" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Stripe 4 -->
+      <rect x="79" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.9"/>
+      <!-- Stripe 5 -->
+      <rect x="97" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Stripe 6 -->
+      <rect x="115" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.9"/>
+      <!-- Stripe 7 -->
+      <rect x="133" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.85"/>
+      <!-- Stripe 8 -->
+      <rect x="151" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.9"/>
+      <!-- Stripe 9 -->
+      <rect x="169" y="0" width="8" height="200" fill="#FFFFFF" opacity="0.8"/>
+    </g>
+    
+    <!-- Shine overlay -->
+    <path fill="url(#shine)" d="
+      M 93,42 
+      L 107,42 
+      L 120,70 
+      L 140,78 
+      L 120,92 
+      L 128,130 
+      L 100,115 
+      L 72,130 
+      L 80,92 
+      L 60,78 
+      L 80,70 
+      Z
+    "/>
+  </g>
+</svg>

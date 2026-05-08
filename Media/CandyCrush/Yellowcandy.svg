@@ -1,0 +1,56 @@
+<svg height="200px" width="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Star gradient - Candy Crush style -->
+    <radialGradient id="starGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="25%" stop-color="#FFD700"/>
+      <stop offset="60%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </radialGradient>
+    
+    <!-- Shine highlight -->
+    <radialGradient id="shine" cx="35%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    
+    <!-- Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.25)"/>
+    </filter>
+  </defs>
+
+  <!-- Star candy body - scaled to fill 200x200 -->
+  <g transform="translate(100, 100)" filter="url(#shadow)">
+    <!-- Main star - touching all edges -->
+    <path fill="url(#starGrad)" d="
+      M 0,-92 
+      L 25,-34 
+      L 87,-34 
+      L 40,8 
+      L 63,70 
+      L 0,37 
+      L -63,70 
+      L -40,8 
+      L -87,-34 
+      L -25,-34 
+      Z
+    "/>
+    
+    <!-- Shine overlay -->
+    <path fill="url(#shine)" d="
+      M -7,-58 
+      L 7,-58 
+      L 20,-30 
+      L 40,-22 
+      L 20,-8 
+      L 28,30 
+      L 0,15 
+      L -28,30 
+      L -20,-8 
+      L -40,-22 
+      L -20,-30 
+      Z
+    "/>
+  </g>
+</svg>

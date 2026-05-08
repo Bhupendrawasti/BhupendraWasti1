@@ -1,0 +1,271 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Semi-transparent Blue Wrapper Gradient -->
+    <linearGradient id="wrapperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4DB8FF" stop-opacity="0.65"/>
+      <stop offset="20%" stop-color="#3399FF" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#1A8CFF" stop-opacity="0.75"/>
+      <stop offset="80%" stop-color="#0066CC" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#003366" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1B2A"/>
+      <stop offset="100%" stop-color="#1B2838"/>
+    </linearGradient>
+
+    <!-- Left vertical gold ribbon gradient -->
+    <linearGradient id="goldLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFF8DC"/>
+      <stop offset="20%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#DAA520"/>
+      <stop offset="80%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+
+    <!-- Right vertical gold ribbon gradient -->
+    <linearGradient id="goldRight" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFF8DC"/>
+      <stop offset="20%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#DAA520"/>
+      <stop offset="80%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+
+    <!-- Inner blue candy gradient -->
+    <radialGradient id="blueGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#80D4FF"/>
+      <stop offset="25%" stop-color="#4DB8FF"/>
+      <stop offset="60%" stop-color="#0099FF"/>
+      <stop offset="85%" stop-color="#0059B3"/>
+      <stop offset="100%" stop-color="#003366"/>
+    </radialGradient>
+
+    <!-- Curved Band Gradients -->
+    <linearGradient id="bandTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#66CCFF"/>
+      <stop offset="50%" stop-color="#4DB8FF"/>
+      <stop offset="100%" stop-color="#0066CC"/>
+    </linearGradient>
+
+    <linearGradient id="bandBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0066CC"/>
+      <stop offset="50%" stop-color="#004d99"/>
+      <stop offset="100%" stop-color="#003366"/>
+    </linearGradient>
+
+    <!-- Candy Crush Glossy Shine -->
+    <radialGradient id="shine" cx="30%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sugar Sparkle Gradient -->
+    <radialGradient id="sparkle" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Center candy shadow -->
+    <filter id="candyShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#001133" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Wrapper drop shadow -->
+    <filter id="wrapperShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="4" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Dark premium background - fills entire canvas -->
+  <rect x="0" y="0" width="500" height="500" fill="url(#bgGrad)"/>
+
+  <!-- Main candy wrapper body -->
+  <g filter="url(#wrapperShadow)">
+    
+    <!-- Wrapper base shape - semi-transparent blue -->
+    <rect x="71" y="20" width="358" height="460" rx="20" ry="20" 
+          fill="url(#wrapperGrad)" stroke="rgba(0,51,102,0.6)" stroke-width="3"/>
+
+    <!-- Elegant gold outline border - inner -->
+    <rect x="86" y="35" width="328" height="430" rx="15" ry="15" 
+          fill="none" stroke="#FFD700" stroke-width="2" opacity="0.4"/>
+
+    <!-- Second gold outline accent -->
+    <rect x="94" y="43" width="312" height="414" rx="12" ry="12" 
+          fill="none" stroke="#DAA520" stroke-width="1" opacity="0.25"/>
+
+    <!-- ============================================ -->
+    <!-- LEFT VERTICAL GOLD RIBBON - x=5 to x=70 -->
+    <!-- ============================================ -->
+    <g>
+      <rect x="5" y="40" width="65" height="420" rx="6" fill="rgba(0,0,0,0.3)"/>
+      <rect x="60" y="40" width="10" height="420" rx="4" fill="url(#goldLeft)" stroke="#8B6914" stroke-width="1"/>
+      
+      <path d="M 60,40 L 50,30 L 40,40 L 50,50 L 40,60 L 50,70 L 40,80 L 50,90 L 40,100 
+               L 50,110 L 40,120 L 50,130 L 40,140 L 50,150 L 40,160 L 50,170 L 40,180 
+               L 50,190 L 40,200 L 50,210 L 40,220 L 50,230 L 40,240 L 50,250 L 40,260 
+               L 50,270 L 40,280 L 50,290 L 40,300 L 50,310 L 40,320 L 50,330 L 40,340 
+               L 50,350 L 40,360 L 50,370 L 40,380 L 50,390 L 40,400 L 50,410 L 40,420 
+               L 50,430 L 40,440 L 50,450 L 40,460 L 50,470 L 60,460 Z" 
+            fill="url(#goldLeft)" stroke="#8B6914" stroke-width="1.5"/>
+      
+      <g stroke="rgba(255,255,255,0.35)" stroke-width="1" fill="none">
+        <path d="M 50,30 L 40,40 L 50,50"/>
+        <path d="M 50,70 L 40,80 L 50,90"/>
+        <path d="M 50,110 L 40,120 L 50,130"/>
+        <path d="M 50,150 L 40,160 L 50,170"/>
+        <path d="M 50,190 L 40,200 L 50,210"/>
+        <path d="M 50,230 L 40,240 L 50,250"/>
+        <path d="M 50,270 L 40,280 L 50,290"/>
+        <path d="M 50,310 L 40,320 L 50,330"/>
+        <path d="M 50,350 L 40,360 L 50,370"/>
+        <path d="M 50,390 L 40,400 L 50,410"/>
+        <path d="M 50,430 L 40,440 L 50,450"/>
+        <path d="M 50,470 L 60,460 L 50,450"/>
+      </g>
+      
+      <rect x="55" y="40" width="4" height="420" fill="rgba(255,255,255,0.2)" rx="2"/>
+      
+      <g stroke="rgba(0,0,0,0.15)" stroke-width="0.8" fill="none">
+        <line x1="40" y1="40" x2="40" y2="460"/>
+        <line x1="50" y1="40" x2="50" y2="460"/>
+      </g>
+    </g>
+
+    <!-- ============================================ -->
+    <!-- RIGHT VERTICAL GOLD RIBBON - x=430 to x=495 -->
+    <!-- ============================================ -->
+    <g>
+      <rect x="430" y="40" width="65" height="420" rx="6" fill="rgba(0,0,0,0.3)"/>
+      <rect x="430" y="40" width="10" height="420" rx="4" fill="url(#goldRight)" stroke="#8B6914" stroke-width="1"/>
+      
+      <path d="M 440,40 L 450,30 L 460,40 L 450,50 L 460,60 L 450,70 L 460,80 L 450,90 L 460,100 
+               L 450,110 L 460,120 L 450,130 L 460,140 L 450,150 L 460,160 L 450,170 L 460,180 
+               L 450,190 L 460,200 L 450,210 L 460,220 L 450,230 L 460,240 L 450,250 L 460,260 
+               L 450,270 L 460,280 L 450,290 L 460,300 L 450,310 L 460,320 L 450,330 L 460,340 
+               L 450,350 L 460,360 L 450,370 L 460,380 L 450,390 L 460,400 L 450,410 L 460,420 
+               L 450,430 L 460,440 L 450,450 L 460,460 L 450,470 L 440,460 Z" 
+            fill="url(#goldRight)" stroke="#8B6914" stroke-width="1.5"/>
+      
+      <g stroke="rgba(255,255,255,0.35)" stroke-width="1" fill="none">
+        <path d="M 450,30 L 460,40 L 450,50"/>
+        <path d="M 450,70 L 460,80 L 450,90"/>
+        <path d="M 450,110 L 460,120 L 450,130"/>
+        <path d="M 450,150 L 460,160 L 450,170"/>
+        <path d="M 450,190 L 460,200 L 450,210"/>
+        <path d="M 450,230 L 460,240 L 450,250"/>
+        <path d="M 450,270 L 460,280 L 450,290"/>
+        <path d="M 450,310 L 460,320 L 450,330"/>
+        <path d="M 450,350 L 460,360 L 450,370"/>
+        <path d="M 450,390 L 460,400 L 450,410"/>
+        <path d="M 450,430 L 460,440 L 450,450"/>
+        <path d="M 450,470 L 440,460 L 450,450"/>
+      </g>
+      
+      <rect x="441" y="40" width="4" height="420" fill="rgba(255,255,255,0.2)" rx="2"/>
+      
+      <g stroke="rgba(0,0,0,0.15)" stroke-width="0.8" fill="none">
+        <line x1="450" y1="40" x2="450" y2="460"/>
+        <line x1="460" y1="40" x2="460" y2="460"/>
+      </g>
+    </g>
+
+    <!-- ============================================ -->
+    <!-- CENTER BLUE WRAPPED CANDY (SCALED TO FIT) -->
+    <!-- ============================================ -->
+    <g transform="translate(250, 260) scale(1.25) translate(-100, -100)" filter="url(#candyShadow)">
+      
+      <!-- Candy shadow for depth -->
+      <circle cx="100" cy="103" r="80" fill="rgba(0,0,0,0.12)"/>
+      
+      <!-- Main candy -->
+      <circle cx="100" cy="100" r="80" 
+              fill="url(#blueGrad)" 
+              stroke="#002244" 
+              stroke-width="2" />
+      
+      <!-- Curved Lollipop Band (Wrapped Style) -->
+      
+      <!-- Band shadow -->
+      <path d="M 30,85 Q 100,100 170,85 L 170,115 Q 100,130 30,115 Z" 
+            fill="rgba(0,0,0,0.15)"/>
+      
+      <!-- Curved Band Top Half -->
+      <path d="M 28,82 Q 100,98 172,82 L 170,95 Q 100,108 30,95 Z" 
+            fill="url(#bandTop)"/>
+      
+      <!-- Curved Band Bottom Half -->
+      <path d="M 30,95 Q 100,108 170,95 L 172,112 Q 100,126 28,112 Z" 
+            fill="url(#bandBottom)"/>
+      
+      <!-- Band center crease line -->
+      <path d="M 30,97 Q 100,110 170,97" 
+            fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="1.5"/>
+      
+      <!-- Band top shine -->
+      <path d="M 32,84 Q 100,99 168,84 L 166,88 Q 100,102 34,88 Z" 
+            fill="white" fill-opacity="0.2"/>
+      
+      <!-- Band bottom shadow line -->
+      <path d="M 32,108 Q 100,121 168,108 L 166,111 Q 100,123 34,111 Z" 
+            fill="rgba(0,0,0,0.1)"/>
+      
+      <!-- Band wrap lines (crimps) -->
+      <path d="M 35,86 Q 38,98 35,110" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
+      <path d="M 165,86 Q 162,98 165,110" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
+      <path d="M 45,88 Q 47,98 45,108" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+      <path d="M 155,88 Q 153,98 155,108" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+      
+      <!-- Glossy Shine Highlight -->
+      <ellipse cx="72" cy="62" rx="38" ry="24" 
+               fill="url(#shine)" 
+               transform="rotate(-25, 72, 62)" />
+      
+      <!-- Secondary subtle shine -->
+      <ellipse cx="140" cy="130" rx="20" ry="12" 
+               fill="white" fill-opacity="0.08" 
+               transform="rotate(-30, 140, 130)" />
+      
+      <!-- Candy Crush Style Sparkles -->
+      <!-- Main sparkle -->
+      <circle cx="125" cy="52" r="5" fill="url(#sparkle)"/>
+      <circle cx="128" cy="55" r="2.5" fill="url(#sparkle)"/>
+      
+      <!-- Sugar crystal sparkles -->
+      <circle cx="65" cy="130" r="2.5" fill="white" fill-opacity="0.6"/>
+      <circle cx="145" cy="90" r="2" fill="white" fill-opacity="0.5"/>
+      <circle cx="50" cy="85" r="1.5" fill="white" fill-opacity="0.4"/>
+      <circle cx="155" cy="120" r="1.5" fill="white" fill-opacity="0.4"/>
+      <circle cx="85" cy="155" r="2" fill="white" fill-opacity="0.3"/>
+    </g>
+
+    <!-- ============================================ -->
+    <!-- ADDITIONAL DETAILS -->
+    <!-- ============================================ -->
+    
+    <!-- Subtle wrapper texture lines -->
+    <g opacity="0.03">
+      <line x1="120" y1="200" x2="120" y2="330" stroke="#000" stroke-width="1"/>
+      <line x1="180" y1="200" x2="180" y2="330" stroke="#000" stroke-width="1"/>
+      <line x1="320" y1="200" x2="320" y2="330" stroke="#000" stroke-width="1"/>
+      <line x1="380" y1="200" x2="380" y2="330" stroke="#000" stroke-width="1"/>
+    </g>
+
+    <!-- Top edge shine -->
+    <rect x="73" y="22" width="354" height="5" rx="2.5" fill="rgba(255,255,255,0.1)"/>
+
+    <!-- Bottom edge shadow -->
+    <rect x="73" y="475" width="354" height="5" rx="2.5" fill="rgba(0,0,0,0.25)"/>
+
+  </g>
+
+  <!-- Premium corner accents -->
+  <g fill="none" stroke="#FFD700" stroke-width="2" opacity="0.4">
+    <path d="M 5,20 L 5,5 L 20,5"/>
+    <path d="M 495,20 L 495,5 L 480,5"/>
+    <path d="M 5,480 L 5,495 L 20,495"/>
+    <path d="M 495,480 L 495,495 L 480,495"/>
+  </g>
+</svg>
