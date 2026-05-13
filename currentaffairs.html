@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Affairs - Bhupendra Wasti</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        /* Search */
+        .search-section {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        /* Stats */
+        .stats {
+            background: white;
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .stats-count {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .refresh-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* Posts Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+        }
+
+        .post-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-title {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .post-categories {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .category-tag {
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: #667eea;
+        }
+
+        .post-snippet {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: auto;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 80px;
+            background: white;
+            border-radius: 24px;
+        }
+
+        .spinner {
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            background: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            color: #333;
+        }
+
+        .page-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .page-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px;
+            background: white;
+            border-radius: 24px;
+            color: #666;
+        }
+
+        .error {
+            text-align: center;
+            padding: 60px;
+            background: white;
+            border-radius: 24px;
+            color: #dc2626;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 Current Affairs</h1>
+            <p>Latest news and current events from Nepal</p>
+            <div class="badge">By Bhupendra Wasti</div>
+        </div>
+
+        <div class="search-section">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search articles by title...">
+        </div>
+
+        <div class="stats">
+            <span class="stats-count" id="postCount">Loading posts...</span>
+            <button class="refresh-btn" onclick="fetchPosts()">🔄 Refresh</button>
+        </div>
+
+        <div id="content">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading articles from the blog...</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Content from currentaffairs.bhupendrawasti.com.np</p>
+        </div>
+    </div>
+
+    <script>
+        // PUBLIC FEED - NO API KEY NEEDED!
+        const PUBLIC_FEED = 'https://currentaffairs.bhupendrawasti.com.np/feeds/posts/default?alt=json';
+        const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+        
+        let allPosts = [];
+        let currentPage = 1;
+        let currentSearch = '';
+        const postsPerPage = 12;
+
+        async function fetchPosts() {
+            const container = document.getElementById('content');
+            container.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading articles...</p>
+                </div>
+            `;
+            
+            try {
+                // Using CORS proxy to fetch the feed
+                const response = await fetch(CORS_PROXY + encodeURIComponent(PUBLIC_FEED));
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.feed || !data.feed.entry) {
+                    throw new Error('No posts found');
+                }
+                
+                const entries = data.feed.entry;
+                
+                allPosts = entries.map(entry => {
+                    // Extract categories/tags
+                    const categories = (entry.category || []).map(c => c.term);
+                    
+                    // Extract first image from content
+                    let imageUrl = '';
+                    const imgMatch = entry.content.$t.match(/<img[^>]+src="([^">]+)"/);
+                    if (imgMatch) {
+                        imageUrl = imgMatch[1];
+                    }
+                    
+                    // Clean HTML for snippet
+                    let cleanContent = entry.content.$t.replace(/<[^>]*>/g, '');
+                    let snippet = cleanContent.substring(0, 200);
+                    if (cleanContent.length > 200) snippet += '...';
+                    
+                    // Format date
+                    let date = new Date(entry.published.$t);
+                    let formattedDate = date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    
+                    // Get post link
+                    let link = '';
+                    if (entry.link) {
+                        const linkObj = entry.link.find(l => l.rel === 'alternate');
+                        if (linkObj) link = linkObj.href;
+                    }
+                    
+                    return {
+                        title: entry.title.$t,
+                        link: link,
+                        published: formattedDate,
+                        rawDate: date,
+                        snippet: snippet,
+                        image: imageUrl,
+                        categories: categories
+                    };
+                });
+                
+                // Sort by date (newest first)
+                allPosts.sort((a, b) => b.rawDate - a.rawDate);
+                
+                document.getElementById('postCount').innerText = `${allPosts.length} articles loaded`;
+                currentPage = 1;
+                displayPosts();
+                
+            } catch (error) {
+                console.error('Error details:', error);
+                container.innerHTML = `
+                    <div class="error">
+                        <h3>⚠️ Failed to load posts</h3>
+                        <p>${error.message}</p>
+                        <p style="margin-top: 15px; font-size: 14px;">Troubleshooting tips:</p>
+                        <ul style="margin-top: 10px; text-align: left; display: inline-block;">
+                            <li>Make sure you're connected to the internet</li>
+                            <li>Try opening this file using a local web server:</li>
+                            <li style="background: #f1f5f9; padding: 5px; margin-top: 5px;">python -m http.server 8000</li>
+                            <li>Then visit: http://localhost:8000</li>
+                        </ul>
+                        <br>
+                        <button onclick="fetchPosts()" style="margin-top: 20px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer;">
+                            Try Again
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function displayPosts() {
+            const container = document.getElementById('content');
+            currentSearch = document.getElementById('searchInput').value.toLowerCase();
+            
+            let filteredPosts = allPosts;
+            if (currentSearch) {
+                filteredPosts = allPosts.filter(post => 
+                    post.title.toLowerCase().includes(currentSearch) ||
+                    post.snippet.toLowerCase().includes(currentSearch)
+                );
+            }
+            
+            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+            const startIndex = (currentPage - 1) * postsPerPage;
+            const paginatedPosts = filteredPosts.slice(startIndex, startIndex + postsPerPage);
+            
+            if (filteredPosts.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>🔍 No matching articles found</h3>
+                        <p>Try a different search term</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let postsHTML = '<div class="posts-grid">';
+            
+            paginatedPosts.forEach(post => {
+                postsHTML += `
+                    <div class="post-card" onclick="window.open('${post.link}', '_blank')">
+                        ${post.image ? `<img class="post-image" src="${post.image}" alt="${escapeHtml(post.title)}" onerror="this.style.display='none'">` : ''}
+                        <div class="post-content">
+                            <h2 class="post-title">${escapeHtml(post.title)}</h2>
+                            <div class="post-meta">
+                                <span>📅 ${escapeHtml(post.published)}</span>
+                            </div>
+                            ${post.categories.length ? `
+                                <div class="post-categories">
+                                    ${post.categories.slice(0, 3).map(cat => `<span class="category-tag">${escapeHtml(cat)}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                            <p class="post-snippet">${escapeHtml(post.snippet)}</p>
+                            <a href="${post.link}" class="read-more" target="_blank">Read full article →</a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            postsHTML += '</div>';
+            
+            // Add pagination
+            if (totalPages > 1) {
+                postsHTML += '<div class="pagination">';
+                for (let i = 1; i <= Math.min(totalPages, 10); i++) {
+                    postsHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+                }
+                if (totalPages > 10) {
+                    postsHTML += `<button class="page-btn" onclick="goToPage(${totalPages})">${totalPages}</button>`;
+                }
+                postsHTML += '</div>';
+            }
+            
+            container.innerHTML = postsHTML;
+            document.getElementById('postCount').innerHTML = `${filteredPosts.length} / ${allPosts.length} articles`;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            displayPosts();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Search with debounce
+        let searchTimeout;
+        document.getElementById('searchInput').addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                currentPage = 1;
+                displayPosts();
+            }, 300);
+        });
+
+        // Load posts when page opens
+        fetchPosts();
+    </script>
+</body>
+</html>
