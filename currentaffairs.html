@@ -1,525 +1,855 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Affairs - Bhupendra Wasti</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Current Affairs Nepal | PSC Exam Prep</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+body{
+  padding-top: 60px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: rgb(238, 174, 202);
+  background: -moz-radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  min-height: 100vh;
+  color: #111827;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.container{
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
 
-        /* Header */
-        .header {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
+.header h1{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:10px;
+  color:white;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  padding:20px;
+  border-radius:20px;
+}
 
-        .header h1 {
-            color: #333;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+.des{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  margin-bottom:20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-        .header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
+.search{
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: white;
+  transition: all 0.3s ease;
+}
 
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-top: 15px;
-        }
+.search:focus {
+  outline: none;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
 
-        /* Search */
-        .search-section {
-            background: white;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+.stats {
+  background: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-        .search-input {
-            width: 100%;
-            padding: 14px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
+.stats-count {
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
 
-        .search-input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+.refresh-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: transform 0.2s;
+}
 
-        /* Stats */
-        .stats {
-            background: white;
-            border-radius: 16px;
-            padding: 15px 20px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+.refresh-btn:hover {
+  transform: scale(1.02);
+}
 
-        .stats-count {
-            color: #333;
-            font-weight: 600;
-        }
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
 
-        .refresh-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
+.card{
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  animation: fadeInUp 0.4s ease forwards;
+}
 
-        .refresh-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        /* Posts Grid */
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
 
-        .post-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+.card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+}
 
-        .post-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+.content{
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-        .post-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
-        }
+.title{
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.4;
+}
 
-        .post-content {
-            padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.post-date {
+  color: #888;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}
 
-        .post-title {
-            font-size: 1.25rem;
-            color: #333;
-            margin-bottom: 10px;
-            line-height: 1.4;
-            font-weight: 700;
-        }
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
 
-        .post-meta {
-            color: #666;
-            font-size: 0.8rem;
-            margin-bottom: 12px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+.card-tag {
+  background: #f0f0f0;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  color: #667eea;
+  font-weight: 500;
+}
 
-        .post-categories {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
+/* Ad container styles - matches your ad class */
+.ad-position {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
-        .category-tag {
-            background: #f0f0f0;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            color: #667eea;
-        }
+/* Make ads look good inside grid */
+.ad-container {
+  width: 100%;
+  display: block;
+}
 
-        .post-snippet {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            flex: 1;
-        }
+.loader{
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 24px;
+  font-size: 18px;
+  color: #666;
+}
 
-        .read-more {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: auto;
-        }
+.spinner {
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
 
-        .read-more:hover {
-            color: #764ba2;
-        }
+.progress-info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 500;
+}
 
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 80px;
-            background: white;
-            border-radius: 24px;
-        }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-        .spinner {
-            border: 4px solid #e2e8f0;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
+.infinite-loader {
+  text-align: center;
+  padding: 30px;
+  background: transparent;
+  margin-top: 20px;
+  display: none;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+.infinite-loader .spinner-small {
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
 
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
+.infinite-loader p {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
 
-        .page-btn {
-            background: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
-            color: #333;
-        }
+#postPage{
+  display: none;
+}
 
-        .page-btn:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
+.post-wrapper{
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
 
-        .page-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
+.post-content-wrap{
+  padding: 30px;
+}
 
-        .no-results {
-            text-align: center;
-            padding: 60px;
-            background: white;
-            border-radius: 24px;
-            color: #666;
-        }
+.post-title{
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-        .error {
-            text-align: center;
-            padding: 60px;
-            background: white;
-            border-radius: 24px;
-            color: #dc2626;
-        }
+.post-meta {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e2e8f0;
+}
 
-        .footer {
-            text-align: center;
-            padding: 30px;
-            color: white;
-            opacity: 0.9;
-        }
+.post-content{
+  font-size: 1rem;
+  line-height: 1.8;
+  word-break: break-word;
+  color: #444;
+}
 
-        @media (max-width: 768px) {
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-            .header h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+.post-content p{
+  margin-bottom: 18px;
+}
+
+.post-content img{
+  max-width: 100%;
+  border-radius: 14px;
+  margin: 25px 0;
+}
+
+.post-footer {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.post-footer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.post-footer-tag-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.post-footer-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 25px;
+  font-size: 0.8rem;
+}
+
+.back-btn{
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+.btn{
+  display: inline-block;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: white;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-size: 24px;
+  border: none;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  transform: scale(1.1);
+}
+
+@media(max-width: 768px){
+  .container {
+    padding: 15px;
+  }
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  .post-title{
+    font-size: 1.5rem;
+  }
+  .post-content-wrap{
+    padding: 20px;
+  }
+  .scroll-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+</style>
+
+<link rel="stylesheet" href="/css/navbar.css">
+
+
+     <!-- Navigation -->
+
+<nav class="navbar">
+  <div class="nav-container">
+
+    <a href="index.html" class="logo">
+      <img src="Media/ProfilePicture/logo.png"
+           alt="B"
+           loading="lazy" onerror="this.style.display='none'">
+      <span>Bhupendra Wasti</span>
+    </a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <ul class="nav-links">
+      <li><a href="/index"><img src="/Media/svg/home-1-white.svg" alt="Home" width="15" height="15" onerror="this.style.display='none'">  •Home</a></li>
+      <li><a href="/games"><img src="/Media/svg/game-white.svg" alt="Games" width="15" height="15" onerror="this.style.display='none'">  •Games</a></li>
+      <li><a href="/usefullinks"><img src="/Media/svg/earth-white.svg" alt="link" width="15" height="15" onerror="this.style.display='none'">  •Useful Links</a></li>
+      <li><a href="/gaukhanekatha"><img src="/Media/svg/thinking-think-white.svg" alt="GK" width="15" height="15" onerror="this.style.display='none'">  •Gaukhanekatha</a></li>
+      <li><a href="/tools"><img src="/Media/svg/tools-white.svg" alt="Tools" width="15" height="15" onerror="this.style.display='none'">  •Online Tools</a></li>
+      <li><a href="/about-us"><img src="/Media/svg/user-white.svg" alt="About" width="15" height="15" onerror="this.style.display='none'">  •About us</a></li>
+      
+    </ul>
+
+  </div>
+</nav>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📰 Current Affairs</h1>
-            <p>Latest news and current events from Nepal</p>
-            <div class="badge">By Bhupendra Wasti</div>
-        </div>
 
-        <div class="search-section">
-            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search articles by title...">
-        </div>
+<div id="homePage">
+<div class="container">
+  <div class="header">
+    <h1>📰 Current Affairs</h1>
+  </div>
+  <div class="des">
+    <p>Welcome to <strong>Current Affairs</strong> – your go-to destination for the latest and most relevant news updates, specially curated for <strong>Public Service Commission (PSC) exam</strong> preparation in Nepal.
+      
+      Whether you're preparing for <strong>Lok Sewa, Nepal Police, or other government exams</strong>, our platform ensures you never miss a crucial update..</p>
+  </div>
 
-        <div class="stats">
-            <span class="stats-count" id="postCount">Loading posts...</span>
-            <button class="refresh-btn" onclick="fetchPosts()">🔄 Refresh</button>
-        </div>
+  <input type="text" id="search" class="search" placeholder="🔍 Search articles by title, content, or tags...">
 
-        <div id="content">
-            <div class="loading">
-                <div class="spinner"></div>
-                <p>Loading articles from the blog...</p>
-            </div>
-        </div>
+  <div class="stats" id="stats" style="display: none;">
+    <span class="stats-count" id="postCount">0 articles</span>
+    <button class="refresh-btn" id="refreshBtn">🔄 Refresh</button>
+  </div>
 
-        <div class="footer">
-            <p>Content from currentaffairs.bhupendrawasti.com.np</p>
-        </div>
-    </div>
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+    <div id="progressText" class="progress-info">Fetching posts from feed...</div>
+  </div>
 
-    <script>
-        // PUBLIC FEED - NO API KEY NEEDED!
-        const PUBLIC_FEED = 'https://currentaffairs.bhupendrawasti.com.np/feeds/posts/default?alt=json';
-        const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+  <!-- Main dynamic posts grid -->
+  <div id="posts" class="grid"></div>
+  
+  <div id="infiniteLoader" class="infinite-loader">
+    <div class="spinner-small"></div>
+    <p>Loading more articles...</p>
+  </div>
+
+  <div class="footer">
+   <a href="https://currentaffairs.bhupendrawasti.com.np/" style="color:white; text-decoration:none;"> <p>Content from currentaffairs.bhupendrawasti.com.np</p> </a>
+  </div>
+</div>
+</div>
+
+<div id="postPage">
+<div class="container">
+<div class="post-wrapper">
+<div class="post-content-wrap">
+<button class="btn back-btn" onclick="goHome()">← Back to Home</button>
+<h1 id="postTitle" class="post-title"></h1>
+<div id="postMeta" class="post-meta"></div>
+<div id="postContent" class="post-content"></div>
+<div class="ad-position" style="padding: 10px;">ads loading...</div>
+<div id="postFooter" class="post-footer"></div>
+</div>
+</div>
+</div>
+</div>
+
+<button class="scroll-top" id="scrollTopBtn">↑</button>
+
+<script>
+// ---------- CORE GLOBALS ----------
+let allPosts = [];
+let displayedCount = 0;
+const POSTS_PER_BATCH = 12;        // 12 articles per infinite scroll load
+let isLoadingMore = false;
+let currentFilteredPosts = [];
+let currentSearchTerm = '';
+let currentStartIndex = 1;
+let totalPostsFetched = 0;
+let isFetchingComplete = false;
+
+// AD CONFIGURATION: Insert after every 10 posts (within 10-12 range)
+const AD_INTERVAL = 10;  // Ads will appear after every 10th article
+
+// Track where ads have been inserted (to avoid duplicates)
+let insertedAdPositions = new Set();
+
+// ---------- RENDER POSTS WITH AD INSERTION ----------
+function renderPostsBatch() {
+  if (!currentFilteredPosts.length) {
+    if (displayedCount === 0) {
+      document.getElementById('posts').innerHTML = '<div style="background:white; border-radius:20px; padding:60px; text-align:center; color:#666;">🔍 No posts found. Try a different search term.</div>';
+    }
+    document.getElementById('infiniteLoader').style.display = 'none';
+    return;
+  }
+  
+  const nextBatch = currentFilteredPosts.slice(displayedCount, displayedCount + POSTS_PER_BATCH);
+  if (nextBatch.length === 0) {
+    document.getElementById('infiniteLoader').style.display = 'none';
+    return;
+  }
+
+  const container = document.getElementById('posts');
+  const fragment = document.createDocumentFragment();
+  const startDisplayIdx = displayedCount;
+  
+  // Process each post in the batch
+  for (let i = 0; i < nextBatch.length; i++) {
+    const post = nextBatch[i];
+    const globalPostIndex = startDisplayIdx + i;
+    
+    // 1) Add the post card
+    const card = createPostCardElement(post, allPosts.findIndex(p => p.link === post.link));
+    fragment.appendChild(card);
+    
+    // 2) Check if we need to insert an ad after this post
+    const postNumber = globalPostIndex + 1; // 1-indexed article count (10th, 20th, 30th, etc.)
+    
+    // Insert ad after every AD_INTERVAL posts
+    if (postNumber % AD_INTERVAL === 0) {
+      const adKey = `ad_after_${postNumber}`;
+      if (!insertedAdPositions.has(adKey)) {
+        // Create ad container div with the exact class your ad.js expects
+        const adContainer = document.createElement('div');
+        adContainer.className = 'ad-container';
+        adContainer.setAttribute('data-ad-position', postNumber);
+        adContainer.style.width = '100%';
         
-        let allPosts = [];
-        let currentPage = 1;
-        let currentSearch = '';
-        const postsPerPage = 12;
+        // Create the .ad-position div that your ad.js looks for
+        const adPositionDiv = document.createElement('div');
+        adPositionDiv.className = 'ad-position';
+        adPositionDiv.setAttribute('data-ad-index', Math.floor(postNumber / AD_INTERVAL));
+        
+        // Add loading text temporarily
+        adPositionDiv.innerHTML = '<div style="padding:20px; text-align:center; background:#f5f5f5; border-radius:12px;">Loading ad...</div>';
+        
+        adContainer.appendChild(adPositionDiv);
+        fragment.appendChild(adContainer);
+        insertedAdPositions.add(adKey);
+      }
+    }
+  }
+  
+  container.appendChild(fragment);
+  displayedCount += nextBatch.length;
+  
+  // Update stats
+  const visibleCount = displayedCount;
+  const totalFiltered = currentFilteredPosts.length;
+  const totalAll = allPosts.length;
+  document.getElementById('postCount').innerHTML = `Showing ${visibleCount} of ${totalFiltered} articles (${totalAll} total)`;
+  
+  // AFTER adding new ads to DOM, trigger your ad loading function
+  // This ensures your randomads.js loads ads into the new .ad-position elements
+  if (typeof loadAllAds === 'function') {
+    loadAllAds();
+  } else if (typeof window.loadAllAds === 'function') {
+    window.loadAllAds();
+  } else {
+    console.log('Waiting for ad script to load...');
+    // If ad script not loaded yet, wait for it
+    if (!window.adScriptLoaded) {
+      window.addEventListener('adsLoaded', function() {
+        if (typeof loadAllAds === 'function') loadAllAds();
+      });
+    }
+  }
+  
+  // Show/hide infinite loader
+  if (displayedCount >= currentFilteredPosts.length) {
+    document.getElementById('infiniteLoader').style.display = 'none';
+  } else {
+    document.getElementById('infiniteLoader').style.display = 'block';
+  }
+}
 
-        async function fetchPosts() {
-            const container = document.getElementById('content');
-            container.innerHTML = `
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <p>Loading articles...</p>
-                </div>
-            `;
-            
-            try {
-                // Using CORS proxy to fetch the feed
-                const response = await fetch(CORS_PROXY + encodeURIComponent(PUBLIC_FEED));
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                
-                if (!data.feed || !data.feed.entry) {
-                    throw new Error('No posts found');
-                }
-                
-                const entries = data.feed.entry;
-                
-                allPosts = entries.map(entry => {
-                    // Extract categories/tags
-                    const categories = (entry.category || []).map(c => c.term);
-                    
-                    // Extract first image from content
-                    let imageUrl = '';
-                    const imgMatch = entry.content.$t.match(/<img[^>]+src="([^">]+)"/);
-                    if (imgMatch) {
-                        imageUrl = imgMatch[1];
-                    }
-                    
-                    // Clean HTML for snippet
-                    let cleanContent = entry.content.$t.replace(/<[^>]*>/g, '');
-                    let snippet = cleanContent.substring(0, 200);
-                    if (cleanContent.length > 200) snippet += '...';
-                    
-                    // Format date
-                    let date = new Date(entry.published.$t);
-                    let formattedDate = date.toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-                    
-                    // Get post link
-                    let link = '';
-                    if (entry.link) {
-                        const linkObj = entry.link.find(l => l.rel === 'alternate');
-                        if (linkObj) link = linkObj.href;
-                    }
-                    
-                    return {
-                        title: entry.title.$t,
-                        link: link,
-                        published: formattedDate,
-                        rawDate: date,
-                        snippet: snippet,
-                        image: imageUrl,
-                        categories: categories
-                    };
-                });
-                
-                // Sort by date (newest first)
-                allPosts.sort((a, b) => b.rawDate - a.rawDate);
-                
-                document.getElementById('postCount').innerText = `${allPosts.length} articles loaded`;
-                currentPage = 1;
-                displayPosts();
-                
-            } catch (error) {
-                console.error('Error details:', error);
-                container.innerHTML = `
-                    <div class="error">
-                        <h3>⚠️ Failed to load posts</h3>
-                        <p>${error.message}</p>
-                        <p style="margin-top: 15px; font-size: 14px;">Troubleshooting tips:</p>
-                        <ul style="margin-top: 10px; text-align: left; display: inline-block;">
-                            <li>Make sure you're connected to the internet</li>
-                            <li>Try opening this file using a local web server:</li>
-                            <li style="background: #f1f5f9; padding: 5px; margin-top: 5px;">python -m http.server 8000</li>
-                            <li>Then visit: http://localhost:8000</li>
-                        </ul>
-                        <br>
-                        <button onclick="fetchPosts()" style="margin-top: 20px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer;">
-                            Try Again
-                        </button>
-                    </div>
-                `;
-            }
+// Helper: Create DOM card element
+function createPostCardElement(post, globalIndex) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.setAttribute('onclick', `openPost(${globalIndex})`);
+  const safeTitle = escapeHtml(post.title);
+  const safeImage = escapeHtml(post.image);
+  const safeDate = escapeHtml(post.date);
+  const tagsSlice = post.tags.slice(0, 3).map(t => escapeHtml(t));
+  let tagsHtml = '';
+  if (tagsSlice.length) {
+    tagsHtml = `<div class="card-tags">${tagsSlice.map(t => `<span class="card-tag">#${t}</span>`).join('')}</div>`;
+  }
+  card.innerHTML = `
+    <img src="${safeImage}" alt="${safeTitle}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x300?text=No+Image'">
+    <div class="content">
+      <div class="title">${safeTitle}</div>
+      ${safeDate ? `<div class="post-date">📅 ${safeDate}</div>` : ''}
+      ${tagsHtml}
+    </div>
+  `;
+  return card;
+}
+
+// ---------- FETCH & FEED PARSING ----------
+function fetchPostsBatch(startIndex) {
+  return new Promise((resolve, reject) => {
+    const callbackName = 'bloggerCallback_' + Date.now() + '_' + startIndex;
+    window[callbackName] = function(data) {
+      delete window[callbackName];
+      resolve(data);
+    };
+    const script = document.createElement('script');
+    const url = `https://currentaffairs.bhupendrawasti.com.np/feeds/posts/default?alt=json-in-script&start-index=${startIndex}&max-results=50&callback=${callbackName}`;
+    script.src = url;
+    script.onerror = () => {
+      delete window[callbackName];
+      reject(new Error('Failed to fetch posts'));
+    };
+    document.body.appendChild(script);
+  });
+}
+
+async function fetchAllPosts() {
+  allPosts = [];
+  currentStartIndex = 1;
+  totalPostsFetched = 0;
+  isFetchingComplete = false;
+  insertedAdPositions.clear();
+  
+  document.getElementById('loader').style.display = 'block';
+  document.getElementById('stats').style.display = 'none';
+  document.getElementById('progressText').innerHTML = 'Fetching posts from feed...';
+  document.getElementById('posts').innerHTML = '';
+  
+  const MAX_ATTEMPTS = 20;
+  let hasMore = true;
+  let attempt = 0;
+  
+  while (hasMore && attempt < MAX_ATTEMPTS) {
+    try {
+      document.getElementById('progressText').innerHTML = `Fetching batch ${attempt + 1} (posts ${currentStartIndex} to ${currentStartIndex + 49})...`;
+      const data = await fetchPostsBatch(currentStartIndex);
+      if (!data.feed || !data.feed.entry || data.feed.entry.length === 0) {
+        hasMore = false;
+        break;
+      }
+      const entries = data.feed.entry;
+      let newPostsCount = 0;
+      entries.forEach(post => {
+        const title = post.title.$t;
+        const htmlContent = post.content?.$t || post.summary?.$t || '';
+        const plainContent = htmlContent.replace(/<[^>]*>/g, '');
+        const tags = (post.category || []).map(c => c.term);
+        let image = 'https://via.placeholder.com/600x300?text=No+Image';
+        const imageMatch = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
+        if (imageMatch) {
+          image = imageMatch[1];
+          if (image.startsWith('//')) image = 'https:' + image;
         }
-
-        function displayPosts() {
-            const container = document.getElementById('content');
-            currentSearch = document.getElementById('searchInput').value.toLowerCase();
-            
-            let filteredPosts = allPosts;
-            if (currentSearch) {
-                filteredPosts = allPosts.filter(post => 
-                    post.title.toLowerCase().includes(currentSearch) ||
-                    post.snippet.toLowerCase().includes(currentSearch)
-                );
-            }
-            
-            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-            const startIndex = (currentPage - 1) * postsPerPage;
-            const paginatedPosts = filteredPosts.slice(startIndex, startIndex + postsPerPage);
-            
-            if (filteredPosts.length === 0) {
-                container.innerHTML = `
-                    <div class="no-results">
-                        <h3>🔍 No matching articles found</h3>
-                        <p>Try a different search term</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            let postsHTML = '<div class="posts-grid">';
-            
-            paginatedPosts.forEach(post => {
-                postsHTML += `
-                    <div class="post-card" onclick="window.open('${post.link}', '_blank')">
-                        ${post.image ? `<img class="post-image" src="${post.image}" alt="${escapeHtml(post.title)}" onerror="this.style.display='none'">` : ''}
-                        <div class="post-content">
-                            <h2 class="post-title">${escapeHtml(post.title)}</h2>
-                            <div class="post-meta">
-                                <span>📅 ${escapeHtml(post.published)}</span>
-                            </div>
-                            ${post.categories.length ? `
-                                <div class="post-categories">
-                                    ${post.categories.slice(0, 3).map(cat => `<span class="category-tag">${escapeHtml(cat)}</span>`).join('')}
-                                </div>
-                            ` : ''}
-                            <p class="post-snippet">${escapeHtml(post.snippet)}</p>
-                            <a href="${post.link}" class="read-more" target="_blank">Read full article →</a>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            postsHTML += '</div>';
-            
-            // Add pagination
-            if (totalPages > 1) {
-                postsHTML += '<div class="pagination">';
-                for (let i = 1; i <= Math.min(totalPages, 10); i++) {
-                    postsHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
-                }
-                if (totalPages > 10) {
-                    postsHTML += `<button class="page-btn" onclick="goToPage(${totalPages})">${totalPages}</button>`;
-                }
-                postsHTML += '</div>';
-            }
-            
-            container.innerHTML = postsHTML;
-            document.getElementById('postCount').innerHTML = `${filteredPosts.length} / ${allPosts.length} articles`;
+        let postDate = '';
+        if (post.published) {
+          const d = new Date(post.published.$t);
+          postDate = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         }
-
-        function escapeHtml(text) {
-            if (!text) return '';
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
+        const link = post.link.find(l => l.rel === 'alternate').href;
+        if (!allPosts.some(p => p.link === link)) {
+          allPosts.push({
+            title,
+            html: htmlContent,
+            plainContent,
+            image,
+            link,
+            date: postDate,
+            tags: tags
+          });
+          newPostsCount++;
         }
+      });
+      totalPostsFetched += newPostsCount;
+      if (entries.length < 50) hasMore = false;
+      else currentStartIndex += 50;
+      attempt++;
+      await new Promise(resolve => setTimeout(resolve, 200));
+    } catch (error) {
+      console.error('Error fetching batch:', error);
+      hasMore = false;
+    }
+  }
+  
+  // Sort by date newest first
+  allPosts.sort((a, b) => {
+    if (!a.date && !b.date) return 0;
+    if (!a.date) return 1;
+    if (!b.date) return -1;
+    return new Date(b.date) - new Date(a.date);
+  });
+  
+  document.getElementById('loader').style.display = 'none';
+  document.getElementById('stats').style.display = 'flex';
+  document.getElementById('postCount').innerHTML = `${allPosts.length} articles loaded`;
+  
+  if (allPosts.length === 0) {
+    document.getElementById('posts').innerHTML = '<div style="background:white; border-radius:20px; padding:60px; text-align:center; color:#666;">⚠️ No posts found. Please check internet or try again later.</div>';
+    return;
+  }
+  
+  isFetchingComplete = true;
+  currentSearchTerm = '';
+  displayedCount = 0;
+  currentFilteredPosts = [...allPosts];
+  insertedAdPositions.clear();
+  renderPostsBatch();
+  setupInfiniteScroll();
+  setupSearch();
+}
 
-        function goToPage(page) {
-            currentPage = page;
-            displayPosts();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+// ---------- SEARCH FUNCTIONALITY ----------
+function setupSearch() {
+  const searchInput = document.getElementById('search');
+  if (searchInput.hasListener) return;
+  searchInput.addEventListener('input', (e) => {
+    currentSearchTerm = e.target.value.toLowerCase();
+    if (!currentSearchTerm) {
+      currentFilteredPosts = [...allPosts];
+    } else {
+      currentFilteredPosts = allPosts.filter(post => {
+        if (post.title.toLowerCase().includes(currentSearchTerm)) return true;
+        if (post.plainContent.toLowerCase().includes(currentSearchTerm)) return true;
+        if (post.tags.some(tag => tag.toLowerCase().includes(currentSearchTerm))) return true;
+        return false;
+      });
+    }
+    displayedCount = 0;
+    insertedAdPositions.clear();
+    document.getElementById('posts').innerHTML = '';
+    renderPostsBatch();
+  });
+  searchInput.hasListener = true;
+}
 
-        // Search with debounce
-        let searchTimeout;
-        document.getElementById('searchInput').addEventListener('input', () => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                currentPage = 1;
-                displayPosts();
-            }, 300);
-        });
+// ---------- INFINITE SCROLL ----------
+function setupInfiniteScroll() {
+  let scrollHandler = function() {
+    if (isLoadingMore) return;
+    if (!isFetchingComplete) return;
+    if (displayedCount >= currentFilteredPosts.length) return;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    if (scrollY + windowHeight >= documentHeight - 350) {
+      isLoadingMore = true;
+      document.getElementById('infiniteLoader').style.display = 'block';
+      setTimeout(() => {
+        renderPostsBatch();
+        isLoadingMore = false;
+      }, 200);
+    }
+  };
+  window.removeEventListener('scroll', scrollHandler);
+  window.addEventListener('scroll', scrollHandler);
+  
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  const scrollBtnHandler = function() {
+    if (window.scrollY > 500) scrollBtn.classList.add('show');
+    else scrollBtn.classList.remove('show');
+  };
+  window.removeEventListener('scroll', scrollBtnHandler);
+  window.addEventListener('scroll', scrollBtnHandler);
+  scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-        // Load posts when page opens
-        fetchPosts();
-    </script>
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function openPost(index) {
+  const post = allPosts[index];
+  if (!post) return;
+  document.getElementById('homePage').style.display = 'none';
+  document.getElementById('postPage').style.display = 'block';
+  document.getElementById('postTitle').innerText = post.title;
+  if (post.date) {
+    document.getElementById('postMeta').innerHTML = `📅 ${post.date} | 🔗 ${post.link.replace('https://', '').split('/')[0]}`;
+  } else {
+    document.getElementById('postMeta').innerHTML = `🔗 ${post.link.replace('https://', '').split('/')[0]}`;
+  }
+  document.getElementById('postContent').innerHTML = post.html;
+  if (post.tags && post.tags.length) {
+    const tagsHtml = `<div class="post-footer-tags"><span class="post-footer-tag-label">🏷️ Tags:</span>${post.tags.map(tag => `<span class="post-footer-tag">#${escapeHtml(tag)}</span>`).join('')}</div>`;
+    document.getElementById('postFooter').innerHTML = tagsHtml;
+  } else {
+    document.getElementById('postFooter').innerHTML = '';
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goHome() {
+  document.getElementById('postPage').style.display = 'none';
+  document.getElementById('homePage').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function refreshPosts() {
+  allPosts = [];
+  displayedCount = 0;
+  currentFilteredPosts = [];
+  currentSearchTerm = '';
+  isFetchingComplete = false;
+  insertedAdPositions.clear();
+  document.getElementById('posts').innerHTML = '';
+  document.getElementById('search').value = '';
+  document.getElementById('infiniteLoader').style.display = 'none';
+  fetchAllPosts();
+}
+
+// Initialize
+document.getElementById('refreshBtn').addEventListener('click', refreshPosts);
+fetchAllPosts();
+</script>
+
+<!-- Load your external ad JS file - YOUR EXACT PATH -->
+<script src="/Ads/Js/randomads.js"></script>
+
+<!-- Signal that ad script has loaded -->
+<script>
+// Notify that ad script is ready
+window.adScriptLoaded = true;
+window.dispatchEvent(new Event('adsLoaded'));
+</script>
+
 </body>
 </html>
