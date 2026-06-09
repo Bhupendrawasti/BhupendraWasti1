@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>उपयोगी लिङ्कहरू</title>
+    <meta name="theme-color" content="#667eea">
+<link rel="manifest" href="/manifest.json">
+    
     <style>
         body {
             background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
@@ -425,5 +428,32 @@
         // Initial search
         searchLinks();
     </script>
+
+    <script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", async () => {
+        try {
+            const reg = await navigator.serviceWorker.register("/sw.js");
+
+            console.log("SW Registered:", reg);
+
+            // Auto update SW
+            reg.onupdatefound = () => {
+                const newWorker = reg.installing;
+                newWorker.onstatechange = () => {
+                    if (newWorker.state === "installed") {
+                        if (navigator.serviceWorker.controller) {
+                            console.log("New update available");
+                        }
+                    }
+                };
+            };
+
+        } catch (err) {
+            console.log("SW registration failed", err);
+        }
+    });
+}
+</script>
 </body>
 </html>
