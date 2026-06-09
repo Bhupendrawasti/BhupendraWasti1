@@ -84,12 +84,31 @@
         </div>
     </div>
 <script>
-    if("serviceWorker" in navigator){
-  window.addEventListener("load",()=>{
-    navigator.serviceWorker.register("/sw.js");
-  });
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", async () => {
+        try {
+            const reg = await navigator.serviceWorker.register("/sw.js");
+
+            console.log("SW Registered:", reg);
+
+            // Auto update SW
+            reg.onupdatefound = () => {
+                const newWorker = reg.installing;
+                newWorker.onstatechange = () => {
+                    if (newWorker.state === "installed") {
+                        if (navigator.serviceWorker.controller) {
+                            console.log("New update available");
+                        }
+                    }
+                };
+            };
+
+        } catch (err) {
+            console.log("SW registration failed", err);
+        }
+    });
 }
-          </script>
+</script>
 
         <script src="/Data/JavaScript/gaukhanekatha.js"></script>
 </body>
