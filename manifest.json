@@ -2,6 +2,7 @@
   "name": "Bhupendra Wasti",
   "short_name": "Bhupendra",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
@@ -13,7 +14,7 @@
       "type": "image/png"
     },
     {
-      "src": "favicon/web-app-manifest-512x512.png",
+      "src": "/favicon/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
