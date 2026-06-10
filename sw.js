@@ -6,7 +6,7 @@ const FILES = [
   "/",
   "/index.html",
   "/offline.html",
-
+  "/404.html",
   "/games.html",
   "/games/tictactoe.html",
   "/useful_link.html",
