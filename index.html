@@ -1,34 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Bhupendra Wasti" />
- <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#667eea">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+
     <title>Bhupendra Wasti</title>
 
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
-    
- <link rel="stylesheet" href="css/navbar.css">
- <link rel="stylesheet" href="css/style.css">
- <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
 
-    
-     <!-- Navigation -->
+<body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
 
     <a href="index.html" class="logo">
-      <img src="Media/ProfilePicture/logo.png"
-           alt="B"
-           loading="lazy" onerror="this.style.display='none'">
+      <img src="Media/ProfilePicture/logo.png" alt="Logo" width="40">
       <span>Bhupendra Wasti</span>
     </a>
 
@@ -36,113 +38,109 @@
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
     <ul class="nav-links">
-      <li><a href="/index.html"><img src="/Media/svg/home-1-white.svg" alt="Home" width="15" height="15" onerror="this.style.display='none'">  •Home</a></li>
-      <li><a href="/games.html"><img src="/Media/svg/game-white.svg" alt="Games" width="15" height="15" onerror="this.style.display='none'">  •Games</a></li>
-      <li><a href="/usefullinks.html"><img src="/Media/svg/earth-white.svg" alt="link" width="15" height="15" onerror="this.style.display='none'">  •Useful Links</a></li>
-      <li><a href="/gaukhanekatha.html"><img src="/Media/svg/thinking-think-white.svg" alt="GK" width="15" height="15" onerror="this.style.display='none'">  •Gaukhanekatha</a></li>
-      <li><a href="/tools.html"><img src="/Media/svg/tools-white.svg" alt="Tools" width="15" height="15" onerror="this.style.display='none'">  •Online Tools</a></li>
-      <li><a href="/about-us.html"><img src="/Media/svg/user-white.svg" alt="About" width="15" height="15" onerror="this.style.display='none'">  •About us</a></li>
-      
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/games.html">Games</a></li>
+      <li><a href="/usefullinks.html">Links</a></li>
+      <li><a href="/gaukhanekatha.html">GK</a></li>
+      <li><a href="/tools.html">Tools</a></li>
+      <li><a href="/about-us.html">About</a></li>
     </ul>
 
   </div>
 </nav>
 
+<!-- MAIN -->
+<main style="text-align:center; padding-top:60px;">
+    <img src="Media/ProfilePicture/logo.png" style="width:150px;">
+    <h1>Bhupendra Wasti</h1>
+    <p>Student | Developer | Creator</p>
+</main>
 
-</head>
-<body>
-   
-
-
-    <!-- Main Content -->
-    <main class="container1" style="padding-top: 40px;">
-        <section class="masthead1 text-center text-white">
-            <div class="header1">
-                <div class="animation">
-                    <img src="Media/ProfilePicture/logo.png" alt="Profile Picture" class="img-fluid rounded-circle" style="width: 90%;">
-                </div>
-                <div class="animation1 mt-4">
-                    <h1 class="display-4">Bhupendra Wasti</h1>
-                    <p class="lead1">Student</p>
-                </div>
-            </div>
-        </section>
-    </main>
-<button id="installBtn" style="display:none;">
-  📲 Install App
+<!-- INSTALL BUTTON -->
+<button id="installBtn" style="display:none; position:fixed; bottom:20px; right:20px; padding:10px 15px; background:#667eea; color:white; border:none; border-radius:10px;">
+📲 Install App
 </button>
-<!-- Footer -->
-<footer class="footer-basic bg-dark text-white mt-5">
-    <div class="container py-4">
-        <div class="social-links mb-3">
-            <a href="https://facebook.com/bhupendrawasti.official" target="_blank" rel="noopener">
-                <img src="Media/svg/facebook.svg" alt="Facebook" width="40" height="40" onerror="this.style.display='none'">
-            </a>
-            <a href="https://www.tiktok.com/@bhupendrawasti" target="_blank" rel="noopener">
-                <img src="Media/svg/tiktok.svg" alt="TikTok" width="40" height="40" onerror="this.style.display='none'">
-            </a>
-            <a href="https://youtube.com/" target="_blank" rel="noopener">
-                <img src="Media/svg/youtube-1.svg" alt="Youtube" width="40" height="40" onerror="this.style.display='none'">
-            </a>
-        </div>
-        <p class="mb-0">&copy; 2022 Bhupendra Wasti.<br> All rights reserved.</p>
-        <div class="mt-2">
-        </div>
-    </div>
+
+<!-- FOOTER -->
+<footer style="text-align:center; margin-top:50px;">
+    <p>&copy; 2026 Bhupendra Wasti</p>
 </footer>
+
+---
+
+# 🚀 SCRIPTS (FIXED PROPERLY)
+
+## 1️⃣ SERVICE WORKER REGISTER
 <script>
 if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
-        try {
-            const reg = await navigator.serviceWorker.register("/sw.js");
+    window.addEventListener("load", () => {
 
-            console.log("SW Registered:", reg);
+        // MAIN PWA SW
+        navigator.serviceWorker.register("/sw.js");
 
-            // Auto update SW
-            reg.onupdatefound = () => {
-                const newWorker = reg.installing;
-                newWorker.onstatechange = () => {
-                    if (newWorker.state === "installed") {
-                        if (navigator.serviceWorker.controller) {
-                            console.log("New update available");
-                        }
-                    }
-                };
-            };
+        // PUSH SW
+        navigator.serviceWorker.register("/firebase-messaging-sw.js");
 
-        } catch (err) {
-            console.log("SW registration failed", err);
-        }
     });
 }
 </script>
-    <script>
-        let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
+---
 
-  document.getElementById('installBtn').style.display = 'block';
+## 2️⃣ PWA INSTALL BUTTON
+<script>
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById("installBtn").style.display = "block";
 });
 
-document.getElementById('installBtn').addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-
-  deferredPrompt.prompt();
-  await deferredPrompt.userChoice;
-  deferredPrompt = null;
-
-  document.getElementById('installBtn').style.display = 'none';
+document.getElementById("installBtn").addEventListener("click", async () => {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    document.getElementById("installBtn").style.display = "none";
 });
-    </script>
-    <script>
-import { initPush } from "/js/firebase-messaging.js";
+</script>
 
-initPush();
+---
 
-        navigator.serviceWorker.register("/firebase-messaging-sw.js");
-        
-    </script>
+## 3️⃣ FIREBASE PUSH (FIXED PROPER WAY)
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-messaging.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDO1lzq-RlRvYpNnjSoEtFZFqW86-vOCLU",
+  authDomain: "bhupendra-pwa.firebaseapp.com",
+  projectId: "bhupendra-pwa",
+  messagingSenderId: "852947519760",
+  appId: "1:852947519760:web:e99c3e26c93912b8aa7d95"
+};
+
+const app = initializeApp(firebaseConfig);
+const messaging = getMessaging(app);
+
+// PUSH INIT
+async function initPush() {
+    const permission = await Notification.requestPermission();
+
+    if (permission !== "granted") {
+        console.log("Permission denied");
+        return;
+    }
+
+    const token = await getToken(messaging, {
+        vapidKey: "BPrKV8gDtcYj4t5tTIL5hFZipYYq-8pXj-T60GCC7Wi8FkbdxB3A1C9k6E85H731JoHTrzMy6_zpkk346eN_Gpg"
+    });
+
+    console.log("FCM TOKEN:", token);
+}
+
+window.addEventListener("load", initPush);
+</script>
+
 </body>
-    </html>
+</html>
