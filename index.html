@@ -136,5 +136,13 @@ document.getElementById('installBtn').addEventListener('click', async () => {
   document.getElementById('installBtn').style.display = 'none';
 });
     </script>
+    <script>
+import { initPush } from "/js/firebase-messaging.js";
+
+initPush();
+
+        navigator.serviceWorker.register("/firebase-messaging-sw.js");
+        
+    </script>
 </body>
     </html>
