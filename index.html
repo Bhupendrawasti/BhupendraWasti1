@@ -68,7 +68,9 @@
             </div>
         </section>
     </main>
-
+<button id="installBtn" style="display:none;">
+  📲 Install App
+</button>
 <!-- Footer -->
 <footer class="footer-basic bg-dark text-white mt-5">
     <div class="container py-4">
@@ -114,5 +116,25 @@ if ("serviceWorker" in navigator) {
     });
 }
 </script>
+    <script>
+        let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  document.getElementById('installBtn').style.display = 'block';
+});
+
+document.getElementById('installBtn').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null;
+
+  document.getElementById('installBtn').style.display = 'none';
+});
+    </script>
 </body>
     </html>
