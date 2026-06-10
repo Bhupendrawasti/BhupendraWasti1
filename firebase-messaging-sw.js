@@ -2,7 +2,7 @@ importScripts("https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js");
 importScripts("https://www.gstatic.com/firebasejs/12.14.0/firebase-messaging.js");
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDO1...",
+  apiKey: "AIzaSyDO1lzq-RlRvYpNnjSoEtFZFqW86-vOCLU",
   authDomain: "bhupendra-pwa.firebaseapp.com",
   projectId: "bhupendra-pwa",
   storageBucket: "bhupendra-pwa.firebasestorage.app",
