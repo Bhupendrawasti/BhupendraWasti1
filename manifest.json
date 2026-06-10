@@ -1,12 +1,14 @@
 {
   "name": "Bhupendra Wasti",
   "short_name": "Bhupendra",
+  "description": "Games, tools, quizzes, current affairs and educational resources.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
   "orientation": "portrait",
+  "categories": ["education","games","productivity"],
   "icons": [
     {
       "src": "/favicon/web-app-manifest-192x192.png",
