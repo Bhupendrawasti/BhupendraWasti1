@@ -1,0 +1,267 @@
+[
+{
+"id":"police",
+"category":"police",
+"image":"Media/Icons/police.webp",
+"icon":"🚓",
+"en":"Police",
+"np":"प्रहरी",
+"number":"100",
+"searchKeywords":"police prahari प्रहरी"
+},
+{
+"id":"fire",
+"category":"fire",
+"image":"Media/Icons/fire.webp",
+"icon":"🚒",
+"en":"Fire Brigade",
+"np":"दमकल",
+"number":"101",
+"searchKeywords":"fire brigade damkal दमकल"
+},
+{
+"id":"ambulance",
+"category":"ambulance",
+"image":"Media/Icons/ambulance.webp",
+"icon":"🚑",
+"en":"Ambulance",
+"np":"एम्बुलेन्स",
+"number":"102",
+"searchKeywords":"ambulance emergency hospital emt एम्बुलेन्स"
+},
+{
+"id":"traffic",
+"category":"police",
+"image":"Media/Icons/traffic.webp",
+"icon":"🚦",
+"en":"Traffic Police",
+"np":"ट्राफिक प्रहरी",
+"number":"103",
+"searchKeywords":"traffic police prahari ट्राफिक"
+},
+{
+"id":"child_missing",
+"category":"child",
+"image":"Media/Icons/child.webp",
+"icon":"👶",
+"en":"Child Missing Emergency",
+"np":"हराएको बालबालिका",
+"number":"104",
+"searchKeywords":"child missing lost kid बालबालिका"
+},
+
+{
+"id":"ciaa",
+"category":"other",
+"image":"Media/Icons/corruption.webp",
+"icon":"🛡️",
+"en":"CIAA (Anti Corruption)",
+"np":"अख्तियार दुरुपयोग आयोग",
+"number":"107",
+"searchKeywords":"ciaa corruption anti corruption अख्तियार"
+},
+{
+"id":"army_kathmandu",
+"category":"other",
+"image":"Media/Icons/army.webp",
+"icon":"🎖️",
+"en":"Nepal Army Kathmandu",
+"np":"नेपाली सेना काठमाडौँ",
+"number":"105",
+"searchKeywords":"army nepal sena military सेना"
+},
+{
+"id":"army_central",
+"category":"other",
+"image":"Media/Icons/army.webp",
+"icon":"🎖️",
+"en":"Central Army",
+"np":"केन्द्रीय सेना",
+"number":"106",
+"searchKeywords":"army central sena military"
+},
+{
+"id":"apf",
+"category":"police",
+"image":"Media/Icons/apf.webp",
+"icon":"🛡️",
+"en":"Armed Police Force",
+"np":"सशस्त्र प्रहरी",
+"number":"1114",
+"searchKeywords":"apf armed police force प्रहरी"
+},
+{
+"id":"np_hq",
+"category":"police",
+"image":"Media/Icons/police_hq.webp",
+"icon":"🏢",
+"en":"Nepal Police HQ Naxal",
+"np":"नेपाल प्रहरी प्रधान कार्यालय",
+"number":"1113",
+"searchKeywords":"police hq nepal naxal प्रहरी"
+},
+
+{
+"id":"child_rights",
+"category":"child",
+"image":"Media/Icons/child_rights.webp",
+"icon":"👶",
+"en":"Child Rights",
+"np":"बाल अधिकार",
+"number":"1098",
+"searchKeywords":"child rights protection बाल अधिकार"
+},
+{
+"id":"health_emergency",
+"category":"health",
+"image":"Media/Icons/health.webp",
+"icon":"🏥",
+"en":"Health Emergency",
+"np":"स्वास्थ्य आपतकाल",
+"number":"1115",
+"searchKeywords":"health emergency hospital medical स्वास्थ्य"
+},
+{
+"id":"women",
+"category":"women",
+"image":"Media/Icons/women.webp",
+"icon":"👩",
+"en":"National Women Commission",
+"np":"राष्ट्रिय महिला आयोग",
+"number":"1145",
+"searchKeywords":"women commission help harassment महिला"
+},
+{
+"id":"human_trafficking",
+"category":"other",
+"image":"Media/Icons/trafficking.webp",
+"icon":"🚨",
+"en":"Human Trafficking Bureau",
+"np":"मानव बेचबिखन नियन्त्रण",
+"number":"1177",
+"searchKeywords":"human trafficking crime rescue बचबिखन"
+},
+
+{
+"id":"black_market",
+"category":"other",
+"image":"Media/Icons/market.webp",
+"icon":"⚠️",
+"en":"Black Market Control",
+"np":"कालोबजारी नियन्त्रण",
+"number":"1137",
+"searchKeywords":"black market illegal price कालोबजारी"
+},
+{
+"id":"energy_ministry",
+"category":"other",
+"image":"Media/Icons/energy.webp",
+"icon":"⚡",
+"en":"Energy Ministry",
+"np":"ऊर्जा मन्त्रालय",
+"number":"1155",
+"searchKeywords":"energy ministry electricity power ऊर्जा"
+},
+{
+"id":"electricity",
+"category":"other",
+"image":"Media/Icons/electricity.webp",
+"icon":"💡",
+"en":"Electricity Line",
+"np":"विद्युत लाइन",
+"number":"1151",
+"searchKeywords":"electricity line power outage बत्ती"
+},
+{
+"id":"nea",
+"category":"other",
+"image":"Media/Icons/nea.webp",
+"icon":"⚡",
+"en":"Nepal Electricity Authority",
+"np":"नेपाल विद्युत प्राधिकरण",
+"number":"1150",
+"searchKeywords":"nea electricity authority nepal विद्युत"
+},
+{
+"id":"red_cross",
+"category":"other",
+"image":"Media/Icons/redcross.webp",
+"icon":"🩸",
+"en":"Nepal Red Cross",
+"np":"नेपाल रेडक्रस",
+"number":"1130",
+"searchKeywords":"red cross blood emergency blood donation"
+},
+
+{
+"id":"disaster",
+"category":"other",
+"image":"Media/Icons/disaster.webp",
+"icon":"🌪️",
+"en":"Natural Disaster",
+"np":"प्राकृतिक विपद",
+"number":"1149",
+"searchKeywords":"earthquake flood disaster emergency विपद"
+},
+{
+"id":"covid",
+"category":"other",
+"image":"Media/Icons/covid.webp",
+"icon":"🦠",
+"en":"Corona Inquiry",
+"np":"कोरोना जानकारी",
+"number":"1140",
+"searchKeywords":"covid corona virus health"
+},
+{
+"id":"tourist_police",
+"category":"police",
+"image":"Media/Icons/tourist.webp",
+"icon":"👮",
+"en":"Tourist Police",
+"np":"पर्यटक प्रहरी",
+"number":"1144",
+"searchKeywords":"tourist police visitor help safety"
+},
+
+{
+"id":"telephone",
+"category":"other",
+"image":"Media/Icons/phone.webp",
+"icon":"☎️",
+"en":"Telephone Enquiry",
+"np":"टेलिफोन जानकारी",
+"number":"197",
+"searchKeywords":"telephone enquiry operator information"
+},
+{
+"id":"sarkar",
+"category":"other",
+"image":"Media/Icons/sarkar.webp",
+"icon":"🏛️",
+"en":"Hello Sarkar",
+"np":"हेल्लो सरकार",
+"number":"1111",
+"searchKeywords":"hello sarkar government help"
+},
+{
+"id":"home_ministry",
+"category":"other",
+"image":"Media/Icons/home.webp",
+"icon":"🏢",
+"en":"Home Ministry",
+"np":"गृह मन्त्रालय",
+"number":"1112",
+"searchKeywords":"home ministry government nepal"
+},
+{
+"id":"info_unit",
+"category":"other",
+"image":"Media/Icons/info.webp",
+"icon":"📞",
+"en":"Police Info Unit",
+"np":"सूचना केन्द्र",
+"number":"16600141516",
+"searchKeywords":"info police unit information center"
+}
+]
