@@ -1,4 +1,4 @@
-const CACHE_NAME = "bhupendra-v3";
+const CACHE_NAME = "bhupendra-v4";
 const RUNTIME_CACHE = "bhupendra-runtime";
 
 // Core files to cache during installation
