@@ -66,11 +66,11 @@
     <p>&copy; 2026 Bhupendra Wasti</p>
 </footer>
 
----
+<!--
 
 # 🚀 SCRIPTS (FIXED PROPERLY)
 
-## 1️⃣ SERVICE WORKER REGISTER
+## 1️⃣ SERVICE WORKER REGISTER-->
 <script>
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -85,9 +85,9 @@ if ("serviceWorker" in navigator) {
 }
 </script>
 
----
+<!--
 
-## 2️⃣ PWA INSTALL BUTTON
+## 2️⃣ PWA INSTALL BUTTON-->
 <script>
 let deferredPrompt;
 
@@ -105,9 +105,8 @@ document.getElementById("installBtn").addEventListener("click", async () => {
 });
 </script>
 
----
-
-## 3️⃣ FIREBASE PUSH (FIXED PROPER WAY)
+<!--
+## 3️⃣ FIREBASE PUSH (FIXED PROPER WAY)-->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
 import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-messaging.js";
