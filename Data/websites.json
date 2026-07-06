@@ -1,0 +1,553 @@
+[
+  {
+    "id": "nid-check",
+    "category": "identity",
+    "title": {
+      "en": "Check National ID Number",
+      "np": "राष्ट्रिय परिचयपत्र नम्बर हेर्न"
+    },
+    "description": {
+      "en": "Verify and check your National Identity Card number online through the official citizen portal.",
+      "np": "आधिकारिक नागरिक पोर्टल मार्फत आफ्नो राष्ट्रिय परिचयपत्र नम्बर अनलाइन जाँच गर्नुहोस्।"
+    },
+    "image": "/assets/images/id-check.webp",
+    "icon": "🪪",
+    "url": "https://citizenportal.donidcr.gov.np/en/check-national-id-number",
+    "keywords": ["nid", "national id", "राष्ट्रिय परिचयपत्र", "नागरिकता", "identity card"],
+    "featured": true,
+    "official": true,
+    "popular": 950
+  },
+  {
+    "id": "nid-status",
+    "category": "identity",
+    "title": {
+      "en": "Check National ID Card Status",
+      "np": "राष्ट्रिय परिचय पत्रको अवस्था जाँच"
+    },
+    "description": {
+      "en": "Track the status of your National Identity Card application online.",
+      "np": "आफ्नो राष्ट्रिय परिचयपत्र आवेदनको अवस्था अनलाइन ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/id-status.webp",
+    "icon": "📋",
+    "url": "https://citizenportal.donidcr.gov.np/ne/check-nid-card-status",
+    "keywords": ["nid status", "card status", "परिचयपत्र अवस्था", "status check"],
+    "featured": false,
+    "official": true,
+    "popular": 720
+  },
+  {
+    "id": "nid-apply",
+    "category": "identity",
+    "title": {
+      "en": "Apply for National ID Card",
+      "np": "राष्ट्रिय परिचयपत्रको आवेदन दिन"
+    },
+    "description": {
+      "en": "Submit your application for a new National Identity Card through the pre-enrollment portal.",
+      "np": "पूर्व-दर्ता पोर्टल मार्फत नयाँ राष्ट्रिय परिचयपत्रको लागि आवेदन दिनुहोस्।"
+    },
+    "image": "/assets/images/id-apply.webp",
+    "icon": "📝",
+    "url": "https://enrollment.donidcr.gov.np/PreEnrollment/",
+    "keywords": ["apply nid", "new id", "नयाँ परिचयपत्र", "आवेदन", "enrollment"],
+    "featured": true,
+    "official": true,
+    "popular": 890
+  },
+  {
+    "id": "driving-license",
+    "category": "identity",
+    "title": {
+      "en": "Apply for Driving License",
+      "np": "सवारीचालक अनुमतिपत्र आवेदन"
+    },
+    "description": {
+      "en": "Online application portal for new driving license in Nepal. Apply, renew, or track your license status.",
+      "np": "नेपालमा नयाँ सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/driving-license.webp",
+    "icon": "🚗",
+    "url": "https://applydlnew.dotm.gov.np/login",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm"],
+    "featured": true,
+    "official": true,
+    "popular": 850
+  },
+  {
+    "id": "passport",
+    "category": "identity",
+    "title": {
+      "en": "Apply for E-Passport",
+      "np": "विद्युतीय राहदानी आवेदन"
+    },
+    "description": {
+      "en": "Apply for Nepal's electronic passport (e-passport) through the official online portal.",
+      "np": "आधिकारिक अनलाइन पोर्टल मार्फत नेपालको विद्युतीय राहदानी (ई-पासपोर्ट) को लागि आवेदन दिनुहोस्।"
+    },
+    "image": "/assets/images/passport.webp",
+    "icon": "🛂",
+    "url": "https://emrtds.nepalpassport.gov.np/",
+    "keywords": ["passport", "e-passport", "राहदानी", "पासपोर्ट", "विद्युतीय"],
+    "featured": true,
+    "official": true,
+    "popular": 920
+  },
+  {
+    "id": "labor-approval",
+    "category": "government",
+    "title": {
+      "en": "Online Labor Approval",
+      "np": "अनलाइन श्रम स्वीकृति"
+    },
+    "description": {
+      "en": "Get labor approval for foreign employment online through the Department of Foreign Employment portal.",
+      "np": "वैदेशिक रोजगार विभागको पोर्टल मार्फत वैदेशिक रोजगारको लागि अनलाइन श्रम स्वीकृति लिनुहोस्।"
+    },
+    "image": "/assets/images/labor.webp",
+    "icon": "💼",
+    "url": "https://feims.dofe.gov.np/New-Individual-Login",
+    "keywords": ["labor", "foreign employment", "श्रम", "वैदेशिक रोजगार", "स्वीकृति"],
+    "featured": false,
+    "official": true,
+    "popular": 680
+  },
+  {
+    "id": "police-clearance",
+    "category": "government",
+    "title": {
+      "en": "Police Clearance Certificate",
+      "np": "प्रहरी चारित्रिक प्रमाणपत्र"
+    },
+    "description": {
+      "en": "Apply for Police Clearance Certificate (Character Certificate) online through Nepal Police portal.",
+      "np": "नेपाल प्रहरी पोर्टल मार्फत अनलाइन प्रहरी चारित्रिक प्रमाणपत्र (क्यारेक्टर सर्टिफिकेट) को लागि आवेदन दिनुहोस्।"
+    },
+    "image": "/assets/images/police.webp",
+    "icon": "👮",
+    "url": "https://opcr.nepalpolice.gov.np/#/login",
+    "keywords": ["police", "clearance", "character", "प्रहरी", "चारित्रिक", "प्रमाणपत्र"],
+    "featured": false,
+    "official": true,
+    "popular": 750
+  },
+  {
+    "id": "noc-certificate",
+    "category": "government",
+    "title": {
+      "en": "NOC Certificate",
+      "np": "नो अब्जेक्सन सर्टिफिकेट"
+    },
+    "description": {
+      "en": "Apply for No Objection Certificate (NOC) for various purposes through the Ministry of Education portal.",
+      "np": "शिक्षा मन्त्रालय पोर्टल मार्फत विभिन्न प्रयोजनको लागि नो अब्जेक्सन सर्टिफिकेट (NOC) को लागि आवेदन दिनुहोस्।"
+    },
+    "image": "/assets/images/noc.webp",
+    "icon": "📜",
+    "url": "https://noc.moest.gov.np/",
+    "keywords": ["noc", "no objection", "certificate", "सर्टिफिकेट", "शिक्षा"],
+    "featured": false,
+    "official": true,
+    "popular": 520
+  },
+  {
+    "id": "voter-list",
+    "category": "government",
+    "title": {
+      "en": "Check Voter List",
+      "np": "मतदाता नामावली हेर्न"
+    },
+    "description": {
+      "en": "Check your name in the voter list and find your polling station through the Election Commission portal.",
+      "np": "निर्वाचन आयोग पोर्टल मार्फत मतदाता नामावलीमा आफ्नो नाम जाँच गर्नुहोस् र आफ्नो मतदान केन्द्र पत्ता लगाउनुहोस्।"
+    },
+    "image": "/assets/images/voterid.webp",
+    "icon": "🗳️",
+    "url": "https://election.gov.np/np/page/voter-list-db",
+    "keywords": ["voter", "election", "मतदाता", "निर्वाचन", "नामावली", "voter list"],
+    "featured": false,
+    "official": true,
+    "popular": 610
+  },
+  {
+    "id": "voter-registration",
+    "category": "government",
+    "title": {
+      "en": "Voter Registration",
+      "np": "मतदाता नामावलीमा नाम दर्ता"
+    },
+    "description": {
+      "en": "Register your name in the voter list online through the Election Commission's pre-registration portal.",
+      "np": "निर्वाचन आयोगको पूर्व-दर्ता पोर्टल मार्फत अनलाइन मतदाता नामावलीमा आफ्नो नाम दर्ता गर्नुहोस्।"
+    },
+    "image": "/assets/images/voter-register.webp",
+    "icon": "✍️",
+    "url": "https://applyvr.election.gov.np/Login/Preregistration/EnterMobileNo",
+    "keywords": ["voter registration", "मतदाता दर्ता", "नाम दर्ता", "election"],
+    "featured": false,
+    "official": true,
+    "popular": 580
+  },
+  {
+    "id": "nagarik-app-android",
+    "category": "utilities",
+    "title": {
+      "en": "Nagarik App - Android",
+      "np": "नागरिक एप - एन्ड्रोइड"
+    },
+    "description": {
+      "en": "Download the official Nagarik App for Android. Access government services digitally from your phone.",
+      "np": "एन्ड्रोइडको लागि आधिकारिक नागरिक एप डाउनलोड गर्नुहोस्। आफ्नो फोनबाट डिजिटल रूपमा सरकारी सेवाहरू पहुँच गर्नुहोस्।"
+    },
+    "image": "/assets/images/nagarik-app.webp",
+    "icon": "📱",
+    "url": "https://play.google.com/store/apps/details?id=com.yajtech.nagarikapp",
+    "keywords": ["nagarik app", "नागरिक एप", "android", "mobile app", "government app"],
+    "featured": true,
+    "official": true,
+    "popular": 980
+  },
+  {
+    "id": "nagarik-app-ios",
+    "category": "utilities",
+    "title": {
+      "en": "Nagarik App - iOS",
+      "np": "नागरिक एप - आइओएस"
+    },
+    "description": {
+      "en": "Download the official Nagarik App for iOS devices. Access government services digitally from your iPhone.",
+      "np": "आइओएस उपकरणहरूको लागि आधिकारिक नागरिक एप डाउनलोड गर्नुहोस्। आफ्नो आइफोनबाट डिजिटल रूपमा सरकारी सेवाहरू पहुँच गर्नुहोस्।"
+    },
+    "image": "/assets/images/nagarik-app.webp",
+    "icon": "🍎",
+    "url": "https://apps.apple.com/app/id1493013430",
+    "keywords": ["nagarik app", "नागरिक एप", "ios", "iphone", "apple"],
+    "featured": false,
+    "official": true,
+    "popular": 760
+  },
+  {
+    "id": "nagarik-app-web",
+    "category": "utilities",
+    "title": {
+      "en": "Nagarik App - Official Website",
+      "np": "नागरिक एप - आधिकारिक वेबसाइट"
+    },
+    "description": {
+      "en": "Visit the official Nagarik App website for more information and web-based access to services.",
+      "np": "थप जानकारी र सेवाहरूमा वेब-आधारित पहुँचको लागि आधिकारिक नागरिक एप वेबसाइट भ्रमण गर्नुहोस्।"
+    },
+    "image": "/assets/images/nagarik-app.webp",
+    "icon": "🌐",
+    "url": "https://web.nagarikapp.gov.np/",
+    "keywords": ["nagarik app web", "नागरिक एप वेब", "website"],
+    "featured": false,
+    "official": true,
+    "popular": 640
+  },
+  {
+    "id": "loksewa-central",
+    "category": "loksewa",
+    "title": {
+      "en": "Federal PSC - Online Application",
+      "np": "संघीय लोकसेवा आयोग - अनलाइन आवेदन"
+    },
+    "description": {
+      "en": "Apply online for Federal Public Service Commission (Loksewa) examinations and view results.",
+      "np": "संघीय लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन दिनुहोस् र नतिजा हेर्नुहोस्।"
+    },
+    "image": "/assets/images/loksewa.webp",
+    "icon": "🏛️",
+    "url": "https://psconline1.psc.gov.np/#/home",
+    "keywords": ["loksewa", "psc", "public service commission", "लोकसेवा", "आयोग", "federal"],
+    "featured": true,
+    "official": true,
+    "popular": 960
+  },
+  {
+    "id": "loksewa-koshi",
+    "category": "loksewa",
+    "title": {
+      "en": "Koshi Province PSC",
+      "np": "कोशी प्रदेश लोकसेवा आयोग"
+    },
+    "description": {
+      "en": "Online application portal for Koshi Province Public Service Commission examinations.",
+      "np": "कोशी प्रदेश लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन पोर्टल।"
+    },
+    "image": "/assets/images/loksewa-koshi.webp",
+    "icon": "🏔️",
+    "url": "https://psconline.p1.gov.np/login",
+    "keywords": ["loksewa", "koshi", "province", "कोशी", "प्रदेश", "p1"],
+    "featured": false,
+    "official": true,
+    "popular": 540
+  },
+  {
+    "id": "loksewa-madhesh",
+    "category": "loksewa",
+    "title": {
+      "en": "Madhesh Province PSC",
+      "np": "मधेश प्रदेश लोकसेवा आयोग"
+    },
+    "description": {
+      "en": "Online application portal for Madhesh Province Public Service Commission examinations.",
+      "np": "मधेश प्रदेश लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन पोर्टल।"
+    },
+    "image": "/assets/images/loksewa-madhesh.webp",
+    "icon": "🌾",
+    "url": "https://ppsconline.p2.gov.np/login/",
+    "keywords": ["loksewa", "madhesh", "province", "मधेश", "प्रदेश", "p2"],
+    "featured": false,
+    "official": true,
+    "popular": 490
+  },
+  {
+    "id": "loksewa-bagmati",
+    "category": "loksewa",
+    "title": {
+      "en": "Bagmati Province PSC",
+      "np": "बागमती प्रदेश लोकसेवा आयोग"
+    },
+    "description": {
+      "en": "Online application portal for Bagmati Province Public Service Commission examinations.",
+      "np": "बागमती प्रदेश लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन पोर्टल।"
+    },
+    "image": "/assets/images/loksewa.webp",
+    "icon": "🏙️",
+    "url": "https://ppsconline.bagamati.gov.np/login",
+    "keywords": ["loksewa", "bagmati", "province", "बागमती", "प्रदेश"],
+    "featured": false,
+    "official": true,
+    "popular": 560
+  },
+  {
+    "id": "loksewa-gandaki",
+    "category": "loksewa",
+    "title": {
+      "en": "Gandaki Province PSC",
+      "np": "गण्डकी प्रदेश लोकसेवा आयोग"
+    },
+    "description": {
+      "en": "Online application portal for Gandaki Province Public Service Commission examinations.",
+      "np": "गण्डकी प्रदेश लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन पोर्टल।"
+    },
+    "image": "/assets/images/loksewa-gandaki.webp",
+    "icon": "⛰️",
+    "url": "https://onlineppsc.gandaki.gov.np/login",
+    "keywords": ["loksewa", "gandaki", "province", "गण्डकी", "प्रदेश"],
+    "featured": false,
+    "official": true,
+    "popular": 470
+  },
+  {
+    "id": "loksewa-lumbini",
+    "category": "loksewa",
+    "title": {
+      "en": "Lumbini Province PSC",
+      "np": "लुम्बिनी प्रदेश लोकसेवा आयोग"
+    },
+    "description": {
+      "en": "Online application portal for Lumbini Province Public Service Commission examinations.",
+      "np": "लुम्बिनी प्रदेश लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन पोर्टल।"
+    },
+    "image": "/assets/images/loksewa-lumbini.webp",
+    "icon": "🕊️",
+    "url": "https://ppsconline.lumbini.gov.np/login",
+    "keywords": ["loksewa", "lumbini", "province", "लुम्बिनी", "प्रदेश"],
+    "featured": false,
+    "official": true,
+    "popular": 450
+  },
+  {
+    "id": "loksewa-karnali",
+    "category": "loksewa",
+    "title": {
+      "en": "Karnali Province PSC",
+      "np": "कर्णाली प्रदेश लोकसेवा आयोग"
+    },
+    "description": {
+      "en": "Online application portal for Karnali Province Public Service Commission examinations.",
+      "np": "कर्णाली प्रदेश लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन पोर्टल।"
+    },
+    "image": "/assets/images/loksewa-karnali.webp",
+    "icon": "🏞️",
+    "url": "https://ppsconline.karnali.gov.np/#/login",
+    "keywords": ["loksewa", "karnali", "province", "कर्णाली", "प्रदेश"],
+    "featured": false,
+    "official": true,
+    "popular": 430
+  },
+  {
+    "id": "loksewa-sudurpashchim",
+    "category": "loksewa",
+    "title": {
+      "en": "Sudurpashchim Province PSC",
+      "np": "सुदूरपश्चिम प्रदेश लोकसेवा आयोग"
+    },
+    "description": {
+      "en": "Online application portal for Sudurpashchim Province Public Service Commission examinations.",
+      "np": "सुदूरपश्चिम प्रदेश लोकसेवा आयोग परीक्षाहरूको लागि अनलाइन आवेदन पोर्टल।"
+    },
+    "image": "/assets/images/loksewa-sudurpashchim.webp",
+    "icon": "🌄",
+    "url": "https://ppsconline.sudurpashchim.gov.np/login",
+    "keywords": ["loksewa", "sudurpashchim", "province", "सुदूरपश्चिम", "प्रदेश"],
+    "featured": false,
+    "official": true,
+    "popular": 420
+  },
+  {
+    "id": "tsc-license",
+    "category": "education",
+    "title": {
+      "en": "Teacher Service Commission",
+      "np": "शिक्षक सेवा आयोग दरखास्त पोर्टल"
+    },
+    "description": {
+      "en": "Apply for teaching license and view TSC examination results through the official Teacher Service Commission portal.",
+      "np": "आधिकारिक शिक्षक सेवा आयोग पोर्टल मार्फत अध्यापन अनुमति पत्रको लागि आवेदन दिनुहोस् र TSC परीक्षा नतिजा हेर्नुहोस्।"
+    },
+    "image": "/assets/images/TSC.webp",
+    "icon": "👨‍🏫",
+    "url": "https://license.tsc.gov.np/auth/login",
+    "keywords": ["tsc", "teacher", "teaching license", "शिक्षक", "अध्यापन अनुमति पत्र", "शिक्षक सेवा आयोग"],
+    "featured": true,
+    "official": true,
+    "popular": 780
+  },
+  {
+    "id": "see-result",
+    "category": "education",
+    "title": {
+      "en": "SEE Result Check",
+      "np": "SEE को रिजल्ट चेक गर्न"
+    },
+    "description": {
+      "en": "Check Secondary Education Examination (SEE) results online through NTC portal.",
+      "np": "NTC पोर्टल मार्फत माध्यमिक शिक्षा परीक्षा (SEE) को नतिजा अनलाइन जाँच गर्नुहोस्।"
+    },
+    "image": "/assets/images/NEB.webp",
+    "icon": "📚",
+    "url": "https://see.ntc.net.np/",
+    "keywords": ["see", "result", "exam", "परीक्षा", "नतिजा", "SEE result", "class 10"],
+    "featured": false,
+    "official": true,
+    "popular": 820
+  },
+  {
+    "id": "neb-result",
+    "category": "education",
+    "title": {
+      "en": "Class 12 Result Check",
+      "np": "कक्षा १२ को रिजल्ट चेक गर्न"
+    },
+    "description": {
+      "en": "Check National Examination Board (NEB) Class 12 results online.",
+      "np": "राष्ट्रिय परीक्षा बोर्ड (NEB) कक्षा १२ को नतिजा अनलाइन जाँच गर्नुहोस्।"
+    },
+    "image": "/assets/images/NEB.webp",
+    "icon": "🎓",
+    "url": "https://neb.ntc.net.np/",
+    "keywords": ["neb", "class 12", "result", "परीक्षा", "नतिजा", "कक्षा १२", "+2"],
+    "featured": false,
+    "official": true,
+    "popular": 790
+  },
+  {
+    "id": "tu-student-portal",
+    "category": "education",
+    "title": {
+      "en": "TU Student Portal",
+      "np": "त्रिभुवन विश्वविद्यालय विद्यार्थी पोर्टल"
+    },
+    "description": {
+      "en": "Tribhuvan University student portal for exam form submission, results, and academic information.",
+      "np": "परीक्षा फारम भर्न, नतिजा, र शैक्षिक जानकारीको लागि त्रिभुवन विश्वविद्यालय विद्यार्थी पोर्टल।"
+    },
+    "image": "/assets/images/TU.webp",
+    "icon": "🏫",
+    "url": "https://student.exam.tu.edu.np/",
+    "keywords": ["tu", "tribhuwan university", "student portal", "त्रिभुवन", "विश्वविद्यालय", "student"],
+    "featured": false,
+    "official": true,
+    "popular": 700
+  },
+  {
+    "id": "tu-result",
+    "category": "education",
+    "title": {
+      "en": "TU Result Check",
+      "np": "त्रिभुवन विश्वविद्यालयको रिजल्ट"
+    },
+    "description": {
+      "en": "Check Tribhuvan University examination results online through the official result portal.",
+      "np": "आधिकारिक नतिजा पोर्टल मार्फत त्रिभुवन विश्वविद्यालय परीक्षा नतिजा अनलाइन जाँच गर्नुहोस्।"
+    },
+    "image": "/assets/images/TU.webp",
+    "icon": "📊",
+    "url": "https://result.tuexam.edu.np/",
+    "keywords": ["tu result", "tribhuwan", "exam result", "परीक्षा नतिजा", "त्रिभुवन"],
+    "featured": false,
+    "official": true,
+    "popular": 660
+  },
+  {
+    "id": "meroshare-login",
+    "category": "finance",
+    "title": {
+      "en": "Meroshare Login",
+      "np": "मेरोशेयर लगइन"
+    },
+    "description": {
+      "en": "Login to Meroshare - CDSC's online platform for IPO applications, share transactions, and portfolio management.",
+      "np": "मेरोशेयरमा लगइन गर्नुहोस् - IPO आवेदन, शेयर कारोबार, र पोर्टफोलियो व्यवस्थापनको लागि CDSC को अनलाइन प्लेटफर्म।"
+    },
+    "image": "/assets/images/Meroshare.webp",
+    "icon": "📈",
+    "url": "https://meroshare.cdsc.com.np/#/login",
+    "keywords": ["meroshare", "cdsc", "share", "ipo", "मेरोशेयर", "शेयर", "सेयर"],
+    "featured": true,
+    "official": true,
+    "popular": 990
+  },
+  {
+    "id": "share-result",
+    "category": "finance",
+    "title": {
+      "en": "IPO Result Check",
+      "np": "शेयर/IPO को रिजल्ट चेक"
+    },
+    "description": {
+      "en": "Check IPO results and share allotment results through CDSC's online portal.",
+      "np": "CDSC को अनलाइन पोर्टल मार्फत IPO नतिजा र शेयर बाँडफाँड नतिजा जाँच गर्नुहोस्।"
+    },
+    "image": "/assets/images/Meroshare.webp",
+    "icon": "💰",
+    "url": "https://iporesult.cdsc.com.np/",
+    "keywords": ["ipo result", "share result", "cdsc", "allotment", "शेयर नतिजा", "IPO"],
+    "featured": false,
+    "official": true,
+    "popular": 830
+  },
+  {
+    "id": "domain-registration",
+    "category": "utilities",
+    "title": {
+      "en": ".com.np Domain Registration",
+      "np": ".com.np डोमेन दर्ता"
+    },
+    "description": {
+      "en": "Register .com.np domain for free through the official domain registration portal.",
+      "np": "आधिकारिक डोमेन दर्ता पोर्टल मार्फत नि:शुल्क .com.np डोमेन दर्ता गर्नुहोस्।"
+    },
+    "image": "/assets/images/comreg.webp",
+    "icon": "🌐",
+    "url": "https://register.com.np/",
+    "keywords": ["domain", "register", "com.np", "डोमेन", "दर्ता", "free domain"],
+    "featured": false,
+    "official": true,
+    "popular": 550
+  }
+]
