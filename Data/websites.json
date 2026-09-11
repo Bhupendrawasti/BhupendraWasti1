@@ -1,14 +1,14 @@
 [
   {
-    "id": "nid-check",
-    "category": "identity",
+    "id": "nid-download",
+    "category": ["identity", "Government"],
     "title": {
-      "en": "Check National ID Number",
-      "np": "राष्ट्रिय परिचयपत्र नम्बर हेर्न"
+      "en": "Download Your eNID ",
+      "np": "राष्ट्रिय परिचयपत्र डाउनलोड गर्न "
     },
     "description": {
-      "en": "Verify and check your National Identity Card number online through the official citizen portal.",
-      "np": "आधिकारिक नागरिक पोर्टल मार्फत आफ्नो राष्ट्रिय परिचयपत्र नम्बर अनलाइन जाँच गर्नुहोस्।"
+      "en": "Enter your citizenship details to download your eNID.",
+      "np": " नागरिकता विवरणका आधारमा आफ्नो eNID डाउनलोड गर्नुहोस्।"
     },
     "image": "/assets/images/id-check.webp",
     "icon": "🪪",
@@ -20,7 +20,7 @@
   },
   {
     "id": "nid-status",
-    "category": "identity",
+    "category": ["identity", "Government"],
     "title": {
       "en": "Check National ID Card Status",
       "np": "राष्ट्रिय परिचय पत्रको अवस्था जाँच"
@@ -39,7 +39,7 @@
   },
   {
     "id": "nid-apply",
-    "category": "identity",
+    "category": ["identity", "Government"],
     "title": {
       "en": "Apply for National ID Card",
       "np": "राष्ट्रिय परिचयपत्रको आवेदन दिन"
@@ -56,28 +56,148 @@
     "official": true,
     "popular": 890
   },
-  {
-    "id": "driving-license",
-    "category": "identity",
+    {
+    "id": "koshidriving-license",
+    "category": ["identity", "license","Government"],
     "title": {
-      "en": "Apply for Driving License",
-      "np": "सवारीचालक अनुमतिपत्र आवेदन"
+      "en": "Koshi Pradesh Driving License",
+      "np": "कोशी प्रदेश सवारीचालक अनुमतिपत्र "
     },
     "description": {
-      "en": "Online application portal for new driving license in Nepal. Apply, renew, or track your license status.",
-      "np": "नेपालमा नयाँ सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+      "en": "Online application portal for driving license for Koshi Pradesh. Apply, renew, or track your license status.",
+      "np": "कोशी प्रदेश सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
     },
     "image": "/assets/images/driving-license.webp",
     "icon": "🚗",
-    "url": "https://applydlnew.dotm.gov.np/login",
-    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm"],
-    "featured": true,
+    "url": "https://edlvrs.koshi.gov.np/edl",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm", "कोशी", "Koshi"],
+    "featured": false,
+    "official": true,
+    "popular": 854
+  },
+
+  {
+    "id": "madheshdriving-license",
+    "category": ["identity", "license","Government"],
+    "title": {
+      "en": "Madhesh Pradesh Driving License",
+      "np": "मधेस प्रदेश सवारीचालक अनुमतिपत्र "
+    },
+    "description": {
+      "en": "Online application portal for driving license for Madhesh Pradesh. Apply, renew, or track your license status.",
+      "np": "मधेश प्रदेश सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/driving-license.webp",
+    "icon": "🚗",
+    "url": "https://edlvrs.madhesh.gov.np/edl",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm", "मधेश", "Madhesh"],
+    "featured": false,
+    "official": true,
+    "popular": 850
+  },
+
+  {
+    "id": "bagmatidriving-license",
+    "category": ["identity", "license","Government"],
+    "title": {
+      "en": "Bagmati Pradesh Driving License",
+      "np": "बागमती प्रदेश सवारीचालक अनुमतिपत्र "
+    },
+    "description": {
+      "en": "Online application portal for new driving license for Bagmati Pradesh. Apply, renew, or track your license status.",
+      "np": "बागमती प्रदेश सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/driving-license.webp",
+    "icon": "🚗",
+    "url": "https://edlvrs.bagamati.gov.np/edl",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm", "बागमती", "Bagmati", "Bagamati"],
+    "featured": false,
+    "official": true,
+    "popular": 855
+  },
+
+  {
+    "id": "gandakidriving-license",
+      "category": ["identity", "license","Government"],
+    "title": {
+      "en": "Gandaki Pradesh Driving License",
+      "np": "गण्डकी प्रदेश सवारीचालक अनुमतिपत्र "
+    },
+    "description": {
+      "en": "Online application portal for new driving license for Gandaki Pradesh. Apply, renew, or track your license status.",
+      "np": "गण्डकी प्रदेश सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/driving-license.webp",
+    "icon": "🚗",
+    "url": "https://edlvrs.gandaki.gov.np/edl",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm", "गण्डकी", "Gandaki"],
+    "featured": false,
+    "official": true,
+    "popular": 850
+  },
+
+  {
+    "id": "lumbinidriving-license",
+    "category": ["identity", "license","Government"],
+    "title": {
+      "en": "Lumbini Pradesh Driving License",
+      "np": "लुम्बिनी प्रदेश सवारीचालक अनुमतिपत्र "
+    },
+    "description": {
+      "en": "Online application portal for new driving license for Lumbini  Pradesh. Apply, renew, or track your license status.",
+      "np": "लुम्बिनी प्रदेश सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/driving-license.webp",
+    "icon": "🚗",
+    "url": "https://edlvrs.lumbini.gov.np/edl",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm", "लुम्बिनी", "Lumbini"],
+    "featured": false,
+    "official": true,
+    "popular": 850
+  },
+
+  {
+    "id": "karnalidriving-license",
+     "category": ["identity", "license","Government"],
+    "title": {
+      "en": "Karnali Pradesh Driving License",
+      "np": "कर्णाली प्रदेश सवारीचालक अनुमतिपत्र "
+    },
+    "description": {
+      "en": "Online application portal for new driving license for Karnali Pradesh. Apply, renew, or track your license status.",
+      "np": "कर्णाली प्रदेश सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/driving-license.webp",
+    "icon": "🚗",
+    "url": "https://edlvrs.karnali.gov.np/edl",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm", "कर्णाली", "Karnali"],
+    "featured": false,
+    "official": true,
+    "popular": 850
+  },
+
+  {
+    "id": "sudurpashchimdriving-license",
+    "category": ["identity", "license","Government"],
+    "title": {
+      "en": "Sudurpashchim Pradesh Driving License",
+      "np": सुदूरपश्चिम प्रदेश सवारीचालक अनुमतिपत्र "
+    },
+    "description": {
+      "en": "Online application portal for new driving license for Sudurpashchim Pradesh. Apply, renew, or track your license status.",
+      "np": "सुदूरपश्चिम प्रदेश सवारीचालक अनुमतिपत्रको लागि अनलाइन आवेदन पोर्टल। आवेदन दिनुहोस्, नवीकरण गर्नुहोस्, वा आफ्नो लाइसेन्सको अवस्था ट्रयाक गर्नुहोस्।"
+    },
+    "image": "/assets/images/driving-license.webp",
+    "icon": "🚗",
+    "url": "https://edlvrs.sudurpashchim.gov.np/edl",
+    "keywords": ["driving license", "license", "सवारी चालक", "लाइसेन्स", "अनुमतिपत्र", "dotm", "सुदूरपश्चिम", "Sudurpashchim"],
+    "featured": false,
     "official": true,
     "popular": 850
   },
   {
     "id": "passport",
-    "category": "identity",
+    "category": ["identity", "Government"],
     "title": {
       "en": "Apply for E-Passport",
       "np": "विद्युतीय राहदानी आवेदन"
@@ -96,7 +216,7 @@
   },
   {
     "id": "labor-approval",
-    "category": "government",
+    "category": ["identity", "Government"],
     "title": {
       "en": "Online Labor Approval",
       "np": "अनलाइन श्रम स्वीकृति"
@@ -153,7 +273,7 @@
   },
   {
     "id": "voter-list",
-    "category": "government",
+    "category": ["identity", "Government"],
     "title": {
       "en": "Check Voter List",
       "np": "मतदाता नामावली हेर्न"
@@ -172,7 +292,7 @@
   },
   {
     "id": "voter-registration",
-    "category": "government",
+    "category": ["identity", "Government"],
     "title": {
       "en": "Voter Registration",
       "np": "मतदाता नामावलीमा नाम दर्ता"
@@ -191,7 +311,7 @@
   },
   {
     "id": "nagarik-app-android",
-    "category": "utilities",
+    "category": ["utilities", "Government"],
     "title": {
       "en": "Nagarik App - Android",
       "np": "नागरिक एप - एन्ड्रोइड"
@@ -210,7 +330,7 @@
   },
   {
     "id": "nagarik-app-ios",
-    "category": "utilities",
+    "category":["utilities", "Government"],
     "title": {
       "en": "Nagarik App - iOS",
       "np": "नागरिक एप - आइओएस"
@@ -229,7 +349,7 @@
   },
   {
     "id": "nagarik-app-web",
-    "category": "utilities",
+    "category": ["utilities", "Government"],
     "title": {
       "en": "Nagarik App - Official Website",
       "np": "नागरिक एप - आधिकारिक वेबसाइट"
@@ -244,7 +364,7 @@
     "keywords": ["nagarik app web", "नागरिक एप वेब", "website"],
     "featured": false,
     "official": true,
-    "popular": 640
+    "popular": 700
   },
   {
     "id": "loksewa-central",
@@ -282,7 +402,7 @@
     "keywords": ["loksewa", "koshi", "province", "कोशी", "प्रदेश", "p1"],
     "featured": false,
     "official": true,
-    "popular": 540
+    "popular": 605
   },
   {
     "id": "loksewa-madhesh",
@@ -301,7 +421,7 @@
     "keywords": ["loksewa", "madhesh", "province", "मधेश", "प्रदेश", "p2"],
     "featured": false,
     "official": true,
-    "popular": 490
+    "popular": 602
   },
   {
     "id": "loksewa-bagmati",
@@ -320,7 +440,7 @@
     "keywords": ["loksewa", "bagmati", "province", "बागमती", "प्रदेश"],
     "featured": false,
     "official": true,
-    "popular": 560
+    "popular": 606
   },
   {
     "id": "loksewa-gandaki",
@@ -339,7 +459,7 @@
     "keywords": ["loksewa", "gandaki", "province", "गण्डकी", "प्रदेश"],
     "featured": false,
     "official": true,
-    "popular": 470
+    "popular": 603
   },
   {
     "id": "loksewa-lumbini",
@@ -358,7 +478,7 @@
     "keywords": ["loksewa", "lumbini", "province", "लुम्बिनी", "प्रदेश"],
     "featured": false,
     "official": true,
-    "popular": 450
+    "popular": 604
   },
   {
     "id": "loksewa-karnali",
@@ -377,7 +497,7 @@
     "keywords": ["loksewa", "karnali", "province", "कर्णाली", "प्रदेश"],
     "featured": false,
     "official": true,
-    "popular": 430
+    "popular": 601
   },
   {
     "id": "loksewa-sudurpashchim",
@@ -396,7 +516,7 @@
     "keywords": ["loksewa", "sudurpashchim", "province", "सुदूरपश्चिम", "प्रदेश"],
     "featured": false,
     "official": true,
-    "popular": 420
+    "popular": 600
   },
   {
     "id": "tsc-license",
@@ -415,7 +535,7 @@
     "keywords": ["tsc", "teacher", "teaching license", "शिक्षक", "अध्यापन अनुमति पत्र", "शिक्षक सेवा आयोग"],
     "featured": true,
     "official": true,
-    "popular": 780
+    "popular": 608
   },
   {
     "id": "see-result",
