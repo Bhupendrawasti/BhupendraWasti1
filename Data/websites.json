@@ -1,7 +1,7 @@
 [
   {
     "id": "nid-download",
-    "category": ["identity", "Government"],
+    "category": ["identity", "government"],
     "title": {
       "en": "Download Your eNID ",
       "np": "राष्ट्रिय परिचयपत्र डाउनलोड गर्न "
@@ -20,7 +20,7 @@
   },
   {
     "id": "nid-status",
-    "category": ["identity", "Government"],
+    "category": ["identity", "government"],
     "title": {
       "en": "Check National ID Card Status",
       "np": "राष्ट्रिय परिचय पत्रको अवस्था जाँच"
@@ -39,7 +39,7 @@
   },
   {
     "id": "nid-apply",
-    "category": ["identity", "Government"],
+    "category": ["identity", "government"],
     "title": {
       "en": "Apply for National ID Card",
       "np": "राष्ट्रिय परिचयपत्रको आवेदन दिन"
@@ -56,9 +56,9 @@
     "official": true,
     "popular": 890
   },
-    {
+  {
     "id": "koshidriving-license",
-    "category": ["identity", "license","Government"],
+    "category": ["identity", "license", "government"],
     "title": {
       "en": "Koshi Pradesh Driving License",
       "np": "कोशी प्रदेश सवारीचालक अनुमतिपत्र "
@@ -75,10 +75,9 @@
     "official": true,
     "popular": 854
   },
-
   {
     "id": "madheshdriving-license",
-    "category": ["identity", "license","Government"],
+    "category": ["identity", "license", "government"],
     "title": {
       "en": "Madhesh Pradesh Driving License",
       "np": "मधेस प्रदेश सवारीचालक अनुमतिपत्र "
@@ -95,10 +94,9 @@
     "official": true,
     "popular": 850
   },
-
   {
     "id": "bagmatidriving-license",
-    "category": ["identity", "license","Government"],
+    "category": ["identity", "license", "government"],
     "title": {
       "en": "Bagmati Pradesh Driving License",
       "np": "बागमती प्रदेश सवारीचालक अनुमतिपत्र "
@@ -115,10 +113,9 @@
     "official": true,
     "popular": 855
   },
-
   {
     "id": "gandakidriving-license",
-      "category": ["identity", "license","Government"],
+    "category": ["identity", "license", "government"],
     "title": {
       "en": "Gandaki Pradesh Driving License",
       "np": "गण्डकी प्रदेश सवारीचालक अनुमतिपत्र "
@@ -135,10 +132,9 @@
     "official": true,
     "popular": 850
   },
-
   {
     "id": "lumbinidriving-license",
-    "category": ["identity", "license","Government"],
+    "category": ["identity", "license", "government"],
     "title": {
       "en": "Lumbini Pradesh Driving License",
       "np": "लुम्बिनी प्रदेश सवारीचालक अनुमतिपत्र "
@@ -155,10 +151,9 @@
     "official": true,
     "popular": 850
   },
-
   {
     "id": "karnalidriving-license",
-     "category": ["identity", "license","Government"],
+    "category": ["identity", "license", "government"],
     "title": {
       "en": "Karnali Pradesh Driving License",
       "np": "कर्णाली प्रदेश सवारीचालक अनुमतिपत्र "
@@ -175,13 +170,12 @@
     "official": true,
     "popular": 850
   },
-
   {
     "id": "sudurpashchimdriving-license",
-    "category": ["identity", "license","Government"],
+    "category": ["identity", "license", "government"],
     "title": {
       "en": "Sudurpashchim Pradesh Driving License",
-      "np": सुदूरपश्चिम प्रदेश सवारीचालक अनुमतिपत्र "
+      "np": "सुदूरपश्चिम प्रदेश सवारीचालक अनुमतिपत्र "
     },
     "description": {
       "en": "Online application portal for new driving license for Sudurpashchim Pradesh. Apply, renew, or track your license status.",
@@ -197,7 +191,7 @@
   },
   {
     "id": "passport",
-    "category": ["identity", "Government"],
+    "category": ["identity", "government"],
     "title": {
       "en": "Apply for E-Passport",
       "np": "विद्युतीय राहदानी आवेदन"
@@ -216,7 +210,7 @@
   },
   {
     "id": "labor-approval",
-    "category": ["identity", "Government"],
+    "category": ["identity", "government"],
     "title": {
       "en": "Online Labor Approval",
       "np": "अनलाइन श्रम स्वीकृति"
@@ -235,7 +229,7 @@
   },
   {
     "id": "police-clearance",
-    "category": "government",
+    "category": ["government"],
     "title": {
       "en": "Police Clearance Certificate",
       "np": "प्रहरी चारित्रिक प्रमाणपत्र"
@@ -254,7 +248,7 @@
   },
   {
     "id": "noc-certificate",
-    "category": "government",
+    "category": ["government"],
     "title": {
       "en": "NOC Certificate",
       "np": "नो अब्जेक्सन सर्टिफिकेट"
@@ -273,7 +267,7 @@
   },
   {
     "id": "voter-list",
-    "category": ["identity", "Government"],
+    "category": ["identity", "government"],
     "title": {
       "en": "Check Voter List",
       "np": "मतदाता नामावली हेर्न"
@@ -292,7 +286,7 @@
   },
   {
     "id": "voter-registration",
-    "category": ["identity", "Government"],
+    "category": ["identity", "government"],
     "title": {
       "en": "Voter Registration",
       "np": "मतदाता नामावलीमा नाम दर्ता"
@@ -311,7 +305,7 @@
   },
   {
     "id": "nagarik-app-android",
-    "category": ["utilities", "Government"],
+    "category": ["utilities", "government"],
     "title": {
       "en": "Nagarik App - Android",
       "np": "नागरिक एप - एन्ड्रोइड"
@@ -330,7 +324,7 @@
   },
   {
     "id": "nagarik-app-ios",
-    "category":["utilities", "Government"],
+    "category": ["utilities", "government"],
     "title": {
       "en": "Nagarik App - iOS",
       "np": "नागरिक एप - आइओएस"
@@ -349,7 +343,7 @@
   },
   {
     "id": "nagarik-app-web",
-    "category": ["utilities", "Government"],
+    "category": ["utilities", "government"],
     "title": {
       "en": "Nagarik App - Official Website",
       "np": "नागरिक एप - आधिकारिक वेबसाइट"
@@ -368,7 +362,7 @@
   },
   {
     "id": "loksewa-central",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Federal PSC - Online Application",
       "np": "संघीय लोकसेवा आयोग - अनलाइन आवेदन"
@@ -387,7 +381,7 @@
   },
   {
     "id": "loksewa-koshi",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Koshi Province PSC",
       "np": "कोशी प्रदेश लोकसेवा आयोग"
@@ -406,7 +400,7 @@
   },
   {
     "id": "loksewa-madhesh",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Madhesh Province PSC",
       "np": "मधेश प्रदेश लोकसेवा आयोग"
@@ -425,7 +419,7 @@
   },
   {
     "id": "loksewa-bagmati",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Bagmati Province PSC",
       "np": "बागमती प्रदेश लोकसेवा आयोग"
@@ -444,7 +438,7 @@
   },
   {
     "id": "loksewa-gandaki",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Gandaki Province PSC",
       "np": "गण्डकी प्रदेश लोकसेवा आयोग"
@@ -463,7 +457,7 @@
   },
   {
     "id": "loksewa-lumbini",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Lumbini Province PSC",
       "np": "लुम्बिनी प्रदेश लोकसेवा आयोग"
@@ -482,7 +476,7 @@
   },
   {
     "id": "loksewa-karnali",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Karnali Province PSC",
       "np": "कर्णाली प्रदेश लोकसेवा आयोग"
@@ -501,7 +495,7 @@
   },
   {
     "id": "loksewa-sudurpashchim",
-    "category": "loksewa",
+    "category": ["loksewa"],
     "title": {
       "en": "Sudurpashchim Province PSC",
       "np": "सुदूरपश्चिम प्रदेश लोकसेवा आयोग"
@@ -520,7 +514,7 @@
   },
   {
     "id": "tsc-license",
-    "category": "education",
+    "category": ["education"],
     "title": {
       "en": "Teacher Service Commission",
       "np": "शिक्षक सेवा आयोग दरखास्त पोर्टल"
@@ -539,7 +533,7 @@
   },
   {
     "id": "see-result",
-    "category": "education",
+    "category": ["education"],
     "title": {
       "en": "SEE Result Check",
       "np": "SEE को रिजल्ट चेक गर्न"
@@ -558,7 +552,7 @@
   },
   {
     "id": "neb-result",
-    "category": "education",
+    "category": ["education"],
     "title": {
       "en": "Class 12 Result Check",
       "np": "कक्षा १२ को रिजल्ट चेक गर्न"
@@ -577,7 +571,7 @@
   },
   {
     "id": "tu-student-portal",
-    "category": "education",
+    "category": ["education"],
     "title": {
       "en": "TU Student Portal",
       "np": "त्रिभुवन विश्वविद्यालय विद्यार्थी पोर्टल"
@@ -596,7 +590,7 @@
   },
   {
     "id": "tu-result",
-    "category": "education",
+    "category": ["education"],
     "title": {
       "en": "TU Result Check",
       "np": "त्रिभुवन विश्वविद्यालयको रिजल्ट"
@@ -615,7 +609,7 @@
   },
   {
     "id": "meroshare-login",
-    "category": "finance",
+    "category": ["finance"],
     "title": {
       "en": "Meroshare Login",
       "np": "मेरोशेयर लगइन"
@@ -634,7 +628,7 @@
   },
   {
     "id": "share-result",
-    "category": "finance",
+    "category": ["finance"],
     "title": {
       "en": "IPO Result Check",
       "np": "शेयर/IPO को रिजल्ट चेक"
@@ -653,7 +647,7 @@
   },
   {
     "id": "domain-registration",
-    "category": "utilities",
+    "category": ["utilities"],
     "title": {
       "en": ".com.np Domain Registration",
       "np": ".com.np डोमेन दर्ता"
