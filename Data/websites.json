@@ -57,6 +57,24 @@
     "popular": 890
   },
   {
+    "id": "pmdrfdonation",
+    "category": ["donation", "Government"],
+    "title": {
+      "en": "Donate to the Prime Minister’s Disaster Relief Fund",
+      "np": "प्रधानमन्त्री दैवी प्रकोप उद्धार कोषमा सहयोग गर्न"  },
+    "description": {
+      "en": "Donate to the Government of Nepal Prime Minister’s Disaster Relief Fund to support nationwide disaster rescue, relief, rehabilitation and recovery operations.",
+      "np": "देशभर विपद् उद्धार, राहत, पुनर्स्थापना तथा पुनर्निर्माण कार्यमा सहयोग पुर्‍याउन नेपाल सरकारको प्रधानमन्त्री दैवी प्रकोप उद्धार कोषमा सहयोग गर्नुहोस्।"  },
+    "image": "/assets/images/pmdr.webp",
+    "icon": "🎁",
+    "url": "https://donate.gov.np",
+    "keywords": [ "donation", "pmdrf",  "Prime Minister Disaster Relief Fund", "प्रधानमन्त्री दैवी प्रकोप उद्धार कोष",   "विपद् राहत",   "disaster relief" ],
+    "featured": true,
+    "official": true,
+    "popular": 999
+  },
+
+  {
     "id": "koshidriving-license",
     "category": ["identity", "license", "government"],
     "title": {
