@@ -1,10 +1,44 @@
 {
-  "2083 Bhadra 16 to 31": [
 
+  "2083 Bhadra 16 to 31":[
+    { "billNumber": "048915618211",    "status": "Winner",   "prizeType": "Bumper Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner"  },
+    { "billNumber": "047751629120",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "053777634226",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "056471686003",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "060108695507",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "058503976719",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "049523214674",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "054609004477",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "057052874943",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "050194542406",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "052248445058",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "051585654635",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "048098557373",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "059882208157",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "055618877167",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "061709207499",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "062991195456",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" }
 ],
-  "2083 Bhadra 1 to 15": [
 
+  "2083 Bhadra 1 to 15":[
+    { "billNumber": "036447852378",    "status": "Winner",   "prizeType": "Bumper Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner"  },
+    { "billNumber": "032454269275",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "038328091444",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "037578626740",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "033144165666",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "036825619944",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "044745489488",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "042618477620",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "039705942959",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "035907335960",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "046092188962",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "034636885897",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "040009462634",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "041365661530",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "043746633042",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
+    { "billNumber": "045671499525",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" }
 ],
+  
   "2083 Shrawan 16 to 31":[
     { "billNumber": "026888979039",    "status": "Winner",   "prizeType": "Bumper Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner"  },
     { "billNumber": "030342279956",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
