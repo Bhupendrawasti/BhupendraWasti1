@@ -21,7 +21,7 @@
 ],
 
   "2083 Bhadra 1 to 15":[
-    { "billNumber": "036447852378",    "status": "Winner",   "prizeType": "Bumper Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner"  },
+    { "billNumber": "036447852378",    "status": "Winner",   "prizeType": "Bumper Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
     { "billNumber": "032454269275",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
     { "billNumber": "038328091444",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
     { "billNumber": "037578626740",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
@@ -38,25 +38,25 @@
     { "billNumber": "043746633042",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" },
     { "billNumber": "045671499525",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Ashwin 16",      "winnerName": "Winner" }
 ],
-  
+
   "2083 Shrawan 16 to 31":[
-    { "billNumber": "026888979039",    "status": "Winner",   "prizeType": "Bumper Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner"  },
-    { "billNumber": "030342279956",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "019256510925",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "026144515005",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "031799935082",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "017766107005",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "018128759409",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "024673171904",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "021184000653",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "023856885370",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "025357331941",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "022458096668",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "016667290146",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "020037283747",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "029184622665",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "027711487145",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" },
-    { "billNumber": "028657775459",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Winner" }
+    { "billNumber": "026888979039",    "status": "Winner",   "prizeType": "Bumper Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "TUL PUDASHAINI"  },
+    { "billNumber": "030342279956",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "YOGESH BISHOWKARMA" },
+    { "billNumber": "019256510925",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Dinesh Tamang" },
+    { "billNumber": "026144515005",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "ASKRINA LAMA" },
+    { "billNumber": "031799935082",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "BHAGWATI SAPKOTA" },
+    { "billNumber": "017766107005",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Rahim Mahamad Hawari" },
+    { "billNumber": "018128759409",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "MAHESHKUMAR PAUDEL" },
+    { "billNumber": "024673171904",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "RAJENDRA THAPA" },
+    { "billNumber": "021184000653",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "KAMALA TAMANG" },
+    { "billNumber": "023856885370",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "SHIV NARAYAN BADAHI MISTRI" },
+    { "billNumber": "025357331941",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "CHUDAMANI DANAI" },
+    { "billNumber": "022458096668",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Ramesh Sah Kanu" },
+    { "billNumber": "016667290146",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "MANISH GAUTAM" },
+    { "billNumber": "020037283747",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Ghanshyam Tiwari" },
+    { "billNumber": "029184622665",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "Rakesh Kumar Singh" },
+    { "billNumber": "027711487145",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "BIKASH GURUNG" },
+    { "billNumber": "028657775459",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 16",      "winnerName": "CHAKRA BAHADUR SHAHI" }
 ],
 
   "2083 Shrawan 1 to 15":[
@@ -78,6 +78,5 @@
     { "billNumber": "011380914580",    "status": "Winner",   "prizeType": "Daily Winner",    "claimPeriod": "2083 Bhadra 6",      "winnerName": "Winner"}
 ]
 }
-
 
 
